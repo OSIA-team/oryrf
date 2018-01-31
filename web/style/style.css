@@ -566,10 +566,11 @@ nav .brand-logo{
 }
 
 .products h3{
-  color: #1b1b1b;
-  font-size: 20px;
-  text-align: center;
-  margin-top: 8px;
+  color: white;;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0px;
+  text-shadow: 1px 0px 0px rgb(99, 99, 99);
 }
 
 .products h4.background{
@@ -578,7 +579,7 @@ nav .brand-logo{
   text-align: center;
   color: #383838;
   font-size: 16px;
-  margin-top: 20px;
+  margin-top: 0px;
   font-weight: normal;
   font-family: 'Open sans', sans-serif;
 }
@@ -598,8 +599,46 @@ h4.background::before{
 }
 .products .product img{
   width: 100%;
+  line-height: 0px;
 }
 
+.product .title{
+    position: absolute;
+    width: 100%;
+    color: white;
+    bottom: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.88+59,0.88+59,0.88+59,0.88+60,0.88+60 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.88) 59%, rgba(0,0,0,0.88) 60%, rgba(0,0,0,0.88) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.88) 59%,rgba(0,0,0,0.88) 60%,rgba(0,0,0,0.88) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.88) 59%,rgba(0,0,0,0.88) 60%,rgba(0,0,0,0.88) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e0000000',GradientType=0 ); /* IE6-9 */
+    padding: 16px 8px;
+    margin: 0;
+    min-height: 70px;
+    display: flex;
+    align-items: flex-end;
+}
+.product .obrazek{
+  position: relative;
+  line-height: 0px;
+  border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+}
+
+.product p{
+      color: #a0a0a0;
+      font-size: 14px;
+      line-height: 18px;
+      font-family: 'Open Sans', sans-serif;
+      padding: 16px 8px;
+      margin: 0px;
+      font-style: italic;
+      text-align: left;
+}
+
+.product p:first-letter {
+    text-transform: uppercase;
+}
 .product .cena span{
   border: 1px solid grey;
   border-radius: 50px;
