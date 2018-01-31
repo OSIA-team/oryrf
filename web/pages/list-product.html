@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Bel3s - belgické kuchyně, fast food</title>
+  </head>
+  <body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <nav class="user">
+    <a href="#">Přihlásit se</a> nebo <a href="#">registrovat</a>
+    </nav>
+
+    <nav class="grey darken-4">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">
+        <div class="vlajecka-logo">
+            <img src="../pict/logo_bezpozadi.png" alt="logo" width="98" height="53">
+        </div>
+      </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <div class="center menu hide-on-med-and-down">
+        <a href="sass.html">MENU</a></li>
+        <a href="badges.html">KDE NÁS NAJDETE</a>
+        <a href="collapsible.html">O NÁS</a>
+      </div>
+      <ul class="kosik-menu">
+        <span class="menu-polozka">0</span><span>1 777 Kč</span>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">MENU</a></li>
+        <li><a href="badges.html">KDE NÁS NAJDETE</a></li>
+        <li><a href="collapsible.html">O NÁS</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="banner">
+    <div class="jidelnicek">
+      <ul>
+        <a href="#"><li><img src="../pict/hranolky.png" alt="hranolky">Hranolky</li></a>
+        <a href="#"><li><img src="../pict/kure.png" alt="kure">Kuře</li></a>
+        <a href="#"><li><img src="../pict/bagety.png" alt="bagety">Bagety</li></a>
+        <a href="#"><li><img src="../pict/snidaně.png" alt="snidaně">Snídaně</li></a>
+        <a href="#"><li><img src="../pict/napoje.png" alt="napoje">Nápoje</li></a>
+        <a href="#"><li><img src="../pict/omacky.png" alt="omacky">Omáčky</li></a>
+      </ul>
+    </div>
+    <h1>Hranolky</h1>
+  </div>
+
+  <!--Sekce s nabídkou všech produktů -->
+  <section class="container product-list">
+    <div class="navigation-sidebar">
+      <nav>
+        <ul>
+        <a href="#!">  <li><img src="../pict/hranolky.png" alt="hranolky">Hranolky</li></a>
+        <a href="#!">  <li><img src="../pict/kure.png" alt="kure">Kuře</li></a>
+        <a href="#!">  <li><img src="../pict/bagety.png" alt="bagety">Bagety</li></a>
+        <a href="#!">  <li><img src="../pict/snidaně.png" alt="snidaně">Snídaně</li></a>
+        <a href="#!">  <li><img src="../pict/napoje.png" alt="napoje">Nápoje</li></a>
+        <a href="#!">  <li class="no-border"><img src="../pict/omacky.png" alt="omacky">Omáčky</li></a>
+        </ul>
+      </nav>
+    </div>
+
+
+
+
+    <div class=" products">
+
+        <div class="product">
+          <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg" alt="bageta1"> </a>
+            <h3>Hranolky s modul oknem</h3>
+            <h4 class="background"><span>cena</span></h4>
+            <div class="cena">
+                <div class="text">75 Kč</div>
+                <div class="sp-quantity">
+                  <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+                  <div class="sp-plus fff ddd">+</div>
+                  <div class="sp-minus fff ddd">-</div>
+                </div>
+            </div>
+             <a class="modal-trigger" href="#modal1"><button type="button" name="button"><i class="material-icons">shopping_basket</i></button></a>
+             <!-- Modal Structure -->
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>K hranolkům omáčku nebo dip?</h4>
+                  <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
+                  <div class="">
+                    <input type="checkbox" class="filled-in" id="omacka1" />
+                    <label for="omacka1">Česneková omáčka <b>35,-Kč</b></label>
+                  </div>
+
+                  <div class="">
+                    <input type="checkbox" class="filled-in" id="omacka2" />
+                    <label for="omacka2">Kečupová omáčka <b>35,-Kč</b></label>
+                  </div>
+
+                  <div class="">
+                    <input type="checkbox" class="filled-in" id="omacka3" />
+                    <label for="omacka3">Tatarska omáčka <b>35,-Kč</b></label>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">přidat do košíku</a>
+                </div>
+              </div>
+
+        </div>
+
+        <div class="product">
+          <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg" alt="bageta1"> </a>
+            <h3>Hranolky</h3>
+            <h4 class="background"><span>cena</span></h4>
+            <div class="cena">
+                <div class="text">75 Kč</div>
+                <div class="sp-quantity">
+                  <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+                  <div class="sp-plus fff ddd">+</div>
+                  <div class="sp-minus fff ddd">-</div>
+                </div>
+            </div>
+            <button type="button" name="button"><i class="material-icons">shopping_basket</i></button>
+        </div>
+
+        <div class="product">
+          <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg" alt="bageta1"> </a>
+            <h3>Hranolky</h3>
+            <h4 class="background"><span>cena</span></h4>
+            <div class="cena">
+                <div class="text">75 Kč</div>
+                <div class="sp-quantity">
+                  <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+                  <div class="sp-plus fff ddd">+</div>
+                  <div class="sp-minus fff ddd">-</div>
+                </div>
+            </div>
+            <button type="button" name="button"><i class="material-icons">shopping_basket</i></button>
+        </div>
+
+
+
+
+    </div>
+
+
+
+  </section>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+  $('.modal').modal();
+});
+
+  $(".ddd").on("click", function () {
+
+    var $button = $(this);
+    var oldValue = $button.closest('.sp-quantity').find("input.quntity-input").val();
+
+    if ($button.text() == "+") {
+        var newVal = parseFloat(oldValue) + 1;
+    } else {
+        // Don't allow decrementing below zero
+        if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+        } else {
+            newVal = 0;
+        }
+    }
+
+    $button.closest('.sp-quantity').find("input.quntity-input").val(newVal);
+
+  });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Bel3s - belgické kuchyně, fast food</title>
+  </head>
+  <body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <nav class="user">
+    <a href="#">Přihlásit se</a> nebo <a href="#">registrovat</a>
+    </nav>
+
+    <div class="progres">
+          <div class="timeline">
+            <div class="timeline-step complete"><p>1</p><div class="header">Košík</div></div>
+            <div class="timeline-step"><p>2</p><div class="header">Adresa a platba</div></div>
+            <div class="timeline-step"><p>3</p><div class="header">Rekapitulace</div></div>
+          </div>
+    </div>
+
+    <form class="" method="post">
+    <section class="kosik">
+      <div class="polozka row">
+        <div class="col s12 l2">
+        <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg"> </a>
+        </div>
+        <div class="popis col s12 l4">
+          <h3>Belgické hranolky</h3>
+          <h4>Množství/velikost</h4>
+          <h5 class="mnozstvi">8ks</h5>
+        </div>
+        <div class="col s6 l2">
+            <h5 class="cena">289,99 Kč</h5>
+        </div>
+        <div class="col s6 l2">
+          <div class="sp-quantity">
+            <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+            <div class="sp-plus fff ddd">+</div>
+            <div class="sp-minus fff ddd">-</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="polozka row">
+        <div class="col s12 l2">
+        <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg"> </a>
+        </div>
+        <div class="popis col s12 l4">
+          <h3>Belgické hranolky</h3>
+          <h4>Množství/velikost</h4>
+          <h5 class="mnozstvi">8ks</h5>
+        </div>
+        <div class="col s6 l2">
+            <h5 class="cena">289,99 Kč</h5>
+        </div>
+        <div class="col s6 l2">
+          <div class="sp-quantity">
+            <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+            <div class="sp-plus fff ddd">+</div>
+            <div class="sp-minus fff ddd">-</div>
+          </div>
+        </div>
+      </div>
+      <div class="polozka row">
+        <div class="col s12 l2">
+        <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg"> </a>
+        </div>
+        <div class="popis col s12 l4">
+          <h3>Belgické hranolky</h3>
+          <h4>Množství/velikost</h4>
+          <h5 class="mnozstvi">8ks</h5>
+        </div>
+        <div class="col s6 l2">
+            <h5 class="cena">289,99 Kč</h5>
+        </div>
+        <div class="col s6 l2">
+          <div class="sp-quantity">
+            <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+            <div class="sp-plus fff ddd">+</div>
+            <div class="sp-minus fff ddd">-</div>
+          </div>
+        </div>
+      </div>
+      <div class="polozka row">
+        <div class="col s12 l2">
+        <a href="#"> <img src="https://www.bb.cz/files/caesar.jpg"> </a>
+        </div>
+        <div class="popis col s12 l4">
+          <h3>Belgické hranolky</h3>
+          <h4>Množství/velikost</h4>
+          <h5 class="mnozstvi">8ks</h5>
+        </div>
+        <div class="col s6 l2">
+            <h5 class="cena">289,99 Kč</h5>
+        </div>
+        <div class="col s6 l2">
+          <div class="sp-quantity">
+            <div class="sp-input"><input type="text" class="quntity-input" name="quntity-1" value="1" /></div>
+            <div class="sp-plus fff ddd">+</div>
+            <div class="sp-minus fff ddd">-</div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <div class="suma row">
+      <div class="col s6 l2 offset-s0 offset-l8">Celkem</div>
+      <div class="col s6  l2">566,00 Kč</div>
+      <input type="submit" name="to-checkout" class="col l2 m12  offset-l10 next-btn" value="Pokračovat">
+    </div>
+
+    </form>
+    <script type="text/javascript">
+    $(".ddd").on("click", function () {
+
+      var $button = $(this);
+      var oldValue = $button.closest('.sp-quantity').find("input.quntity-input").val();
+
+      if ($button.text() == "+") {
+          var newVal = parseFloat(oldValue) + 1;
+      } else {
+          // Don't allow decrementing below zero
+          if (oldValue > 0) {
+              var newVal = parseFloat(oldValue) - 1;
+          } else {
+              newVal = 0;
+          }
+      }
+
+      $button.closest('.sp-quantity').find("input.quntity-input").val(newVal);
+
+    });
+    </script>
+  </body>
+</html>

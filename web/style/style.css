@@ -1,0 +1,925 @@
+/* */
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: white;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+#picker{
+  display: none;
+}
+[type="checkbox"].filled-in:checked+label:after {
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff2633;
+  background-color: #ff2633;
+  z-index: 0;
+}
+
+.carousel-item h1{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  margin-top: 3px;
+  padding-bottom: -10px;
+  border-bottom: 0.5px solid white;
+  display: inline-block;
+  margin-bottom: 0px;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+
+
+.user{
+  background: #ffae00;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+padding: 0px;
+margin: 0px;
+font-weight: 100;
+line-height: 20px;
+height: 26px;
+padding: 5px 5% 5px;
+text-align: right;
+z-index: 10;
+}
+
+.user a{
+  font-weight: bold;
+}
+
+.nav-wrapper{
+  font-weight: bold;
+  padding: 0 5%;
+}
+
+.menu-polozka{
+  background-color: #ffae00;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  /* padding: 3px; */
+  margin-right: 10px;
+  align-self: center;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.carousel-item{
+  background-repeat: : no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+
+}
+
+.carousel{
+  height: 80vh;
+}
+.nad-nadpis{
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.podnadpis{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fc3939;
+}
+
+.ramecek{
+  width: 100%;
+margin-top: -10px;
+height: 10px;
+position: relative;
+z-index: 120;
+background-image: -webkit-linear-gradient(315deg, transparent 10px, #1e1e1e 10px), -webkit-linear-gradient(225deg, transparent 10px, #1e1e1e 10px);
+background-image: linear-gradient(135deg, transparent 10px, #1e1e1e 10px), linear-gradient(-135deg, transparent 10px, #1e1e1e 10px);
+background-size: 10px 10px;
+background-repeat: repeat-x;
+background-position: 50% 50%;
+clear: both;
+}
+
+.nabidka_mainpage{
+  background-color: #1e1e1e;
+  padding-top: 80px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.nabidka_mainpage h2{
+  color: #676767;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 48px;
+font-weight: bold;
+margin: 0px;
+margin-top: -10px;
+margin-bottom: 50px;
+}
+.nabidka_mainpage h3{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 35px;
+font-weight: bold;
+color: #fc3939;
+-ms-transform: rotate(-10deg);
+-webkit-transform: rotate(-10deg);
+transform: rotate(-10deg);
+display: inline-block;
+}
+
+.nabidka_mainpage .item1{
+  background-image: url('../pict/6-1.png');
+  background-size: cover;
+}
+
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    overflow:hidden;
+}
+
+.content {
+    position:absolute;
+    height:95%; /* = 100% - 2*10% padding */
+    width: 90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
+.table{
+    display:table;
+    height:100%;
+    width:100%;
+}
+.table-cell{
+    display:table-cell;
+    height:100%;
+    width:100%;
+}
+
+.nadpis-jidlo{
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      color: white;
+    }
+
+.nadpis-jidlo h1{
+  float: left;
+  clear: left;
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.57);
+  -webkit-text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.57);
+  -moz-text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.57);
+}
+
+.nadpis-jidlo h2{
+  float: left;
+  clear: left;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0px;
+  padding: 0px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.57);
+  -webkit-text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.57);
+  -moz-text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.57);
+}
+
+.cenovka:before{
+  float: none;
+  clear: left;
+  content: ' ';
+}
+.cenovka{
+  clear: left;
+  background-color: #FFAE00;
+  border-radius: 10px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: white;
+  text-align: left;
+  padding: 5px 2%;
+  width: 40%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.cenovka h4{
+  font-size: 50px;
+  margin: 0px;
+  padding: 0px;
+  margin-right: 5%;
+  margin-top: -15px;
+}
+.cenovka span{
+  font-size: 17px;
+  font-weight: 100;
+}
+
+.menu li{
+    width: 20%;
+    text-align: center;
+
+}
+.menu{
+  width: 100%;
+  float: left;
+}
+.menu a{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.kosik-menu{
+  position: absolute;
+  right: 6%;
+  display: flex;
+  /* height: 64px; */
+  width: 180px;
+  align-items: center;
+}
+
+nav .brand-logo{
+  z-index: 7;
+  margin: 0px;
+  padding: 0px;
+}
+.vlajecka-logo{
+  width: 110px;
+  height: 99px;
+  background-image: url('../pict/vlajecka.png');
+  background-size: cover;
+  margin-top: -6px;
+  z-index: 1;
+  padding: 10px 6px;
+}
+
+.jidelnicek{
+  font-family: 'Roboto', sans-serif;
+  z-index: 5;
+  position: relative;
+  background: rgba(0, 0, 0, 0.74);
+  text-align: center;
+  padding: 0px 2% 7px;
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 25px;
+
+}
+.jidelnicek li{
+  display: inline;
+  margin: 0px 1%;
+}
+
+.jidelnicek ul{
+  padding: 0px;
+  margin: 0px;
+}
+.jidelnicek img{
+  width: 25px;
+    height: 25px;
+    top: 8px;
+    position: relative;
+    margin-right: 5px;
+}
+
+.jidelnicek a{
+  text-decoration: none;
+  color: white;
+}
+
+.valign{
+  position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.nabidka_mainpage .row{
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+}
+.snidane-wrapper{
+  height: auto;
+  padding: 200px 2rem 100px;
+  background-image: url('../pict/bg2.png');
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+
+}
+
+.snidane-wrapper .menu{
+  width: 50%;
+  float: right;
+}
+
+.snidane-wrapper .menu .bunka{
+  width: 46%;
+  float: left;
+  padding: 25px;
+  color: #FFAE00;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.snidane-wrapper .menu .bunka p{
+  margin-top: 0px;
+  margin-right: 20%;
+  font-family: 'Open sans', sans-serif;
+  font-style: italic;
+  color: white;
+
+}
+.snidane-wrapper h1{
+  margin: 0px;
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 100px;
+  margin-bottom: 40px;
+}
+
+.snidane-wrapper h2{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 100;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.snidane-wrapper .cena{
+  float: right;
+}
+
+.promo-product-wrapper{
+  text-align: center;
+  height: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-image: url('../pict/bg1.png');
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  color: #2D2B2D;
+}
+
+.promo-product-wrapper .content {
+  width: 50%;
+  position: relative;
+}
+.promo-product-wrapper h1, h2, h4{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.promo-product-wrapper h1{
+  font-size: 140px;
+  margin:0px;
+  line-height: 140px;
+}
+.promo-product-wrapper h2{
+  font-size: 100px;
+  margin-top: -21px;
+}
+
+.promo-product-wrapper h4{
+  font-size: 30px;
+  color: #FC3939;
+}
+.promo-product-wrapper .nadtitulek {
+    font-family: 'Open sans', sans-serif;
+    font-size: 40px;
+    color: #6E6E6E;
+    padding-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #6E6E6E;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.banner{
+  width: 100%;
+  height: 350px;
+  background-image: url('../pict/bg-banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner h1{
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 100px;
+  margin-top: 100px
+}
+.navigation-sidebar{
+  width: 350px;
+  margin-right: 50px;
+  }
+.navigation-sidebar li{
+    display: block;
+     float: none;
+     line-height: 42px;
+     height: 50px;
+     padding: 5px;
+     border-bottom: 1px solid grey;
+}
+
+.navigation-sidebar nav ul a{
+  padding: 0px;
+  -moz-transition: none;
+ -webkit-transition: none;
+ -o-transition: color 0 ease-in;
+ transition: none;
+}
+.navigation-sidebar ul li.no-border{
+  border-bottom: 0px;
+}
+
+
+.navigation-sidebar ul{
+  padding: 15px 25px;
+  -moz-transition: none;
+ -webkit-transition: none;
+ -o-transition: color 0 ease-in;
+ transition: none;
+}
+
+.navigation-sidebar li{
+  -moz-transition: none;
+ -webkit-transition: none;
+ -o-transition: color 0 ease-in;
+ transition: none;
+ position: relative;
+}
+
+.navigation-sidebar li:hover::after {
+    visibility: visible;
+}
+
+.navigation-sidebar li::after{
+  transform: rotate(45deg);
+  width: 40px;
+  height: 42px;
+  content: " ";
+  display: block;
+  top: 4px;
+  left: 92%;
+  position: absolute;
+  border-radius: 10px;
+  visibility: hidden;
+  background: #df0714;
+}
+.navigation-sidebar li:hover{
+  background-color: #df0714;
+  color: white;
+  margin-left: -25px;
+  padding-left: 25px;
+  margin-right: -25px;
+  border-color: rgba(255, 0, 0, 0);
+  -moz-transition: none;
+ -webkit-transition: none;
+ -o-transition: color 0 ease-in;
+ transition: none;
+
+}
+
+.navigation-sidebar li.active{
+    background-color: #df0714;
+    color: white;
+    margin-left: -25px;
+    padding-left: 25px;
+    margin-right: -25px;
+    border-color: rgba(255, 0, 0, 0);
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
+}
+
+.navigation-sidebar li.active::after{
+  visibility: visible;
+}
+
+.navigation-sidebar img{
+  float: left;
+}
+.navigation-sidebar nav{
+  background-color: #f7f7f7;
+  height: auto;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+.product-list{
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  padding: 5px 25px;
+}
+.navigation-sidebar a{
+  color: grey;
+}
+
+ .products{
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   justify-content: flex-start;
+}
+
+.products a{
+  text-decoration: none;
+  color: #1b1b1b;
+}
+.products .product{
+  width: 250px;
+  margin: 0 20px;
+  margin-bottom: 40px;
+  border: 2px solid rgba(0,0,0,0);
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  align-self: flex-start;
+}
+
+.products .product:hover{
+  border:2px solid #e6e6e6;
+}
+
+.products h3{
+  color: #1b1b1b;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.products h4.background{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #383838;
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: normal;
+  font-family: 'Open sans', sans-serif;
+}
+
+h4.background::before{
+        border-top: 1px solid #bdbdbd;
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+}
+.product span{
+  background: #fff;
+  padding: 0 15px;
+}
+.products .product img{
+  width: 100%;
+}
+
+.product .cena span{
+  border: 1px solid grey;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  padding: 16px 5px;
+  text-align: center;
+  margin-right: 8px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.product .cena span:hover{
+  background-color: #df0714;
+  color: white;
+  border: 1px solid #df0714;
+}
+.product .cena{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.product .cena .text{
+  font-weight: bold;
+}
+.product input[type="submit"]{
+  width: 100%;
+  background-color: #ff2633;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -os-border-radius: 10px;
+  color: white;
+  padding-bottom: 0px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 32px;
+}
+
+.product input[type="submit"]:hover{
+  background-color: #df0714;
+}
+
+.product input[type="submit"] .material-icons{
+  font-size: 33px;
+  line-height: 50px;
+}
+
+.timeline{
+  background-color: #dddddd;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progres{
+  height: 50px;
+  margin-top: 50px;
+  padding: 0 1rem;
+}
+
+.timeline-step{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #df0714;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: white;
+  position: relative;
+  top: -19px;
+  font-weight: bold;
+  color: #505050;
+}
+
+.timeline-step .header{
+    position: absolute;
+    top: 46px;
+    color: #616161;
+    width: 116px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 13px;
+}
+.timeline-step.complete, .timeline-step:hover{
+  background-color: #df0714;
+  color: white;
+  cursor: pointer;
+}
+
+.kosik{
+  border-top: 1px solid #f3f3f3;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem 0;
+  margin-top: 80px;
+}
+.mid-step{
+  border-top: 1px solid #f3f3f3;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1rem 2rem 0;
+  margin-top: 80px;
+}
+
+.final-step{
+  border-top: 1px solid #f3f3f3;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1rem 2rem 0;
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-step h3{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 41px;
+  line-height: 41px;
+  margin-top: 27px;
+}
+.next-btn{
+  border: 1px solid #df0714;
+    border-radius: 5px;
+    color: white;
+    background-color: #df0714;
+    padding: 5px 20px !important;
+    margin-top: 50px;
+}
+.suma{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+.kosik .polozka .popis{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.kosik .polozka img{
+  width: 100%;
+  height: auto;
+}
+
+.kosik .polozka h3{
+  font-size: 17px;
+  margin: 0px;
+  width: 100%;
+  color: #2d2d2d;
+}
+
+.kosik .polozka h4{
+    font-family: 'Roboto', sans-serif;
+    color: #525252;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.kosik .polozka .mnozstvi{
+  font-family: 'Roboto', sans-serif;
+  color: #525252;
+  font-size: 12px;
+  margin: 0;
+  font-weight: normal;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.kosik .polozka .cena{
+    font-family: 'Roboto', sans-serif;
+    color: #525252;
+    font-size: 12px;
+    margin: 0;
+    font-weight: normal;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.quntity-input{
+  border: none !important;
+  margin: 0px !important;
+  font-size: 13px !important;
+  height: auto !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0)!important;
+}
+
+
+input[type=text]:focus {
+  border-bottom: none!important;
+  box-shadow: none!important;
+}
+
+.sp-quantity {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #dddddd;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  -webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.sp-minus {
+    background: #dddddd;
+    width: 40px;
+    text-align: center;
+    height: 20px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    display: block;
+    cursor: pointer;
+}
+.sp-input {
+  width: 80px;
+}
+.sp-plus {
+  background: #dddddd;
+  width: 40px;
+  text-align: center;
+  height: 20px;
+  padding-bottom: 10px;
+  border-radius: 30px;
+  margin-right: 3px;
+  display: block;
+  cursor: pointer;
+}
+.sp-input input {
+    width:30px;
+    height:34px;
+    text-align:center;
+    border: none;
+}
+.sp-input input:focus {
+    border:1px solid #e1e1e1;
+    border: none;
+}
+.sp-minus a, .sp-plus a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #525252;
+}
+
+.kosik .polozka{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.products .sp-input{
+  width: 66px;
+}
+
+.products .sp-plus, .products .sp-minus{
+  padding-bottom: 23px;
+}
+@media screen and (max-width: 792px) {
+    .navigation-sidebar{
+      width: 100%;
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
+    .product-list{
+      flex-wrap: wrap;
+      padding: 0px 16px;
+    }
+
+    .kosik{
+      margin-top: 20px;
+      border-bottom: none;
+    }
+    .timeline .header{
+      display: none;
+    }
+
+    .kosik .polozka h4{
+      margin-top: 10px;
+      display: inline;
+      width: auto;
+    }
+    .kosik .polozka .mnozstvi{
+      width: auto;
+    display: inline-block;
+    margin-top: 9px;
+    margin-left: 25px;
+    }
+
+    .kosik .polozka .cena{
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .sp-quantity{
+      margin-top: 12px;
+    }
+
+    .kosik .polozka{
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f3f3f3;
+    }
+}

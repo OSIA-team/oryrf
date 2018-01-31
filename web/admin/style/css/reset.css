@@ -1,0 +1,125 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remove textarea resize at Safari */
+textarea {
+	resize: none;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container{
+	width: 100%;
+	margin-bottom: 20px;
+	border-top: 1px solid #d6d6d6;
+}
+
+.row{
+	display: flex;
+	justify-content: space-between;
+	height: 20px;
+	line-height: 25px;
+	border: 1px solid #d6d6d6;
+	border-top: none;
+	padding: 8px 16px;
+	background: #f7f7f7;
+}
+
+.row:hover{
+	background: #e2e2e2;
+  color: #d0614b
+}
+
+.action{
+	font-weight: bold;
+}
+.container a{
+	text-decoration: none;
+	color: #646464;
+	}
+
+table.ObjDetail {
+	border: 1px solid #1C6EA4;
+	background-color: #EEEEEE;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+table.ObjDetail td, table.ObjDetail th {
+	border: 2px solid #AAAAAA;
+	padding: 3px 3px;
+}
+table.ObjDetail tbody td {
+	font-size: 13px;
+}
+table.ObjDetail tr:nth-child(even) {
+	background: #DEDEDE;
+}
+table.ObjDetail thead {
+	background: #DEDEDE;
+	background: -moz-linear-gradient(top, #e6e6e6 0%, #e1e1e1 66%, #DEDEDE 100%);
+	background: -webkit-linear-gradient(top, #e6e6e6 0%, #e1e1e1 66%, #DEDEDE 100%);
+	background: linear-gradient(to bottom, #e6e6e6 0%, #e1e1e1 66%, #DEDEDE 100%);
+	border-bottom: 2px solid #444444;
+}
+table.ObjDetail thead th {
+	font-size: 16px;
+	font-weight: bold;
+	color: #303030;
+	border-left: 2px solid #F5F5F5;
+}
+table.ObjDetail thead th:first-child {
+	border-left: none;
+}
+
+table.ObjDetail tfoot .links {
+	text-align: right;
+}
+table.ObjDetail tfoot .links a{
+	display: inline-block;
+	background: #1C6EA4;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
