@@ -1,5 +1,5 @@
 ## Bel3s
 
-soukromý projekt
+Soukromej Projekt!
 
 @Authors Patrik Šafář, Kryštof Košut 2018
