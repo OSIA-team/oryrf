@@ -16,10 +16,11 @@
  ?>
       <div class="product">
           <form method="post">
-            <div class="">
+            <div class="obrazek">
                <img src="<?php echo $foto['path'].$foto['nazev']; ?>" alt="">
+               <div class="title"><h3><?= $jidlo['nazev'] ?></h3></div>
             </div>
-            <h3><?= $jidlo['nazev'] ?></h3>
+            <p><?= $jidlo['popis'] ?></p>
             <h4 class="background"><span>cena</span></h4>
             <div class="cena">
                 <div class="text"><?= $jidlo['cena'] ?> Kč, <?= $jidlo['gramaz'] ?></div>
