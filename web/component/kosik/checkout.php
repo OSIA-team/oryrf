@@ -27,6 +27,14 @@
                     <option value="2">Rozvozem do 40minut</option>
                 </select>
             </div>
+            <div class="input-field col s12">
+                <select name="zpusobplaceni">
+                    <option value="" disabled selected>Zvolte typ platby</option>
+                    <option value="Stravenkami">Stravenkami</option>
+                    <option value="Hotově">Hotově</option>
+                    <option value="Kartou u kurýra">Kartou u kurýra</option>
+                </select>
+            </div>
             <div class="input-field col s6">
                 <input id="first_name" type="text" class="validate" name="jmeno" required>
                 <label for="first_name">Jméno</label>
@@ -96,4 +104,3 @@
     }
 </script>
 </html>
-

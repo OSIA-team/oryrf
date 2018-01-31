@@ -775,12 +775,12 @@ h4.background::before{
   margin-top: 27px;
 }
 .next-btn{
-  border: 1px solid #df0714;
-    border-radius: 5px;
-    color: white;
-    background-color: #df0714;
-    padding: 5px 20px !important;
-    margin-top: 50px;
+  border: 1px solid #ff000f;
+  border-radius: 5px;
+  color: white;
+  background-color: #d00505;
+  padding: 14px 20px !important;
+  margin-top: 50px;
 }
 .suma{
   max-width: 1100px;
@@ -945,7 +945,7 @@ user-select: none;
       width: auto;
     display: inline-block;
     margin-top: 9px;
-    
+
     }
 
     .kosik .polozka .cena{
