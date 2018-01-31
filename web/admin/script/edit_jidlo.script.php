@@ -55,11 +55,11 @@ if (isset($_POST['edit_jidlo'])){
             if ($upload->uploaded) {
                 // Manipulace s obrazkem
                 $upload->image_resize = true;
-                $upload->image_ratio_y = true;
-                $upload->image_x = 500;
-                $upload->image_y = 500;
+                $upload->image_ratio = true;
+                $upload->image_x = 226;
+                $upload->image_y = 226;
                // $upload->image_precrop              = '5%';
-                $upload->image_ratio_crop           = '500px 500px';
+                $upload->image_ratio_crop           = true;
                 // Presuneme fotku ze slozky temp
                 $upload->Process("../../img/");
                 // Jestli se zadarilo

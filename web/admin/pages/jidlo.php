@@ -355,7 +355,7 @@ $i++;
                         $achecked = ($jidlo['alko'] == 1)?'checked':'';
                         $hchecked = ($jidlo['hracka'] == 1)?'checked':'';
                         */
-                        $mchecked = ($jidlo['menu'] == 1)?'checked':'';
+                        $mchecked = (@$jidlo['menu'] == 1)?'checked':'';
                         ?>
                        <!-- <label><input type="checkbox" name="jidlo" value="1" class="jNiceCheckbox" style="display: block;" <?= $jchecked ?> >       Jídlo</label>
                         <label><input type="checkbox" name="piti" value="1" class="jNiceCheckbox" style="display: block;" <?= $pchecked ?>>        Pití</label>
