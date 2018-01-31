@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/web/admin/style/css/reset.css" line="105" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e13ad1a-4c99-48e7-81fa-84b15fd919ec" name="Default" comment="#! Init commit od Tody protoze udajne to neni commitly :D">
+    <list default="true" id="5e13ad1a-4c99-48e7-81fa-84b15fd919ec" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
@@ -353,12 +353,20 @@
       <workItem from="1516835077216" duration="23415000" />
       <workItem from="1517348854389" duration="4135000" />
       <workItem from="1517353750188" duration="70000" />
-      <workItem from="1517422072962" duration="1693000" />
+      <workItem from="1517422072962" duration="1727000" />
     </task>
+    <task id="LOCAL-00001" summary="#! Readme.md - added authors">
+      <created>1517423841386</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1517423841386</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61143000" />
+    <option name="totallyTimeSpent" value="61177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,6 +432,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#! Readme.md - added authors" />
+    <option name="LAST_COMMIT_MESSAGE" value="#! Readme.md - added authors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
