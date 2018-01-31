@@ -28,11 +28,11 @@ elseif(isset($_POST['nahrat'])) {
     // Overeni zda je obrazek uspesne nahran do tmp slozky
     if ($upload->uploaded) {
         // Manipulace s obrazkem
-        $upload->image_resize            = true;
-        $upload->image_ratio_y           = true; //$image_ratio_crop
-        $upload->image_x                 = 500;
-        $upload->image_y                 = 500;
-        $upload->image_crop              = '20';
+        $upload->image_resize = true;
+        $upload->image_ratio = true;
+        $upload->image_x = 226;
+        $upload->image_y = 226;
+        $upload->image_ratio_crop           = true;
         // Presuneme fotku ze slozky temp
         $upload->Process("../../img/");
         // Jestli se zadarilo
