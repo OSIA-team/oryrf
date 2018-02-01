@@ -254,15 +254,20 @@ nav .brand-logo{
   padding: 0px;
 }
 .vlajecka-logo{
-  width: 110px;
-  height: 99px;
+  width: 142px;
+  height: 136px;
   background-image: url('../pict/vlajecka.png');
   background-size: cover;
-  margin-top: -6px;
+  margin-top: -35px;
   z-index: 1;
   padding: 10px 6px;
 }
 
+.vlajecka-logo img{
+  width: 127px;
+height: auto;
+margin: 0 auto;
+}
 .jidelnicek{
   font-family: 'Roboto', sans-serif;
   z-index: 5;
