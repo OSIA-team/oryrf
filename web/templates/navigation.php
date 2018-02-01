@@ -17,9 +17,9 @@
   </ul>
     </a>
   <ul class="side-nav" id="mobile-demo">
-    <li><a href="sass.html">MENU</a></li>
-    <li><a href="badges.html">KDE NÁS NAJDETE</a></li>
-    <li><a href="collapsible.html">O NÁS</a></li>
+    <li><a href="?page=menu">MENU</a></li>
+    <li><a href="?page=kontakt">KDE NÁS NAJDETE</a></li>
+    <li><a href="?page=onas">O NÁS</a></li>
   </ul>
 </div>
 </nav>

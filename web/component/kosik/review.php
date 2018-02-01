@@ -45,11 +45,11 @@ var_dump($jidlaVkosiku);
                     </div>
                     <div class="col s6 l2">
                         <h5 class="cena"><?= $jidlo['cena']*$jidlo['pocet'] ?> Kč</h5>
+                        <input type="hidden" name="prize" class="prize-of-food" value="<?= $jidlo['cena']  ?>" />
                     </div>
                     <div class="col s6 l2">
                         <div class="sp-quantity">
                             <input type="hidden" name="id[]" value="<?= $jidlo['id']  ?>" />
-
                             <div class="sp-input"><input type="text" class="quntity-input" name="pocet[]" value="<?= $jidlo['pocet'] ?>" /></div>
                             <div class="sp-plus fff ddd">+</div>
                             <div class="sp-minus fff ddd">-</div>
@@ -64,10 +64,13 @@ var_dump($jidlaVkosiku);
 
     <div class="suma row">
         <div class="col s6 l2 offset-s0 offset-l8">Celkem</div>
-        <div class="col s6  l2"><?= $kosikClass->getCena() ?> Kč</div>
+        <div class="col s6  l2" id="cenacelkem"><?= $kosikClass->getCena() ?> Kč</div>
         <input type="hidden" name="cenaCelkem" value="<?= $kosikClass->getCena() ?>" />
         <input type="submit" name="to-checkout" class="col l2 m12  offset-l10 next-btn" value="Pokračovat">
     </div>
 
 </form>
 
+<script type="text/javascript">
+
+</script>
