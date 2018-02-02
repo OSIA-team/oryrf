@@ -473,22 +473,33 @@ margin: 0 auto;
  position: relative;
 }
 
+.navigation-sidebar li i{
+  position: absolute;
+  right: -4px;
+  top: -2px;
+  z-index: 100;
+  color: #ababab;
+}
 .navigation-sidebar li:hover::after {
     visibility: visible;
 }
 
+.navigation-sidebar li:hover i{
+  visibility: visible;
+  color: white;
+}
 .navigation-sidebar li::after{
   transform: rotate(45deg);
   width: 40px;
   height: 42px;
-  content: " ";
+  content: "";
   display: block;
   top: 4px;
   left: 92%;
   position: absolute;
   border-radius: 10px;
   visibility: hidden;
-  background: #df0714;
+  background: rgb(210, 7, 5);
 }
 .navigation-sidebar li:hover{
   background-color: #df0714;
@@ -501,7 +512,11 @@ margin: 0 auto;
  -webkit-transition: none;
  -o-transition: color 0 ease-in;
  transition: none;
-
+ background: rgb(255,48,25); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(255,48,25,1) 0%, rgba(207,4,4,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=1 ); /* IE6-9 */
 }
 
 .navigation-sidebar li.active{
@@ -515,8 +530,16 @@ margin: 0 auto;
     -webkit-transition: none;
     -o-transition: color 0 ease-in;
     transition: none;
+    background: rgb(255,48,25);
+    background: -moz-linear-gradient(left, rgba(255,48,25,1) 0%, rgba(207,4,4,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%);
+    background: linear-gradient(to right, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=1 );
 }
 
+.navigation-sidebar li.active i{
+  color: white;
+}
 .navigation-sidebar li.active::after{
   visibility: visible;
 }
@@ -525,7 +548,7 @@ margin: 0 auto;
   float: left;
 }
 .navigation-sidebar nav{
-  background-color: #f7f7f7;
+  background-color: #383838;
   height: auto;
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -539,7 +562,7 @@ margin: 0 auto;
   padding: 5px 25px;
 }
 .navigation-sidebar a{
-  color: grey;
+  color: white;
 }
 
  .products{
@@ -913,6 +936,14 @@ user-select: none;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #f3f3f3;
+  position: relative;
+}
+
+.kosik .polozka .close-btn{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
 }
 
 .products .sp-input{

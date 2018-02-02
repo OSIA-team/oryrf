@@ -55,6 +55,7 @@ var_dump($jidlaVkosiku);
                             <div class="sp-minus fff ddd">-</div>
                         </div>
                     </div>
+                    <i class="tiny material-icons close-btn">close</i>
                 </div>
             <?php
             endforeach;
@@ -72,5 +73,19 @@ var_dump($jidlaVkosiku);
 </form>
 
 <script type="text/javascript">
+$(".close-btn").on("click", function () {
 
+    var $button = $(this);
+    var oldSuma = document.getElementById('cenacelkem').innerHTML;
+    var cenaZrusena = $button.closest('.polozka').find('h5.cena').text();
+    oldSuma = oldSuma.replace(' Kč', '');
+    cenaZrusena = cenaZrusena.replace(' Kč', '');
+
+    console.log(cenaZrusena);
+    console.log(oldSuma);
+
+    $button.closest('.polozka').find('input.quntity-input').val(0);
+    $('#cenacelkem').text((Number(oldSuma)-Number(cenaZrusena))+" Kč");
+    $button.closest('.polozka').css("display", "none");
+  });
 </script>

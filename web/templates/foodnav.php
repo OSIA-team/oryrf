@@ -31,7 +31,7 @@ $kategories = $kategorieClass->getAllKategorie();
                                 echo "class=\"active\"";
                             }
                         ?>
-                    ><?= $kat['nazev'] ?></li></a>
+                    ><?= $kat['nazev'] ?><i class="large material-icons">navigate_next</i></li></a>
           <?php
            endforeach;
 
