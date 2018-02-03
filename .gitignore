@@ -2,3 +2,5 @@
 
 .idea/*
 web/img/
+.htaccess
+.htpasswd

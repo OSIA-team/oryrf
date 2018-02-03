@@ -1,5 +1,9 @@
 <?php
+$prefix = "../";
+require_once('../model/public/PhpConsole/__autoload.php');
 
+$handler = PhpConsole\Handler::getInstance();
+$handler->start(); // start handling PHP errors & exceptions
 // Constanty pro tridu database
 define( 'DISPLAY_DEBUG', false );
 define( 'SEND_ERRORS_TO', 'k.kosut@gmail.com' );

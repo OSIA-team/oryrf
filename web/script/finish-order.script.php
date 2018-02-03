@@ -11,7 +11,13 @@
 // TODO: Poslat email
 // TODO: administrace
 
-require 'model/public/PHPmailer/PHPMailerAutoload.php';
+
+$handler->debug("Debug message: ".$_SERVER['DOCUMENT_ROOT'] );
+
+
+// require_once 'model/public/PHPmailer/PHPMailerAutoload.php';
+    require_once 'model/public/PHPMailer/PHPMailerAutoload.php';
+
 
 
 $kosik_id   = $_SESSION['kosik']['kosik_id'];

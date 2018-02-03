@@ -2,6 +2,14 @@
 /**
  * @file index.php
  */
+
+require_once('model/public/PhpConsole/__autoload.php');
+
+$handler = PhpConsole\Handler::getInstance();
+$handler->start(); // start handling PHP errors & exceptions
+$handler->debug("Debug message: ".$_SERVER['PHP_SELF'] );
+// $handler->getConnector()->setSourcesBasePath($_SERVER['DOCUMENT_ROOT']); // so files paths on client will be shorter (optional)
+
  session_start();
 
  // debug if not loged in
