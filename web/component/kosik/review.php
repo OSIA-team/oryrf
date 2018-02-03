@@ -66,7 +66,7 @@ var_dump($jidlaVkosiku);
     <div class="suma row">
         <div class="col s6 l2 offset-s0 offset-l8">Celkem</div>
         <div class="col s6  l2" id="cenacelkem"><?= $kosikClass->getCena() ?> Kč</div>
-        <input type="hidden" name="cenaCelkem" value="<?= $kosikClass->getCena() ?>" />
+        <input type="hidden" id="cenacelkemInput" name="cenaCelkem" value="<?= $kosikClass->getCena() ?>" />
         <input type="submit" name="to-checkout" class="col l2 m12  offset-l10 next-btn" value="Pokračovat">
     </div>
 
@@ -86,6 +86,43 @@ $(".close-btn").on("click", function () {
 
     $button.closest('.polozka').find('input.quntity-input').val(0);
     $('#cenacelkem').text((Number(oldSuma)-Number(cenaZrusena))+" Kč");
+    $('#cenacelkemInput').val((Number(oldSuma)-Number(cenaZrusena)));
     $button.closest('.polozka').css("display", "none");
+  });
+
+  $(".ddd").on("click", function () {
+
+      var $button = $(this);
+      var oldValue = $button.closest('.sp-quantity').find("input.quntity-input").val();
+      var cenaJidla = $(this).closest('div.polozka').find('input.prize-of-food').val();
+      var cenaPolozka = $(this).closest('div.polozka').find('h5.cena');
+      var cena = document.getElementsByClassName('cena');
+      var suma = 0;
+
+      if ($button.text() == "+") {
+          var newVal = parseFloat(oldValue) + 1;
+      } else {
+          // Don't allow decrementing below zero
+          if (oldValue > 0) {
+              var newVal = parseFloat(oldValue) - 1;
+          } else {
+              newVal = 0;
+          }
+      }
+
+      $button.closest('.sp-quantity').find("input.quntity-input").val(newVal);
+      cenaPolozka.html(newVal*cenaJidla+" Kč");
+
+      for (var i = 0; i < cena.length; i++) {
+        var mystring = cena[i].innerHTML
+        mystring = mystring.replace(' Kč','');
+
+        suma = Number(suma)+Number(mystring);
+        console.log('upravena suma'+suma);
+
+        document.getElementById('cenacelkem').innerHTML = suma+" Kč";
+        document.getElementById('cenacelkemInput').value = suma;
+      }
+
   });
 </script>
