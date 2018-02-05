@@ -78,16 +78,32 @@ $(".close-btn").on("click", function () {
     var $button = $(this);
     var oldSuma = document.getElementById('cenacelkem').innerHTML;
     var cenaZrusena = $button.closest('.polozka').find('h5.cena').text();
+    var itemsInKosik = 0;
+    var pocetInput = document.getElementsByClassName('quntity-input');
+    var kosikPocet = document.getElementById('pocet-kosik');
+    var cenaKosik = document.getElementById('cena-kosik').innerHTML;
+
+    cenaKosik = cenaKosik.replace(' Kč', '');
     oldSuma = oldSuma.replace(' Kč', '');
     cenaZrusena = cenaZrusena.replace(' Kč', '');
 
-    //console.log(cenaZrusena);
-    //console.log(oldSuma);
+
 
     $button.closest('.polozka').find('input.quntity-input').val(0);
     $('#cenacelkem').text((Number(oldSuma)-Number(cenaZrusena))+" Kč");
     $('#cenacelkemInput').val((Number(oldSuma)-Number(cenaZrusena)));
     $button.closest('.polozka').css("display", "none");
+
+    for (var j = 0; j < pocetInput.length; j++) {
+      itemsInKosik = Number(itemsInKosik) + Number(pocetInput[j].value);
+    }
+
+
+      console.log(cenaKosik);
+      console.log("Odečtená cena: "+cenaZrusena);
+      cenaKosik -= Number(cenaZrusena);
+      document.getElementById('cena-kosik').innerHTML = cenaKosik + " Kč";
+      kosikPocet.innerHTML = itemsInKosik;
   });
 
   $(".ddd").on("click", function () {
