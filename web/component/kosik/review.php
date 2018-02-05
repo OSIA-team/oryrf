@@ -81,8 +81,8 @@ $(".close-btn").on("click", function () {
     oldSuma = oldSuma.replace(' Kč', '');
     cenaZrusena = cenaZrusena.replace(' Kč', '');
 
-    console.log(cenaZrusena);
-    console.log(oldSuma);
+    //console.log(cenaZrusena);
+    //console.log(oldSuma);
 
     $button.closest('.polozka').find('input.quntity-input').val(0);
     $('#cenacelkem').text((Number(oldSuma)-Number(cenaZrusena))+" Kč");
@@ -97,7 +97,9 @@ $(".close-btn").on("click", function () {
       var cenaJidla = $(this).closest('div.polozka').find('input.prize-of-food').val();
       var cenaPolozka = $(this).closest('div.polozka').find('h5.cena');
       var cena = document.getElementsByClassName('cena');
+      var pocetInput = document.getElementsByClassName('quntity-input');
       var suma = 0;
+      var itemsInKosik = 0;
 
       if ($button.text() == "+") {
           var newVal = parseFloat(oldValue) + 1;
@@ -117,12 +119,19 @@ $(".close-btn").on("click", function () {
         var mystring = cena[i].innerHTML
         mystring = mystring.replace(' Kč','');
 
+
         suma = Number(suma)+Number(mystring);
-        console.log('upravena suma'+suma);
+        //console.log('upravena suma'+suma);
 
         document.getElementById('cenacelkem').innerHTML = suma+" Kč";
+        document.getElementById('cena-kosik').innerHTML = suma+" Kč";
         document.getElementById('cenacelkemInput').value = suma;
       }
 
+      for (var j = 0; j < pocetInput.length; j++) {
+        itemsInKosik = Number(itemsInKosik) + Number(pocetInput[j].value);
+      }
+
+        document.getElementById('pocet-kosik').innerHTML = itemsInKosik;
   });
 </script>

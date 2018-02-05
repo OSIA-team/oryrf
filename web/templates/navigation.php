@@ -13,7 +13,7 @@
   </div>
     <a href="?page=kosik" >
   <ul class="kosik-menu">
-    <div class="menu-polozka"><?= $kosikClass->getPocet() ?></div><div><?= $kosikClass->getCena() ?> Kč</div>
+    <div class="menu-polozka" id="pocet-kosik"><?= $kosikClass->getPocet() ?></div><div id="cena-kosik"><?= $kosikClass->getCena() ?> Kč</div>
   </ul>
     </a>
   <ul class="side-nav" id="mobile-demo">
