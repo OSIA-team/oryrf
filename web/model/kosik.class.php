@@ -64,7 +64,12 @@ class kosik
     }
 
     public function updateInKosik($jidlo_id, $pocet){
-       $_SESSION['kosik']['obsah'][$jidlo_id] = $pocet;
+        if ($pocet == 0){
+            unset($_SESSION['kosik']['obsah'][$jidlo_id]);
+        } else {
+            $_SESSION['kosik']['obsah'][$jidlo_id] = $pocet;
+        }
+
     }
 
     public function tranferToObjednavka(){
@@ -112,6 +117,7 @@ class kosik
      */
     public function deleteTempKosik(){
         unset($_SESSION['kosik']);
+        $this->createTempKosik();
     }
 
     /**

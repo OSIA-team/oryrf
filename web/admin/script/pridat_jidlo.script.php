@@ -31,7 +31,7 @@ $insert_jidlo = array(
       'cena'        => $cena
 );
 
-var_dump($jidlo);
+// var_dump($jidlo);
 
 $jidlo_id = $menuItem -> addJidlo($insert_jidlo);
 

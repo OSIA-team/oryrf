@@ -5,6 +5,15 @@
  * Time: 17:49
  */
 
+/*
+require_once('../../model/public/PhpConsole/__autoload.php');
+$connector = PhpConsole\Connector::getInstance();
+$connector->setPassword("789ae456ae123");
+$connector->startEvalRequestsListener(); // must be called in the end of all configurations
+
+$handler = PhpConsole\Handler::getInstance();
+$handler->start(); // start handling PHP errors & exceptions
+*/
 if (isset($_POST['edit_jidlo'])){
 
     require '../../model/database.class.php';
@@ -23,7 +32,7 @@ if (isset($_POST['edit_jidlo'])){
     $priloha    = (!isset($priloha))  ? 0 : 1 ;
     $alko       = (!isset($alko))     ? 0 : 1 ;
     $hracka     = (!isset($hracka))   ? 0 : 1 ;
-    $menu       = (!isset($menu))   ? 0 : 1 ;
+    $menu       = (!isset($menu))     ? 0 : 1 ;
 
     $where = [
         'id' => $id
@@ -77,6 +86,8 @@ if (isset($_POST['edit_jidlo'])){
                     );
 
                     $upload_foto = $menuItem->editFotka($update, $where);
+                    /*var_dump($update); var_dump($where);
+                    var_dump($upload_foto); die();*/
                 }
             }
                 } else {
