@@ -50,7 +50,7 @@ if (@isset($_POST['delete'])){
 }
 
 if (isset($_POST['addKategories'])){
-    require 'pages/addKategories.php';
+    require 'component/nastaveni/addKategories.php';
 }
 elseif (isset($_POST['zmenKategories'])){
 
@@ -63,9 +63,9 @@ elseif (isset($_POST['zmenKategories'])){
             echo "chyba!"; die();
         }
     }
-    require 'pages/defaultkategories.php';
+    require 'component/nastaveni/defaultkategories.php';
 } else {
-    require 'pages/defaultkategories.php';
+    require 'component/nastaveni/defaultkategories.php';
 }
 ?>
 

@@ -1,3 +1,11 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: kkosu
+ * Date: 10.02.2018
+ * Time: 23:10
+ */
+?>
 <div id="sidebar">
       <ul class="sideNav">
           <li><a href="?page=nastaveni&action=kategorie" <?php echo ($_GET['action'] == "kategorie")  ?"class=\"active\"":""; ?>>Správa kategorií</a></li>
@@ -16,15 +24,15 @@
             switch ($action)
             {
                 case 'sezona':
-                    require 'pages/sezona.php';
+                    require 'component/nastaveni/sezona.php';
                     break;
 
                 case 'kategorie':
-                    require 'pages/kategorie.php';
+                    require 'component/nastaveni/kategorie.php';
                     break;
 
                 case 'default':
-                    require  'pages/sezona.php';
+                    require  'component/nastaveni/sezona.php';
                     break;
             }
 
