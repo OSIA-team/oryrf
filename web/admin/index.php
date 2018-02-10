@@ -47,7 +47,7 @@ function multiexplode ($delimiters,$string) {
         	<li><a href="?page=objednavky&action=prehled" 		        <?php echo ($page=="objednavky")			    ?"class=\"active\"":""; ?>>Objednavky			</a></li>
             <li><a href="?page=uzivatele&action=prehled" 			    <?php echo ($page=="uzivatele")				    ?"class=\"active\"":""; ?>>Uživatelé			</a></li>
             <li><a href="?page=nastaveni&action=prehled" 			    <?php echo ($page=="nastaveni")				    ?"class=\"active\"":""; ?>>Nastavení			</a></li>
-        	<li class="logout"><a href="logout.php">Odhlásit se</a></li>
+        	<li class="logout"><a href="component/logout/index.php">Odhlásit se</a></li>
         </ul>
         <!-- // #end mainNav -->
 
@@ -58,34 +58,25 @@ function multiexplode ($delimiters,$string) {
 
 													switch ($page) {
 															case 'jidlo':
-																require 'pages/jidlo.php';
-															break;
-
-															case 'piti':
-																require 'pages/piti.php';
-															break;
-
-															case 'ingredience':
-																require 'pages/ingredience.php';
-															break;
+																require 'component/jidlo/index.php';
+															    break;
 
 															case 'objednavky':
-																require 'pages/objednavky.php';
-															break;
+																require 'component/objednavky/index.php';
+															    break;
 
 															case 'uzivatele':
-																require 'pages/uzivatele.php';
-															break;
+																require 'component/uzivatele/index.php';
+															    break;
 
 															case 'nastaveni':
-																require 'pages/nastaveni.php';
-															break;
+																require 'component/nastaveni/index.php';
+															    break;
 
 															default:
-																# code...
-															break;
+                                                                require 'component/jidlo/index.php';
+                                                                break;
 													}
-
 										 ?>
                 <div class="clear"></div>
             </div>

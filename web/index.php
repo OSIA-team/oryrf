@@ -83,7 +83,7 @@ switch ($page){
          $kategorie  = $kategorie['nazev'];
 
          require 'templates/foodnav.php';
-         require 'templates/produkty.php';
+         require 'component/produkty/produkty.php';
         break;
     case 'home':
          require 'templates/home.html';

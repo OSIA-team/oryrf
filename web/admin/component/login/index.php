@@ -72,21 +72,21 @@ echo $password." ".$password_hash."<br>";
     <title>OptimasDB/OSIA Team software</title>
 
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/bootstrap.css">
     <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="style/fonts/icomoon.css">
-    <link rel="stylesheet" type="text/css" href="style/fonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="style/vendors/css/extensions/pace.css">
+    <link rel="stylesheet" type="text/css" href="../../style/fonts/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="../../style/fonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../style/vendors/css/extensions/pace.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN ROBUST CSS-->
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="style/css/app.css">
-    <link rel="stylesheet" type="text/css" href="style/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/colors.css">
     <!-- END ROBUST CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="style/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="style/css/core/menu/menu-types/vertical-overlay-menu.css">
-    <link rel="stylesheet" type="text/css" href="style/css/pages/login-register.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/core/menu/menu-types/vertical-overlay-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../style/css/pages/login-register.css">
     <!-- END Page Level CSS-->
 
   </head>
