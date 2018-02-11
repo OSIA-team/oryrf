@@ -5,7 +5,7 @@
 
 // Cookies
 session_start();
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['admin'])) {
     header("location: index.php");
 }
 
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 //  var_dump($password);
     $password_hash = crypt($password,'$2a$07$belesbel3ssaltsoosasd$');
 //  var_dump($password_hash);
-echo $password." ".$password_hash."<br>";
+// echo $password." ".$password_hash."<br>";
 //  $user   = $_POST['username'];
 
   $query  = "SELECT password FROM admin WHERE username='{$username}'";
@@ -46,7 +46,7 @@ echo $password." ".$password_hash."<br>";
       //  echo "ok2";
       if ($row[0] == $password_hash) {
 
-        $_SESSION["user"] = $username;
+        $_SESSION["admin"] = $username;
         header("location: index.php");
       }
     }
@@ -72,21 +72,21 @@ echo $password." ".$password_hash."<br>";
     <title>OptimasDB/OSIA Team software</title>
 
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="../../style/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
     <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="../../style/fonts/icomoon.css">
-    <link rel="stylesheet" type="text/css" href="../../style/fonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="../../style/vendors/css/extensions/pace.css">
+    <link rel="stylesheet" type="text/css" href="style/fonts/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="style/fonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="style/vendors/css/extensions/pace.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN ROBUST CSS-->
-    <link rel="stylesheet" type="text/css" href="../../style/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="../../style/css/app.css">
-    <link rel="stylesheet" type="text/css" href="../../style/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="style/css/app.css">
+    <link rel="stylesheet" type="text/css" href="style/css/colors.css">
     <!-- END ROBUST CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="../../style/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="../../style/css/core/menu/menu-types/vertical-overlay-menu.css">
-    <link rel="stylesheet" type="text/css" href="../../style/css/pages/login-register.css">
+    <link rel="stylesheet" type="text/css" href="style/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="style/css/core/menu/menu-types/vertical-overlay-menu.css">
+    <link rel="stylesheet" type="text/css" href="style/css/pages/login-register.css">
     <!-- END Page Level CSS-->
 
   </head>

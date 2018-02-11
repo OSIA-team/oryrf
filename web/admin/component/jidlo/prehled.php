@@ -9,7 +9,6 @@
 ///////////////////////////////////////////////////////////////////////////
 // action prehled
 ///////////////////////////////////////////////////////////////////////////
-if($_GET['action'] == "prehled"):
     require '../model/kategorie.class.php';
     $kategorieClass = new kategorie($mysqli);
     $kategories = $kategorieClass->getAllKategorie();
@@ -38,6 +37,3 @@ if($_GET['action'] == "prehled"):
             </div>
         </form>
     </div>
-<?php
-endif;
-?>
