@@ -1,4 +1,11 @@
 <?php
+// Check if user is logged in
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("location: login.php");
+}
+
+
 $prefix = "../";
 require_once('../model/public/PhpConsole/__autoload.php');
 
@@ -47,7 +54,7 @@ function multiexplode ($delimiters,$string) {
         	<li><a href="?page=objednavky&action=prehled" 		        <?php echo ($page=="objednavky")			    ?"class=\"active\"":""; ?>>Objednavky			</a></li>
             <li><a href="?page=uzivatele&action=prehled" 			    <?php echo ($page=="uzivatele")				    ?"class=\"active\"":""; ?>>Uživatelé			</a></li>
             <li><a href="?page=nastaveni&action=prehled" 			    <?php echo ($page=="nastaveni")				    ?"class=\"active\"":""; ?>>Nastavení			</a></li>
-        	<li class="logout"><a href="component/logout/index.php">Odhlásit se</a></li>
+        	<li class="logout"><a href="logout.php">Odhlásit se</a></li>
         </ul>
         <!-- // #end mainNav -->
 

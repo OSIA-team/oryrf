@@ -5,20 +5,19 @@
  * Date: 10.02.2018
  * Time: 22:45
  */
-?>
 
+
+// stripslashes?
+$action = (isset($_GET['action']))?$_GET['action']:'prehled';
+?>
 <div id="sidebar">
     <ul class="sideNav">
-        <li><a href="?page=jidlo&action=prehled" <?php echo ($_GET['action'] == "prehled")  ?"class=\"active\"":""; ?>>Přehled</a></li>
-        <li><a href="?page=jidlo&action=pridat"  <?php echo ($_GET['action'] == "pridat")   ?"class=\"active\"":""; ?>>Přidat</a></li>
+        <li><a href="?page=jidlo&action=prehled" <?php echo ($action == "prehled")  ?"class=\"active\"":""; ?>>Přehled</a></li>
+        <li><a href="?page=jidlo&action=pridat"  <?php echo ($action == "pridat")   ?"class=\"active\"":""; ?>>Přidat</a></li>
     </ul>
     <!-- // .sideNav -->
 </div>
-
 <?php
-// stripslashes?
-$action = $_GET['action'];
-
 switch ($action){
     case 'prehled':
         require_once 'component/jidlo/prehled.php';
