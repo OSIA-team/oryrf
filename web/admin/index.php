@@ -25,7 +25,7 @@ function multiexplode ($delimiters,$string) {
 	return  $launch;
 }
 
-	$page = (isset($_GET['page']))?$_GET['page']:"";
+	$page = (isset($_GET['page']))?$_GET['page']:"jidlo";
  ?>
 <!DOCTYPE html PUBLIC >
 <html>
@@ -37,7 +37,11 @@ function multiexplode ($delimiters,$string) {
 <link href="style/css/transdmin.css" rel="stylesheet" type="text/css" media="screen" />
 <!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="style/css/ie6.css" /><![endif]-->
 <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="style/css/ie7.css" /><![endif]-->
-
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
 <!-- JavaScripts-->
 <script type="text/javascript" src="style/js/jquery.js"></script>
 <script type="text/javascript" src="style/js/jNice.js"></script>
@@ -50,10 +54,10 @@ function multiexplode ($delimiters,$string) {
 
         <!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
         <ul id="mainNav">
-        	<li><a href="?page=jidlo&action=prehled" 					<?php echo ($page=="jidlo")						?"class=\"active\"":""; ?>>Jídlo				</a></li> <!-- Use the "active" class for the active menu item  -->
-        	<li><a href="?page=objednavky&action=prehled" 		        <?php echo ($page=="objednavky")			    ?"class=\"active\"":""; ?>>Objednavky			</a></li>
-            <li><a href="?page=uzivatele&action=prehled" 			    <?php echo ($page=="uzivatele")				    ?"class=\"active\"":""; ?>>Uživatelé			</a></li>
-            <li><a href="?page=nastaveni&action=prehled" 			    <?php echo ($page=="nastaveni")				    ?"class=\"active\"":""; ?>>Nastavení			</a></li>
+        	<li><a href="?page=jidlo" 					<?php echo ($page=="jidlo")						?"class=\"active\"":""; ?>>Jídlo				</a></li> <!-- Use the "active" class for the active menu item  -->
+        	<li><a href="?page=objednavky" 		        <?php echo ($page=="objednavky")			    ?"class=\"active\"":""; ?>>Objednavky			</a></li>
+            <li><a href="?page=uzivatele" 			    <?php echo ($page=="uzivatele")				    ?"class=\"active\"":""; ?>>Uživatelé			</a></li>
+            <li><a href="?page=nastaveni" 			    <?php echo ($page=="nastaveni")				    ?"class=\"active\"":""; ?>>Nastavení			</a></li>
         	<li class="logout"><a href="logout.php">Odhlásit se</a></li>
         </ul>
         <!-- // #end mainNav -->
@@ -61,29 +65,11 @@ function multiexplode ($delimiters,$string) {
         <div id="containerHolder">
 			<div id="container">
 										<?php
-												// page determination
-
-													switch ($page) {
-															case 'jidlo':
-																require 'component/jidlo/index.php';
-															    break;
-
-															case 'objednavky':
-																require 'component/objednavky/index.php';
-															    break;
-
-															case 'uzivatele':
-																require 'component/uzivatele/index.php';
-															    break;
-
-															case 'nastaveni':
-																require 'component/nastaveni/index.php';
-															    break;
-
-															default:
-                                                                require 'component/jidlo/index.php';
-                                                                break;
-													}
+                                            if (file_exists("component/".$page."/index.php")){
+                                                require_once "component/".$page."/index.php";
+                                            } else {
+                                                //error page
+                                            }
 										 ?>
                 <div class="clear"></div>
             </div>
