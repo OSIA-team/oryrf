@@ -85,28 +85,9 @@ if (isset($_POST['addKategorie'])){
 
     $insered_id = $kategorieClass->addKategorie($insert);
     if ($insered_id){
-        // redirect
+        header("Location: ../?page=nastaveni&action=kategorie");
     } else {
         echo 'error';
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

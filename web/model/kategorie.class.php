@@ -4,6 +4,9 @@
  * @access public
  * @author Kryštof Košut
  */
+
+use jidlo as jidlo;
+
 class kategorie {
 	private $_mysqli;
 
@@ -77,10 +80,22 @@ class kategorie {
      * @param $where array
      * @return bool
      */
-    public function updateKategorie($update, $where)
+    public function updateKategorie($update, $where, $originalURL = '')
    {
+       if ($originalURL != ''){
+           $menuItemClass = new \jidlo($this->_mysqli);
+           $menuItem_update = [
+               'kategorie' => (string)$update['url']
+           ];
+
+           $menuItem_where = [
+                'kategorie' => (string)$originalURL
+           ];
+           $menuItem_result = $menuItemClass->editJidlo($menuItem_update, $menuItem_where);
+       }
        $result 	= $this->_mysqli->update( 'kategorie', $update, $where, 1 );
-       if ($result) {
+
+       if ($result AND $menuItem_result) {
            return true;
        } else {
            return false;

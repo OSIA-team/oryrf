@@ -84,6 +84,23 @@ class jidlo {
   return $result;
  }
 
+    /**
+     * TODO: DODELAT
+     * @param $kategorie
+     * @param null $limit
+     * @return mixed
+     */
+    public function getAllJidloByKategorieId($kategorie, $limit = NULL)
+{
+    $query = "SELECT menuitem.nazev, popis, cena, gramaz, prilohy FROM menuitem
+            JOIN menuitem_has_kategorie ON menuitem.id = menuitem_has_kategorie.menuitem_id
+            WHERE kategorie_id = 5";
+
+
+    $result = $this->_mysqli->get_results($query);
+    return $result;
+}
+
  /**
   * Získá všechy sezoni jidla uložené v databázi
   * @param limit (nepovinny)

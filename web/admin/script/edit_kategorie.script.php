@@ -8,12 +8,14 @@
 
 if (isset($_POST['edit_kategorie'])) {
 
+
     require '../../model/database.class.php';
     $mysqli = new database();
 
     require '../../model/kategorie.class.php';
     $kategorieClass = new kategorie($mysqli);
 
+    require '../../model/jidlo.class.php';
     require '../../model/public/upload.class.php';
     // $upload = new upload();
 
@@ -85,8 +87,10 @@ if (isset($_POST['edit_kategorie'])) {
         'id' => $id
     );
 
-    $result = $kategorieClass->updateKategorie($update, $where);
-    if ($result){
-        header("Location: ../?page=nastaveni&action=kategorie");
+        $result = $kategorieClass->updateKategorie($update, $where, $kategorieClass->url);
+        if ($result){
+            header("Location: ../?page=nastaveni&action=kategorie");
+        } else {
+            var_dump($result);
+        }
     }
-}
