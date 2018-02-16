@@ -18,6 +18,15 @@ $action = (isset($_GET['action']))?$_GET['action']:'prehled';
     <!-- // .sideNav -->
 </div>
 <?php
+
+
+if (file_exists('component/jidlo/'.$action.'.php')){
+    require_once 'component/jidlo/'.$action.'.php';
+} else {
+    // error
+    require_once 'component/jidlo/prehled.php';
+}
+/*
 switch ($action){
     case 'prehled':
         require_once 'component/jidlo/prehled.php';
@@ -50,4 +59,4 @@ switch ($action){
     default:
         require_once 'component/jidlo/prehled.php';
         break;
-}
+}*/

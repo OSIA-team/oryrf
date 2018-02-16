@@ -7,7 +7,7 @@ $kategories = $kategorieClass->getAllKategorie('topmenu = 1');
             <?php
                 foreach($kategories as $kat):
             ?>
-          <a href="?page=menu&kategorie=<?= $kat['url'] ?>"><li><img src="<?= $kat['foto'] ?>" alt="<?= $kat['alt'] ?>"><?= $kat['nazev'] ?></li></a>
+                <a href="?page=menu&kategorie=<?= $kat['url'] ?>"><li><img src="img/<?= $kat['icon'] ?>" alt="<?= $kat['alt'] ?>"><?= $kat['nazev'] ?></li></a>
             <?php
                 endforeach;
             ?>
