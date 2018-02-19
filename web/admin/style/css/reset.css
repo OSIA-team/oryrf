@@ -25,6 +25,20 @@ blockquote, q {
 	quotes: none;
 }
 
+.action-kategorie{
+  display: flex;
+}
+
+.add-btn{
+	margin-top: 20px;
+	display: inline-block;
+	padding: 8px 16px;
+	background: #20a500;
+	color: white;
+	border-radius: 5px
+}
+
+
 /* remember to define focus styles! */
 :focus {
 	outline: 0;
@@ -122,4 +136,12 @@ table.ObjDetail tfoot .links a{
 	color: #FFFFFF;
 	padding: 2px 8px;
 	border-radius: 5px;
+}
+
+a.add-btn{
+	color: white;
+}
+
+.container a.delete-icon{
+	color: #ea3939;
 }

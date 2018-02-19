@@ -86,19 +86,19 @@ $kategories = $kategorieClass->getAllKategorie();
             foreach ($kategories as $kategorie):
                 ?>
             <div>
-                <a href="?page=nastaveni&action=editkategorie&id=<?= $kategorie['id'] ?>" class="edit">
                     <div class="row">
                         <div><?= $kategorie['nazev'] ?></div>
-                        <div class="action">Editovat</div>
+
+                        <div class="action-kategorie">
+                          <a href="?page=nastaveni&action=editkategorie&id=<?= $kategorie['id'] ?>" class="edit"><div class="action">Editovat</div></a>
+                          <a href="?page=nastaveni&action=deletekategorie&id=<?= $kategorie['id'] ?>" class="delete-icon" onclick="confirm('Opravdu chcete tuto kategorii vymazat?')"><i class="material-icons dp48">delete</i></a>
+                        </div>
                     </div>
-                </a>
-                <a href="?page=nastaveni&action=deletekategorie&id=<?= $kategorie['id'] ?>" onclick="confirm('Opravdu chcete tuto kategorii vymazat?')"><i class="material-icons dp48">delete</i></a>
             </div>
             <?php
             endforeach;
             ?>
-            <a href="?page=nastaveni&action=addKategories" >Přidat kategorii</a>
+            <a class="add-btn" href="?page=nastaveni&action=addKategories" >Přidat kategorii</a>
         </div>
     </form>
 </div>
-

@@ -8,7 +8,7 @@
 
 require_once('model/public/PhpConsole/__autoload.php');
 
-if(PhpConsole\Connector::getInstance()->isActiveClient()) {
+//if(PhpConsole\Connector::getInstance()->isActiveClient()) {
 
     $connector = PhpConsole\Connector::getInstance();
     $connector->setPassword("789ae456ae123");
@@ -99,6 +99,6 @@ switch ($page){
 
 require 'templates/footer.php';
 //print_r($_SESSION);
-}
+//}
 
 PhpConsole\Helper::register();
