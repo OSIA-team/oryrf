@@ -16,7 +16,7 @@ foreach ($obsahKosiku as $id => $pocet){
     $counter++;
 }
 unset($obsahKosiku);
-// var_dump($jidlaVkosiku);
+var_dump($jidlaVkosiku);
 ?>
 <div class="progres">
     <div class="timeline">
@@ -98,9 +98,6 @@ $(".close-btn").on("click", function () {
       itemsInKosik = Number(itemsInKosik) + Number(pocetInput[j].value);
     }
 
-
-      console.log(cenaKosik);
-      console.log("Odečtená cena: "+cenaZrusena);
       cenaKosik -= Number(cenaZrusena);
       document.getElementById('cena-kosik').innerHTML = cenaKosik + " Kč";
       kosikPocet.innerHTML = itemsInKosik;
