@@ -68,19 +68,24 @@ if (isset($_POST['pridat_do_kosiku'])){
 
 // handle redirects from forms
 
-require 'templates/head.php';
-require 'templates/header.php';
-require 'templates/navigation.php';
+
 
 //define page selected
 $id         = (isset($_GET['id']))?htmlspecialchars($_GET['id']):"";
 $page       = (isset($_GET['page']))?$_GET['page']:'home';
 
+require 'templates/head.php';
+require 'templates/header.php';
+require 'templates/navigation.php';
+
+
 switch ($page){
     case 'menu':
-         $urlKategorie  = (isset($_GET['kategorie']))?htmlspecialchars($_GET['kategorie']):"";
-         $kategorie  = $kategorieClass->getKategorieByURL($urlKategorie);
-         $kategorie  = $kategorie['nazev'];
+        $urlKategorie  = (isset($_GET['kategorie']))?htmlspecialchars($_GET['kategorie']):"";
+        $kategorie  = $kategorieClass->getKategorieByURL($urlKategorie);
+        $kategorieClass->setUpKategorie($kategorie['id']);
+        $kategorie  = $kategorie['nazev'];
+        $kategorieBackground = $kategorieClass->background;
 
          require 'templates/foodnav.php';
          require 'component/produkty/produkty.php';
