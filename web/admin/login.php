@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
     <meta name="description" content="Robust admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, robust admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>OptimasDB/OSIA Team software</title>
+    <title>Bel3s - login do administrace</title>
 
     <!-- BEGIN VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
         <div class="card border-grey border-lighten-3 m-0">
             <div class="card-header no-border">
                 <div class="card-title text-xs-center">
-                    <div class="p-1"><img src="css/images/logo.png" alt="branding logo" style="max-height:80px;"></div>
+                    <div class="p-1"><img src="../pict/logo_bezpozadi.png" alt="branding logo" style="max-height:80px;"></div>
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2"><span>Přihlášení do OptimasDB</span></h6>
             </div>
