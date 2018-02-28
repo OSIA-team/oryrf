@@ -12,6 +12,40 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 #picker{
   display: none;
 }
+
+#login.modal, #register.modal{
+  max-width: 500px !important;
+}
+.login-vyzva{
+  margin-bottom: 40px;
+}
+#login .brand, #register .brand{
+  margin: 0 auto;
+width: 94px;
+display: block;
+}
+
+#login a.forgot,  #register a.forgot{
+  color: #ffa000;
+}
+
+#login .sublink,  #register.sublink{
+  margin-top: 20px;
+}
+    #login.input-field input[type=date]:focus + label,
+    #login.input-field input[type=text]:focus + label,
+    #login.input-field input[type=email]:focus + label,
+    #login.input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    #login.input-field input[type=date]:focus,
+    #login.input-field input[type=text]:focus,
+    #login.input-field input[type=email]:focus,
+    #login.input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
 [type="checkbox"].filled-in:checked+label:after {
   top: 0;
   width: 20px;
