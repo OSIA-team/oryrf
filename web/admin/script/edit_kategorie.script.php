@@ -32,10 +32,10 @@ if (isset($_POST['edit_kategorie'])) {
         if ($upload->uploaded) {
             // Manipulace s obrazkem
             $upload->image_resize = true;
-            $upload->image_ratio = true;
+          //  $upload->image_ratio = true;
             $upload->image_x = 226;
             $upload->image_y = 226;
-            $upload->image_ratio_crop = true;
+           // $upload->image_ratio_crop = true;
             // Presuneme fotku ze slozky temp
             $upload->Process("../../img/");
             // Jestli se zadarilo
@@ -55,10 +55,10 @@ if (isset($_POST['edit_kategorie'])) {
         if ($upload->uploaded) {
             // Manipulace s obrazkem
             $upload->image_resize = true;
-            $upload->image_ratio = true;
-            $upload->image_x = 226;
-            $upload->image_y = 226;
-            $upload->image_ratio_crop = true;
+          //  $upload->image_ratio = true;
+            $upload->image_x = 3000;
+            $upload->image_y = 1500;
+          //  $upload->image_ratio_crop = true;
             // Presuneme fotku ze slozky temp
             $upload->Process("../../img/");
             // Jestli se zadarilo

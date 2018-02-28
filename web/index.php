@@ -86,6 +86,9 @@ switch ($page){
         $kategorieClass->setUpKategorie($kategorie['id']);
         $kategorie  = $kategorie['nazev'];
         $kategorieBackground = $kategorieClass->background;
+        if (!isset($kategorieBackground)){
+            $kategorieBackground = 'default.jpg';
+        }
 
          require 'templates/foodnav.php';
          require 'component/produkty/produkty.php';
