@@ -17,6 +17,10 @@
 </div>
 
 <section class="mid-step">
+  <div class="login-vyzva">
+  <a class="waves-effect waves-light modal-trigger btn amber darken-2" href="#login">Přihlásit se</a> nebo <a class="waves-effect waves-light modal-trigger btn amber darken-2" href="#register">registrovat</a>
+  <br><br>Přihlášení vám ušetří čas s vyplňováním objednávky. Ale můžete si objednat i bez přihlášení.
+  </div>
     <h4>Způsob doručení a adresa</h4>
     <form class="" method="post" action="?page=kosik&action=finish-order">
         <div class="row">
