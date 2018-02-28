@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Centrum Služeb Občanům - Administrace - Registrace</title>
+    <title>Registrace do aministrace</title>
   </head>
 
 <body>
