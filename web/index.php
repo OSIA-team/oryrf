@@ -20,7 +20,7 @@ $handler->debug("Debug message: ".$_SERVER['PHP_SELF'] );
 // $handler->getConnector()->setSourcesBasePath($_SERVER['DOCUMENT_ROOT']); // so files paths on client will be shorter (optional)
 
  session_start();
-
+// var_dump($_SESSION);
  // debug if not loged in
 
 // Constanty pro tridu database

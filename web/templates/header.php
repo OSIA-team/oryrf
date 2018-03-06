@@ -11,7 +11,7 @@
    <div class="modal-content row">
      <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
      <h5>Přihlašte se</h5>
-     <form class="" action="" method="post">
+     <form class="" action="script/singin.script.php" method="post">
        <div class='row'>
          <div class='input-field col s12'>
            <input class='validate' type='email' name='email' id='email' />
@@ -39,7 +39,7 @@
     <div class="modal-content row">
       <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
       <h5>Registrovat se</h5>
-      <form class="" action="" method="post">
+      <form class="" action="script/register.script.php" method="post">
         <div class='row'>
           <div class='input-field col s12'>
             <input class='validate' type='email' name='email' id='email-reg' />
@@ -68,7 +68,7 @@
             <label for='telefon'>Telefon</label>
           </div>
         </div>
-        <input type="submit" class="btn amber darken-2 center" name="login" value="Registrovat se">
+        <input type="submit" class="btn amber darken-2 center" name="register" value="Registrovat se">
       </form>
     </div>
   </div>
