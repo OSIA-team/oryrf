@@ -13,7 +13,6 @@
      <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
      <h5>Přihlašte se</h5>
 <div class="loginform-in">
-<h1>User Login</h1>
 <div class="err" id="add_err"></div>
 <fieldset>
  <form action="./" method="post">

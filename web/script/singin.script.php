@@ -19,13 +19,11 @@ session_start();
     $userClass = new user($mysqli);
 
     $userId = $userClass->checkIfExists($email, $password);
-    
+
     if (!$userId) {
-        echo json_encode(array('false'));
-        die();
+        echo 'false';
     }
 
-    //TODO: Zalozit session
+
     $userClass->createLoginSession($userId);
-    echo json_encode(array('true'));
-    die();
+    echo 'true';
