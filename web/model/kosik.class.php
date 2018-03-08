@@ -42,6 +42,14 @@ class kosik
         $_SESSION['kosik']['obsah']         = array();
       //$_SESSION['kosik']['cenaCelkem']    = 0;
     }
+// TODO: DOMYSLET :D
+    public function createUsersKosik($user_id){
+        $this->deleteTempKosik();
+        $_SESSION['kosik']['user_id']       = $user_id;
+        $_SESSION['kosik']['obsah']         = array();
+        //$_SESSION['kosik']['cenaCelkem']  = 0;
+
+    }
 
     public function getKosikId(){
 

@@ -16,7 +16,7 @@ class kategorie {
 	public $background;
 	public $topmenu;
 	public $icon;
-	// public $position;
+	//public $position;
 
 
 	 public function __construct($mysqli)
