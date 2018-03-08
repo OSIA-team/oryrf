@@ -6,7 +6,10 @@
  * Time: 15:33
  */
 session_start();
-if (isset($_POST['login'])){
+//var_dump($_POST);
+//die();
+
+
     foreach ($_POST as $key => $value) {
         $$key = $value;
     }
@@ -16,7 +19,7 @@ if (isset($_POST['login'])){
     $userClass = new user($mysqli);
 
     $userId = $userClass->checkIfExists($email, $password);
-
+    
     if (!$userId) {
         echo json_encode(array('false'));
         die();
@@ -26,8 +29,3 @@ if (isset($_POST['login'])){
     $userClass->createLoginSession($userId);
     echo json_encode(array('true'));
     die();
-} else {
-    die('Un-authorized entrance');
-}
-
-

@@ -1,38 +1,28 @@
-$( document ).ready(function()
-{
-
-    /* login submit */
-    function submitForm()
-    {
-   var data = $("#login-form").serialize();
-
+$(document).ready(function(){
+ $("#add_err").css('display', 'none', 'important');
+ $("#login-btn").click(function(){
+   email=$("#email").val();
+   password=$("#password").val();
    $.ajax({
-
-   type : 'POST',
-   url  : 'singin.script.php',
-   data : data,
-   beforeSend: function()
-   {
-    $("#error").fadeOut();
-    $("#btn-login").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
-   },
-   success :  function(response)
-      {
-     if(response=="ok"){
-
-      $("#btn-login").html('&nbsp; Signing In ...');
-      setTimeout(' window.location.href = "home.php"; ',4000);
-     }
-     else{
-
-      $("#error").fadeIn(1000, function(){
-    $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response+' !</div>');
-           $("#btn-login").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In');
-         });
-     }
-     }
+    type: "POST",
+    url: "script/singin.script.php",
+ data: "email="+email+"&password="+password,
+    success: function(html){
+ if(html=='true')    {
+ //$("#add_err").html("right username or password");
+ window.location="index.php";
+ }
+ else    {
+ $("#add_err").css('display', 'inline', 'important');
+ $("#add_err").html("<img src='images/alert.png' />Wrong username or password");
+ }
+    },
+    beforeSend:function()
+    {
+ $("#add_err").css('display', 'inline', 'important');
+ $("#add_err").html("<img src='images/ajax-loader.gif' /> Loading...")
+    }
    });
-    return false;
-  }
-    /* login submit */
+ return false;
+ });
 });

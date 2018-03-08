@@ -12,25 +12,22 @@
    <div class="modal-content row">
      <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
      <h5>Přihlašte se</h5>
-     <form method="post" id="login-form">
-       <div class='row'>
-         <div class='input-field col s12'>
-           <input class='validate' type='email' name='email' id='email' />
-           <label for='email'>Váš email</label>
-         </div>
-       </div>
-
-       <div class='row'>
-         <div class='input-field col s12'>
-           <input class='validate' type='password' name='password' id='password' />
-           <label for='password'>Vaše heslo</label>
-         </div>
-         <label style='float: right;'>
-          <a class='forgot' href='#!'><b>Zapomněl jsem</b></a>
-        </label>
-       </div>
-       <button type="submit" id="btn-login" class="btn amber darken-2 center" name="login">Přihlásit</button>
-     </form>
+<div class="loginform-in">
+<h1>User Login</h1>
+<div class="err" id="add_err"></div>
+<fieldset>
+ <form action="./" method="post">
+ <ul>
+ <li> <label for="email">Email</label>
+ <input type="text" name="email" id="email"  /></li>
+ <li> <label for="password">Password</label>
+ <input type="password" name="password" id="password"  /></li>
+ <li> <label></label>
+ <input type="submit" id="login-btn" name="login" value="Login" class="loginbutton" ></li>
+ </ul>
+         </form>
+</fieldset>
+</div>
    </div>
  </div>
 
