@@ -1,6 +1,7 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="script/login.js"></script>
 <!-- Latest compiled and minified CSS -->
 <nav class="user">
 <a class="waves-effect waves-light modal-trigger" href="#login">Přihlásit se</a> nebo <a class="waves-effect waves-light modal-trigger" href="#register">registrovat</a>
@@ -11,7 +12,7 @@
    <div class="modal-content row">
      <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
      <h5>Přihlašte se</h5>
-     <form class="" action="script/singin.script.php" method="post">
+     <form method="post" id="login-form">
        <div class='row'>
          <div class='input-field col s12'>
            <input class='validate' type='email' name='email' id='email' />
@@ -28,7 +29,7 @@
           <a class='forgot' href='#!'><b>Zapomněl jsem</b></a>
         </label>
        </div>
-       <input type="submit" class="btn amber darken-2 center" name="login" value="Přihlásit">
+       <button type="submit" id="btn-login" class="btn amber darken-2 center" name="login">Přihlásit</button>
      </form>
    </div>
  </div>
