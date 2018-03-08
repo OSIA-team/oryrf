@@ -15,8 +15,7 @@ if (isset($_POST['register'])) {
     require_once '../model/database.class.php';
     $mysqli = new database();
     $userClass = new user($mysqli);
-
-    $password = crypt($password,'$2a$07belesissaltysalt!$');
+    $password = crypt($password,'$2a$07$thisisspartabel3syoknow$');
 
     $insert = array(
         'password' => (string)$password,

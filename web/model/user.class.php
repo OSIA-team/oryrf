@@ -46,7 +46,7 @@ class user {
      * @return id or false
      */
     public function checkIfExists($email, $password){
-        $password = crypt($password,'$2a$07belesissaltysalt!$');
+        $password = crypt($password,'$2a$07$thisisspartabel3syoknow$');
         $query = "SELECT id FROM user WHERE email = '{$email}' AND password = '{$password}' AND registered = 1";
         if($rec = $this->_mysqli->get_row($query)){
             return $rec['id'];
