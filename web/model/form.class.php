@@ -20,7 +20,7 @@ class form
         'edit_jidlo' => 'editJidlo',
         'edit_kategorie' => 'editKategorie',
         'pridat_jidlo' => 'pridatJidlo',
-        'upload_img'
+        'upload_img' => 'uploadImgJidlo'
     );
 
     public function __construct($data){
@@ -160,7 +160,7 @@ class form
                         'nazev' => $photo_name
                     );
                     $where = array(
-                        'jidlo_id' => $id
+                        'jidlo_id' => $this->data['id']
                     );
 
                     $upload_foto = $menuItem->editFotka($update, $where);
@@ -174,7 +174,7 @@ class form
 
 
             if ($edit AND $upload_foto) {
-                header("Location: ../?page=jidlo&action=prehled");
+                header("Location: ?page=jidlo&action=prehled");
             } else {
                 // error
                 echo "error";
@@ -284,11 +284,11 @@ class form
 
     private function uploadImgJidlo(){
         $jidlo = new jidlo();
-        
+
         if (isset($this->data['preskocit'])){
-            $upload_img = $jidlo->addImageToJidlo($jidlo_id);
+            $upload_img = $jidlo->addImageToJidlo($this->data['jidlo_id']);
             # upload default image
-            header("Location: ../?page=jidlo&action=detail&id=$jidlo_id");
+            header("Location: ?page=jidlo&action=detail&id=$this->data['jidlo_id']");
         }
         elseif(isset($this->data['nahrat'])) {
 
@@ -315,19 +315,22 @@ class form
             // priprava promennych
         $photo_name   = $_FILES['my_field']['name'];
             // Object pro manipulaci s tabulkou fotka v databazy
-        $insert_fotka = $jidlo->addImageToJidlo($jidlo_id, $photo_name);
+        $insert_fotka = $jidlo->addImageToJidlo($this->data['jidlo_id'], $photo_name);
         if ($insert_fotka){
-        header("Location: ../?page=jidlo&action=prehled");
-        } else {
-            echo "error";
-        }
+        header("Location: ?page=jidlo&action=prehled");
+            } else {
+                echo "error";
+            }
 
-        } else {
-            die($upload->error);
-        }
+            } else {
+                die($upload->error);
+            }
         }
 
         }
     }
 
+    private function finishOrder(){
+
+    }
 }

@@ -5,7 +5,7 @@
 
 
 
-
+// require_once 'model/public/PHPMailer/PHPMailerAutoload.php';
 require_once('model/public/PhpConsole/__autoload.php');
 foreach (glob("model/*.php") as $filename)
 {
@@ -31,7 +31,11 @@ define( 'DISPLAY_DEBUG', false );
 define( 'SEND_ERRORS_TO', 'k.kosut@gmail.com' );
 // require database class
 // $mysqli = new database();
-
+/*
+if (isset($_POST)){
+    $form = new \core\form($_POST);
+}
+*/
 $kategorieClass = new database\kategorie();
 
 $kosikClass = new database\kosik();

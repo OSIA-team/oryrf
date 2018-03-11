@@ -18,7 +18,7 @@ if($_GET['action'] == "pridat"):
     <div id="main">
 
         <h3>Přidat jídlo</h3>
-        <form action="script/pridat_jidlo.script.php" class="jNice" method="POST">
+        <form class="jNice" method="POST">
             <fieldset>
                 <p><label>Název:</label><input type="text" class="text-long" name="nazev" required/></p>
                 <p><label>Popis:</label><textarea rows="1" cols="1" name="popis"></textarea></p>
