@@ -13,8 +13,8 @@ $action = (isset($_GET['action']))?$_GET['action']:'celkem';
     </div>
 
 <?php
-require '../model/objednavka.class.php';
-$objednavkaClass = new objednavka($mysqli);
+
+$objednavkaClass = new \database\objednavka();
 
 // stripslashes?
 

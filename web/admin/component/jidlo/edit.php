@@ -10,17 +10,18 @@
 // action edit
 ///////////////////////////////////////////////////////////////////////////
 if ($_GET['action'] == "edit"):
-    require "../model/jidlo.class.php";
+
     $id = $_GET['id'];
-    $jidloclass = new Jidlo($mysqli);
+    $jidloclass = new \database\jidlo();
     $jidlo = $jidloclass->getJidloById($id);
     ?>
-
+<h2>Upravit</h2>
     <div id="main">
 
-        <h3>Upravit jídlo</h3>
-        <form action="script/edit_jidlo.script.php" class="jNice" method="POST" enctype="multipart/form-data">
-            <fieldset>
+        <h3><?= $jidlo['nazev'] ?></h3>
+        <fieldset>
+        <form class="jNice" method="POST" enctype="multipart/form-data">
+
                 <input type="hidden" value="<?= $id ?>" name="id" />
                 <p><label>Název:</label><input type="text" class="text-long" name="nazev" value="<?= $jidlo['nazev'] ?>" /></p>
                 <p><label>Popis:</label><textarea rows="1" cols="1" name="popis"><?= $jidlo['popis'] ?></textarea></p>
@@ -28,8 +29,8 @@ if ($_GET['action'] == "edit"):
                 <p><label>Kategorie:</label>
                     <select name="kategorie">
                         <?php
-                        require "../model/kategorie.class.php";
-                        $kategorie = new kategorie($mysqli);
+
+                        $kategorie = new \database\kategorie();
                         $kategorie_item = $kategorie->getAllKategorie();
                         foreach ($kategorie_item as $key => $value) {
                             $selected = ( $value['url'] == $jidlo['kategorie'])?'selected':'';
@@ -47,8 +48,8 @@ if ($_GET['action'] == "edit"):
                 <p><label>Sezóna</label>
                     <select name="sezona">
                         <?php
-                        require '../model/sezona.class.php';
-                        $sezona     = new sezona($mysqli);
+
+                        $sezona     = new \database\sezona();
                         $sezony     = $sezona->getAllSezona();
                         $jsezona    = $sezona->getSezonaById($jidlo['id_sezona']);
 
@@ -79,8 +80,9 @@ if ($_GET['action'] == "edit"):
                 </p>
 
                 <input type="submit" value="Editovat" name="edit_jidlo" />
-            </fieldset>
+
         </form>
+        </fieldset>
 
     </div>
     <!-- // #main -->

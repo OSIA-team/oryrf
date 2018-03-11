@@ -1,12 +1,11 @@
 <?php
 /**
- * objekt pro manipulaci s tabulkou "doprace" v databazi (Optimas)
  * @access public
  * @author Kryštof Košut
  */
 
-use jidlo as jidlo;
-
+namespace database;
+use database;
 class kategorie {
 	private $_mysqli;
 
@@ -19,9 +18,9 @@ class kategorie {
 	//public $position;
 
 
-	 public function __construct($mysqli)
+	 public function __construct()
  	 {
- 	 	$this->_mysqli = $mysqli;
+ 	 	$this->_mysqli = new \database\database();
  	 }
 
 	 /**

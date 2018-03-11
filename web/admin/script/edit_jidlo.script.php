@@ -27,11 +27,7 @@ if (isset($_POST['edit_jidlo'])){
         $$key = $value;
     }
 
-    $jidlo      = (!isset($jidlo))    ? 0 : 1 ;
-    $piti       = (!isset($piti))     ? 0 : 1 ;
-    $priloha    = (!isset($priloha))  ? 0 : 1 ;
-    $alko       = (!isset($alko))     ? 0 : 1 ;
-    $hracka     = (!isset($hracka))   ? 0 : 1 ;
+
     $menu       = (!isset($menu))     ? 0 : 1 ;
 
     $where = [
@@ -51,9 +47,6 @@ if (isset($_POST['edit_jidlo'])){
 
 
         if ($_FILES['my_field']['name'] != "") {
-
-            require '../../model/public/upload.class.php';
-            //var_dump($_FILES);
 
             // trida upload preda $_FILES
             // uprava nazvu aby nebyly mezery
@@ -95,11 +88,11 @@ if (isset($_POST['edit_jidlo'])){
                 }
 
                 if ($edit AND $upload_foto) {
-                    header("Location: ../?page=jidlo&action=prehled");
-                } else {
-                    // error
-                    echo "error";
-                }
-            } else {
-                echo "error2";
-            }
+    header("Location: ../?page=jidlo&action=prehled");
+} else {
+    // error
+    echo "error";
+}
+} else {
+    echo "error2";
+}

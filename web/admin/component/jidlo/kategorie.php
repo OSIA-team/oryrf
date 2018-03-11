@@ -22,8 +22,8 @@ if($_GET['action'] == "kategorie"):
         <table cellpadding="0" cellspacing="0">
             <?php
             $i=1;
-            require '../model/jidlo.class.php';
-            $menuItem = new jidlo($mysqli);
+
+            $menuItem = new \database\jidlo();
             $items = $menuItem->getAllJidloByKategorie($kategorie_url);
             foreach ($items as $item):
                 //  var_dump($item);

@@ -7,7 +7,10 @@
 
 
 require_once('model/public/PhpConsole/__autoload.php');
-
+foreach (glob("model/*.php") as $filename)
+{
+    include $filename;
+}
 //if(PhpConsole\Connector::getInstance()->isActiveClient()) {
 
     $connector = PhpConsole\Connector::getInstance();
@@ -27,23 +30,17 @@ $handler->debug("Debug message: ".$_SERVER['PHP_SELF'] );
 define( 'DISPLAY_DEBUG', false );
 define( 'SEND_ERRORS_TO', 'k.kosut@gmail.com' );
 // require database class
-require 'model/database.class.php';
-$mysqli = new database();
+// $mysqli = new database();
 
-require 'model/kategorie.class.php';
-$kategorieClass = new kategorie($mysqli);
+$kategorieClass = new database\kategorie();
 
-require 'model/kosik.class.php';
-$kosikClass = new kosik($mysqli);
+$kosikClass = new database\kosik();
 
-require 'model/user.class.php';
-$userClass = new user($mysqli);
+$userClass = new database\user();
 
-require 'model/jidlo.class.php';
-$menuItem = new jidlo($mysqli);
+$menuItem = new \database\jidlo();
 
-require 'model/objednavka.class.php';
-$objednavkaClass = new objednavka($mysqli);
+$objednavkaClass = new \database\objednavka();
 
 // determinate scripts
  if (isset($_POST['to-checkout'])){

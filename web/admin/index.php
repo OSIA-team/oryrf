@@ -8,15 +8,16 @@ if (!isset($_SESSION['admin'])) {
 
 $prefix = "../";
 require_once('../model/public/PhpConsole/__autoload.php');
-
+require '../model/public/upload.class.php';
 $handler = PhpConsole\Handler::getInstance();
 $handler->start(); // start handling PHP errors & exceptions
 // Constanty pro tridu database
 define( 'DISPLAY_DEBUG', false );
 define( 'SEND_ERRORS_TO', 'k.kosut@gmail.com' );
-// require database class
-require '../model/database.class.php';
-$mysqli = new database();
+foreach (glob("../model/*.php") as $filename)
+{
+    include $filename;
+}
 
 function multiexplode ($delimiters,$string) {
 
@@ -25,6 +26,9 @@ function multiexplode ($delimiters,$string) {
 	return  $launch;
 }
 
+if (isset($_POST)){
+    $form = new \core\form($_POST);
+}
 	$page = (isset($_GET['page']))?$_GET['page']:"jidlo";
  ?>
 <!DOCTYPE html PUBLIC >

@@ -26,37 +26,3 @@ if (file_exists('component/jidlo/'.$action.'.php')){
     // error
     require_once 'component/jidlo/prehled.php';
 }
-/*
-switch ($action){
-    case 'prehled':
-        require_once 'component/jidlo/prehled.php';
-        break;
-
-    case 'kategorie':
-        require_once 'component/jidlo/kategorie.php';
-        break;
-
-    case 'pridat':
-        require_once 'component/jidlo/pridat.php';
-        break;
-
-    case 'upload_img':
-        require_once 'component/jidlo/upload_img.php';
-        break;
-
-    case 'detail':
-        require_once 'component/jidlo/detail.php';
-        break;
-
-    case 'edit':
-        require_once 'component/jidlo/edit.php';
-        break;
-
-    case 'delete':
-        require_once 'component/jidlo/delete.php';
-        break;
-
-    default:
-        require_once 'component/jidlo/prehled.php';
-        break;
-}*/

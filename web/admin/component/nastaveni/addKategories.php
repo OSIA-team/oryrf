@@ -8,7 +8,7 @@
 ?>
 <h3>Přidat Kategorii</h3>
 <div class="container">
-  <form method="post" enctype="multipart/form-data" action="script/addkategorie.script.php">
+  <form method="post" enctype="multipart/form-data" >
     <table cellpadding="0" cellspacing="0">
         <tr>
             <td><input type="text" class="medium" name="nazev" placeholder="Název kategorie" /></td>
