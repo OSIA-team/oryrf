@@ -18,7 +18,7 @@ if($_GET['action'] == "pridat"):
     <div id="main">
 
         <h3>Přidat jídlo</h3>
-        <form action="script/pridat_jidlo.script.php" class="jNice" method="POST">
+        <form class="jNice" method="POST">
             <fieldset>
                 <p><label>Název:</label><input type="text" class="text-long" name="nazev" required/></p>
                 <p><label>Popis:</label><textarea rows="1" cols="1" name="popis"></textarea></p>
@@ -26,15 +26,15 @@ if($_GET['action'] == "pridat"):
                 <p><label>Kategorie:</label>
                     <select name="kategorie">
                         <?php
-                        require "../model/kategorie.class.php";
-                        $kategorie = new kategorie($mysqli);
+
+                        $kategorie = new \database\kategorie();
                         $kategorie_item = $kategorie->getAllKategorie();
                         foreach ($kategorie_item as $key => $value) {
                             echo "<option value=\"{$value['url']}\">{$value['nazev']}</option>";
                         }
                         // var_dump($kategorie_item);
-                        require '../model/sezona.class.php';
-                        $sezona = new sezona($mysqli);
+
+                        $sezona = new \database\sezona();
                         $sezony = $sezona->getAllSezona();
                         ?>
                     </select>

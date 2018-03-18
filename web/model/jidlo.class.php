@@ -4,13 +4,17 @@
  * @access public
  * @author Kryštof Košut
  */
+
+namespace database;
+use database\database;
+
 class jidlo {
 	private $_mysqli;
 
 
-	 public function __construct($mysqli)
+	 public function __construct()
  	 {
- 	 	$this->_mysqli = $mysqli;
+ 	 	$this->_mysqli = new database();
  	 }
 
    /**

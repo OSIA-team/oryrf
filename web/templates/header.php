@@ -4,7 +4,20 @@
 <script src="script/login.js"></script>
 <!-- Latest compiled and minified CSS -->
 <nav class="user">
-<a class="waves-effect waves-light modal-trigger" href="#login">Přihlásit se</a> nebo <a class="waves-effect waves-light modal-trigger" href="#register">registrovat</a>
+    <?php
+        if (isset($userClass->id)):
+            echo $userClass->email;
+    ?>
+            &nbsp;
+    <a class="waves-effect waves-light modal-trigger" href="logout.php">Odhlásit se</a>
+    <?php
+        endif;
+        if (!isset($userClass->id)):
+    ?>
+    <a class="waves-effect waves-light modal-trigger" href="#login">Přihlásit se</a> nebo <a class="waves-effect waves-light modal-trigger" href="#register">registrovat</a>
+    <?php
+        endif;
+    ?>
 </nav>
 
 <!-- Modal Structure -->

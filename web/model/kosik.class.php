@@ -6,6 +6,9 @@
  * Time: 14:07
  */
 
+namespace database;
+use database\database;
+use database\user;
 class kosik
 {
     private $_mysqli;
@@ -14,11 +17,14 @@ class kosik
     public $klient_id;
     public $obsah = array();
 
-    public function __construct($mysqli)
+    public function __construct()
     {
-        $this->_mysqli = $mysqli;
-        if (!isset($_SESSION['kosik'])){
+        $this->_mysqli = new database();
+        $userClass = new user();
+        if (!isset($_SESSION['kosik']) AND !$userClass->isLogged()){
             $this->createTempKosik();
+        } elseif (!isset($_SESSION['kosik']) AND $userClass->isLogged()){
+            $this->createUsersKosik($userClass->id);
         }
     }
 
@@ -38,17 +44,17 @@ class kosik
     }
 
     public function createTempKosik(){
-        $_SESSION['kosik']['user']          = "Anonym";
+        $_SESSION['kosik']['user']          = "Neregistrovaný";
         $_SESSION['kosik']['obsah']         = array();
       //$_SESSION['kosik']['cenaCelkem']    = 0;
     }
 // TODO: DOMYSLET :D
     public function createUsersKosik($user_id){
         $this->deleteTempKosik();
+        $_SESSION['kosik']['user']          = "Registrovaný";
         $_SESSION['kosik']['user_id']       = $user_id;
         $_SESSION['kosik']['obsah']         = array();
         //$_SESSION['kosik']['cenaCelkem']  = 0;
-
     }
 
     public function getKosikId(){
@@ -125,7 +131,7 @@ class kosik
      */
     public function deleteTempKosik(){
         unset($_SESSION['kosik']);
-        $this->createTempKosik();
+        // $this->createTempKosik();
     }
 
     /**

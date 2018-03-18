@@ -6,9 +6,6 @@
  * Time: 13:45
  */
 
-// require '../model/kategorie.class'
-
-
 ?>
 
 <h3>Správa kategorií</h3>

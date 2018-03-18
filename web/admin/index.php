@@ -8,16 +8,17 @@ if (!isset($_SESSION['admin'])) {
 
 $prefix = "../";
 require_once('../model/public/PhpConsole/__autoload.php');
-
+require '../model/public/upload.class.php';
 $handler = PhpConsole\Handler::getInstance();
 $handler->start(); // start handling PHP errors & exceptions
 // Constanty pro tridu database
 define( 'DISPLAY_DEBUG', false );
 define( 'SEND_ERRORS_TO', 'k.kosut@gmail.com' );
-// require database class
-require '../model/database.class.php';
-$mysqli = new database();
-
+foreach (glob("../model/*.php") as $filename)
+{
+    include $filename;
+}
+\core\core::$configFile = require_once '../config.php';
 function multiexplode ($delimiters,$string) {
 
 	$ready = str_replace($delimiters, $delimiters[0], $string);
@@ -25,6 +26,9 @@ function multiexplode ($delimiters,$string) {
 	return  $launch;
 }
 
+if (isset($_POST)){
+    $form = new \core\form($_POST);
+}
 	$page = (isset($_GET['page']))?$_GET['page']:"jidlo";
  ?>
 <!DOCTYPE html PUBLIC >
@@ -42,6 +46,7 @@ function multiexplode ($delimiters,$string) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
+
 <!-- JavaScripts-->
 <script type="text/javascript" src="style/js/jquery.js"></script>
 <script type="text/javascript" src="style/js/jNice.js"></script>

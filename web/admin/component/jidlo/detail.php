@@ -10,13 +10,13 @@
 // action detail
 ///////////////////////////////////////////////////////////////////////////
 if($_GET['action'] == "detail"):
-    require '../model/jidlo.class.php';
+
 
     if (isset($_GET['id'])){
         $id = $_GET['id'];
 
     }
-    $jidloClass = new Jidlo($mysqli);
+    $jidloClass = new \database\jidlo();
     $jidlo = $jidloClass->getJidloById($id);
     // var_dump($jidlo);
     ?>
@@ -32,8 +32,7 @@ if($_GET['action'] == "detail"):
             <p><label>Kategorie:</label>
                 <select name="kategorie" disabled>
                     <?php
-                    require "../model/kategorie.class.php";
-                    $kategorie = new kategorie($mysqli);
+                    $kategorie = new \database\kategorie();
                     $kategorie_item = $kategorie->getAllKategorie();
                     foreach ($kategorie_item as $key => $value) {
                         $selected = ( $value['url'] == $jidlo['kategorie'])?'selected':'';
@@ -51,8 +50,7 @@ if($_GET['action'] == "detail"):
             <p><label>Sezóna</label>
                 <select name="sezona" disabled>
                     <?php
-                    require '../model/sezona.class.php';
-                    $sezona     = new sezona($mysqli);
+                    $sezona     = new \database\sezona();
                     $sezony     = $sezona->getAllSezona();
                     $jsezona    = $sezona->getSezonaById($jidlo['id_sezona']);
 
@@ -77,9 +75,6 @@ if($_GET['action'] == "detail"):
                 <img src="../<?= $fotka['path'].$fotka['nazev'] ?>" height="150px" /> <br>
             </p>
         </fieldset>
-
-
-
     </div>
 <?php
 endif;

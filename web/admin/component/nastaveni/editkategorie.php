@@ -7,9 +7,9 @@
  */
 
 $id = $_GET['id'];
-require_once '../model/kategorie.class.php';
 
-$kategorieClass = new kategorie($mysqli);
+
+$kategorieClass = new \database\kategorie();
 $kategorieClass->setUpKategorie($id);
 ?>
 
@@ -18,7 +18,7 @@ $kategorieClass->setUpKategorie($id);
 <div id="main">
 
     <h3>Úprava kategorie: <?= $kategorieClass->nazev ?></h3>
-        <form method="post" action="script/edit_kategorie.script.php" enctype="multipart/form-data" >
+        <form method="post" enctype="multipart/form-data" >
             <p>
                 <label>Název:</label><input type="text" class="text-long" name="nazev" value="<?= $kategorieClass->nazev ?>" />
                 <label><input type="checkbox" name="topmenu" <?php echo ($kategorieClass->topmenu == 1)?'checked':''; ?> />V horním menu</label>

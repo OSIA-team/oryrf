@@ -16,7 +16,7 @@ foreach ($obsahKosiku as $id => $pocet){
     $counter++;
 }
 unset($obsahKosiku);
-var_dump($jidlaVkosiku);
+// var_dump($jidlaVkosiku);
 ?>
 <div class="progres">
     <div class="timeline">

@@ -25,6 +25,9 @@
  * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author Brent R. Matzelle (original founder)
  */
+
+// namespace core;
+
 class PHPMailer
 {
     /**

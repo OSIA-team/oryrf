@@ -69,9 +69,9 @@ elseif (isset($_POST['zmenKategories'])){
 } else {
     require 'component/nastaveni/defaultkategories.php';
 }*/
-require '../model/kategorie.class.php';
 
-$kategorieClass = new kategorie($mysqli);
+
+$kategorieClass = new \database\kategorie();
 $kategories = $kategorieClass->getAllKategorie();
 ?>
 <h2><a href="#">Nastavení</a> &raquo; <a href="#" class="active">Kategorie</a></h2>

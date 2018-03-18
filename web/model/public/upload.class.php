@@ -25,6 +25,7 @@
 // | This script is free to use, don't abuse.                               |
 // +------------------------------------------------------------------------+
 
+namespace core;
 
 /**
  * Class upload

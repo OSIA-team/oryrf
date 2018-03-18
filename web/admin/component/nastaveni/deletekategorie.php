@@ -7,9 +7,8 @@
  */
 
 $id = $_GET['id'];
-require_once '../model/kategorie.class.php';
 
-$kategorieClass = new kategorie($mysqli);
+$kategorieClass = new \database\kategorie();
 $result = $kategorieClass->deleteKategorie($id);
 
 if ($result){

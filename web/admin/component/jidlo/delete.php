@@ -10,9 +10,9 @@
 // action delete
 ///////////////////////////////////////////////////////////////////////////
 if ($_GET['action'] == "delete"):
-    require '../model/jidlo.class.php';
+
     $id = $_GET['id'];
-    $jidlo = new Jidlo($mysqli);
+    $jidlo = new \database\jidlo();
     $delete = $jidlo->deleteJidlo($id);
 
     /** @var DibiResult $delete */

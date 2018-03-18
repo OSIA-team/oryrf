@@ -10,25 +10,37 @@
 // TODO: ulozit do DB (objednavka a user)
 // TODO: Poslat email
 // TODO: administrace
-
-
-$handler->debug("Debug message: ".$_SERVER['DOCUMENT_ROOT'] );
-
-
 // require_once 'model/public/PHPmailer/PHPMailerAutoload.php';
     require_once 'model/public/PHPMailer/PHPMailerAutoload.php';
 
-
-
 $kosik_id   = $_SESSION['kosik']['kosik_id'];
-$user_id    = $_SESSION['kosik']['user'];
+$user       = $_SESSION['kosik']['user'];
 $cenacelkem = $kosikClass->getCena();
-$kosikClass ->deleteTempKosik();
+// $kosikClass ->deleteTempKosik();
+$user_id = (isset($_SESSION['user_id']))?$_SESSION['user_id']:0;
 
 foreach ($_POST as $key => $value) {
     $$key = $value;
 }
 $casdoruceni = ($cas == "")?"Co nejdříve":$cas;
+
+// if user not logged in -- create user record
+if ($user_id == 0){
+    $user_insert = array(
+        'username'  =>  (string)$user,
+        'email'     =>  (string)$email,
+        'jmeno'     =>  (string)$jmeno,
+        'mobil'     =>  (string)$mobil,
+        'adresa'    =>  (string)$adresa,
+        'registered'=>  0
+    );
+    $user_id = $userClass->addUser($user_insert);
+    if($user_id == false){
+        echo 'add user failed<br>';
+        \core\core::debugLog($user_insert);
+        die();
+    }
+}
 
 
 $insert = array(
@@ -40,14 +52,23 @@ $insert = array(
     'email' => $email,
     'mobil' => $mobil,
     'kosik_id' => $kosik_id,
-    'casdoruceni' => $casdoruceni
+    'casdoruceni' => $casdoruceni,
+    'status'    => 1
 );
-// TODO: IF FALSE....
+
 $objednavka_result = $objednavkaClass->addObjednavka($insert);
 
+if ($objednavka_result != TRUE){
+    echo '<pre>';
+    echo 'Pridani do objednavky failed<br>';
+    print_r($insert);
+    echo '</pre>';
+    die();
+}
+$kosikClass ->deleteTempKosik();
 //TODO: IS USER LOGGED IN?
 $update = array(
-    'username' => 'anonym',
+    'username' => (string)$user,
     'email' => $email,
     'jmeno' => $jmeno,
     'mobil' => $mobil,
@@ -61,11 +82,25 @@ $where = array(
 // TODO: IF FALSE....
 $user_result = $userClass->editUser($update,$where);
 
+if (!$user_result){
+    echo '<pre>';
+    echo 'edit user failed';
+    print_r($update);
+    print_r($where);
+    echo '</pre>';
+    die();
+}
 // set kosik to transfered (to objednavka)
-$kosikClass->editKosik(array('transfered' => 1), array('id' => $kosik_id));
+$trasnferResult = $kosikClass->editKosik(array('transfered' => 1), array('id' => $kosik_id));
+
+if (!$trasnferResult){
+    echo '<pre>';
+        echo 'Transfer kosik to objednavka failed';
+    echo '</pre>';
+    die();
+}
 
 // IF ALL GOOOD, emails:
-
 $subject = 'Objednávka Bel3s';
 
 //Create a new PHPMailer instance
@@ -86,9 +121,15 @@ $mail->IsHTML(false);
 //TODO: DO KDY MA ZASILKA DORAZIT V PRIPADE CO NEJDRIVE?
 // Very important: don't have lines for MsgHTML and AltBody
 $mail->Body = "Dobrý den, \n
-Přijali jsme vaši objednávku, měly by dorazit do:
+Přijali jsme vaši objednávku, měly by dorazit do: $casdoruceni
 \n \n
 Přejeme dobrou chuť,
 Team Bel3s!
 ";
 $mail->Send();
+
+if ($userClass->isLogged()){
+    $kosikClass->createUsersKosik($userClass->id);
+} else {
+    $kosikClass->createTempKosik();
+}

@@ -9,8 +9,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // action prehled
 ///////////////////////////////////////////////////////////////////////////
-    require '../model/kategorie.class.php';
-    $kategorieClass = new kategorie($mysqli);
+    $kategorieClass = new \database\kategorie();
     $kategories = $kategorieClass->getAllKategorie();
     ?>
     <h2><a href="#">Jídlo</a> &raquo; <a href="#" class="active">Přehled</a></h2>

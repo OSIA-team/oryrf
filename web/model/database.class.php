@@ -3,11 +3,15 @@
  * @access public
  * @author Kryštof Košut
  */
+
+namespace database;
+use mysqli;
+use core\core;
 class database {
 	private $_host				= 'localhost';
 	private $_user				= 'root';
-	private $_password		= '';
-	private $_database		= 'Bel3s';
+	private $_password			= '';
+	private $_database			= 'Bel3s';
 	private $_mysqli			= NULL;
 	private $_inst 				= NULL;
 
@@ -17,6 +21,7 @@ class database {
 	 */
 	public function log_db_errors( $error, $query, $severity )
 	{
+
 			$headers  = 'MIME-Version: 1.0' . "\r\n";
 			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$headers .= 'To: Admin <'.SEND_ERRORS_TO.'>' . "\r\n";
@@ -30,6 +35,8 @@ class database {
 			$message .= '</p>';
 			$message .= '<p>Severity: '. $severity .'</p>';
 
+			\core\core::debugLog($message);
+
 			mail( SEND_ERRORS_TO, 'Database Error', $message, $headers);
 
 			if( DISPLAY_DEBUG )
@@ -42,7 +49,8 @@ class database {
 	public function __construct()
 	{
 	   global $connection;
-		@$this->_mysqli = new mysqli( $this->_host, $this->_user, $this->_password, $this->_database );
+	   $connectInfo = \core\core::getDatabase();
+		@$this->_mysqli = new mysqli( $connectInfo['host'], $connectInfo['user'], $connectInfo['password'], $connectInfo['database'] );
 
         if( mysqli_connect_errno() )
         {
@@ -71,7 +79,7 @@ class database {
 	{
 			if( !is_array( $data ) )
 			{
-					$data = trim( htmlentities( $data ) );
+				$data = trim( htmlentities( $data ) );
 				$data = mysqli_real_escape_string( $this->_mysqli, $data );
 			}
 			else

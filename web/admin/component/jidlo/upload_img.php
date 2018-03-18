@@ -18,12 +18,13 @@ if($_GET['action'] == "upload_img"):
     <div id="main">
 
         <h3>Přidat obrázek k jídlu</h3>
-        <form action="script/upload_img_jidlo.script.php" class="jNice" method="POST" enctype="multipart/form-data">
+        <form class="jNice" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <p><label>Název:</label> <?= $_GET['id'] ?></p>
 
                 <input type="file" accept="image/*" name="my_field" value="Vybrat novou fotku" /><br>
                 <input type="hidden" value="<?= $_GET['id'] ?>" name="jidlo_id" />
+                <input type="hidden" value="1" name="upload_img"  />
                 <input type="submit" value="Nahrát" name="nahrat" />
                 <input type="submit" value="Přeskočit" name="preskocit" />
                 <p>* V případě přeskočení kroku bude nahrán výchozí obrázek </p>
