@@ -5,6 +5,10 @@
  * Date: 24.01.18
  * Time: 23:23
  */
+
+echo "<pre>";
+var_dump($_SESSION);
+echo '</pre>';
 ?>
 
 
@@ -40,19 +44,19 @@
                 </select>
             </div>
             <div class="input-field col s6">
-                <input id="first_name" type="text" class="validate" name="jmeno" required>
+                <input id="first_name" type="text" class="validate" name="jmeno" <?php if($userClass->isLogged()) echo "Value=\"".$userClass->jmeno."\"" ?>     required>
                 <label for="first_name">Jméno</label>
             </div>
             <div class="input-field col s6">
-                <input id="number" type="text" class="validate" name="mobil" required>
+                <input id="number" type="text" class="validate" name="mobil" <?php if($userClass->isLogged()) echo "Value=\"".$userClass->mobil."\"" ?> required>
                 <label for="number">Telefoní číslo</label>
             </div>
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate" name="email" required>
+                <input id="email" type="email" class="validate" name="email" <?php if($userClass->isLogged()) echo "Value=\"".$userClass->email."\"" ?> required>
                 <label data-error="Špatně zadaný email" for="email">E-mail</label>
             </div>
             <div class="input-field col s12">
-                <input id="adresa" type="text" class="validate" name="adresa" required>
+                <input id="adresa" type="text" class="validate" name="adresa" <?php if($userClass->isLogged()) echo "Value=\"".$userClass->adresa."\"" ?> required>
                 <label data-error="nevyplněná adresa" for="email">Doručovací adresa</label>
             </div>
             <div class="input-field col s12">

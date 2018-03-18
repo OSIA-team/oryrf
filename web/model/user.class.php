@@ -135,5 +135,25 @@ class user {
         return $this->mobil;
     }
 
+    public function isLogged()
+    {
+        if (isset($this->id)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getUsers($registered = NULL){
+
+        $registered = ($registered === NULL)?"":"WHERE registered = ".$registered;
+
+        $query = "SELECT * FROM user ".$registered;
+
+        $result = $this->_mysqli->get_results($query);
+        return $result;
+
+    }
+
 
 }

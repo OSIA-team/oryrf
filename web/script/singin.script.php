@@ -6,24 +6,24 @@
  * Time: 15:33
  */
 session_start();
-//var_dump($_POST);
-//die();
-
 
     foreach ($_POST as $key => $value) {
         $$key = $value;
     }
-    require_once '../model/user.class.php';
-    require_once '../model/database.class.php';
-    $mysqli = new database();
-    $userClass = new user($mysqli);
+        foreach (glob("../model/*.php") as $filename)
+        {
+            include $filename;
+        }
+    $userClass = new \database\user();
+    $kosikClass = new \database\kosik();
+
+    $kosikClass->deleteTempKosik();
 
     $userId = $userClass->checkIfExists($email, $password);
 
     if (!$userId) {
         echo 'false';
+    } else {
+        $userClass->createLoginSession($userId);
+        echo 'true';
     }
-
-
-    $userClass->createLoginSession($userId);
-    echo 'true';

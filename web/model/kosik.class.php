@@ -8,6 +8,7 @@
 
 namespace database;
 use database\database;
+use database\user;
 class kosik
 {
     private $_mysqli;
@@ -19,8 +20,11 @@ class kosik
     public function __construct()
     {
         $this->_mysqli = new database();
-        if (!isset($_SESSION['kosik'])){
+        $userClass = new user();
+        if (!isset($_SESSION['kosik']) AND !$userClass->isLogged()){
             $this->createTempKosik();
+        } elseif (!isset($_SESSION['kosik']) AND $userClass->isLogged()){
+            $this->createUsersKosik($userClass->id);
         }
     }
 
@@ -51,7 +55,6 @@ class kosik
         $_SESSION['kosik']['user_id']       = $user_id;
         $_SESSION['kosik']['obsah']         = array();
         //$_SESSION['kosik']['cenaCelkem']  = 0;
-
     }
 
     public function getKosikId(){
@@ -128,7 +131,7 @@ class kosik
      */
     public function deleteTempKosik(){
         unset($_SESSION['kosik']);
-        $this->createTempKosik();
+        // $this->createTempKosik();
     }
 
     /**

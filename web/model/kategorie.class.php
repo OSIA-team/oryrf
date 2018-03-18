@@ -6,6 +6,7 @@
 
 namespace database;
 use database;
+use database\jidlo;
 class kategorie {
 	private $_mysqli;
 
@@ -82,7 +83,7 @@ class kategorie {
     public function updateKategorie($update, $where, $originalURL = '')
    {
        if ($originalURL != ''){
-           $menuItemClass = new \jidlo($this->_mysqli);
+           $menuItemClass = new jidlo($this->_mysqli);
            $menuItem_update = [
                'kategorie' => (string)$update['url']
            ];

@@ -10,7 +10,9 @@ namespace core;
 use database\database;
 use database\jidlo;
 use database\kategorie;
+use database\objednavka;
 use core\upload;
+use core\core;
 
 class form
 {
@@ -20,7 +22,8 @@ class form
         'edit_jidlo' => 'editJidlo',
         'edit_kategorie' => 'editKategorie',
         'pridat_jidlo' => 'pridatJidlo',
-        'upload_img' => 'uploadImgJidlo'
+        'upload_img' => 'uploadImgJidlo',
+        'obj-status' => 'objStatus'
     );
 
     public function __construct($data){
@@ -250,7 +253,7 @@ class form
 
         $result = $kategorieClass->updateKategorie($update, $where, $kategorieClass->url);
         if ($result){
-            header("Location: ../?page=nastaveni&action=kategorie");
+            header("Location: ?page=nastaveni&action=kategorie");
         } else {
             echo '<h2>ERROR</h2>';
             echo '<pre>';
@@ -332,5 +335,28 @@ class form
 
     private function finishOrder(){
 
+    }
+
+    private function objStatus(){
+        $objednavka = new objednavka();
+
+        switch ($this->data['obj-status']){
+            case 'Storno':
+                    if(!$objednavka->changeStatus(3,$this->data['id'])){
+                        \core\core::debugLog("Change obj status to: 3 Failed");
+                    }
+                break;
+
+            case 'Vydat':
+                    if(!$objednavka->changeStatus(2,$this->data['id'])){
+                \core\core::debugLog("Change obj status to: 2 Failed");
+            }
+                break;
+
+            default:
+                    //error
+                    \core\core::debugLog('Bad status to change status value: '.$this->data['obj-status']);
+                break;
+        }
     }
 }

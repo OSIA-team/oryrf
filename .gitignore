@@ -2,5 +2,6 @@
 
 .idea/*
 web/img/
+web/tmp/log_Debug.txt
 .htaccess
 .htpasswd

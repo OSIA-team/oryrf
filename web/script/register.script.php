@@ -13,8 +13,7 @@ if (isset($_POST['register'])) {
 
     require_once '../model/user.class.php';
     require_once '../model/database.class.php';
-    $mysqli = new database();
-    $userClass = new user($mysqli);
+    $userClass = new \database\user();
     $password = crypt($password,'$2a$07$thisisspartabel3syoknow$');
 
     $insert = array(
@@ -23,6 +22,7 @@ if (isset($_POST['register'])) {
         'jmeno' => (string)$jmeno,
         'prijmeni' => (string)$prijmeni,
         'mobil' =>  (string)$telefon,
+        'adresa' => (string)$adresa,
         'registered' => 1
     );
 

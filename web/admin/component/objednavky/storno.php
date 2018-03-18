@@ -1,19 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: krystofkosut
- * Date: 30.01.18
- * Time: 23:02
+ * User: kkosu
+ * Date: 17.03.2018
+ * Time: 15:46
  */
 
-$objednavky = $objednavkaClass->getAllObjednavkaByStatus(2);
+$objednavky = $objednavkaClass->getAllObjednavkaByStatus(3);
 ?>
 
 <h2><a href="#">Objednávky</a> &raquo; <a href="#" class="active">Přehled</a></h2>
 
 <div id="main">
 
-    <h3>Vydané objednávky</h3>
+    <h3>Stornované objednávky</h3>
 
     <form>
         <div class="container">

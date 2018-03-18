@@ -18,7 +18,7 @@ foreach (glob("../model/*.php") as $filename)
 {
     include $filename;
 }
-
+\core\core::$configFile = require_once '../config.php';
 function multiexplode ($delimiters,$string) {
 
 	$ready = str_replace($delimiters, $delimiters[0], $string);
@@ -46,6 +46,7 @@ if (isset($_POST)){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
+
 <!-- JavaScripts-->
 <script type="text/javascript" src="style/js/jquery.js"></script>
 <script type="text/javascript" src="style/js/jNice.js"></script>

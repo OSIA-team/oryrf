@@ -15,7 +15,7 @@ $objednavka = $objednavkaClass->getAllInObjednavka($id);
 
     <div id="main">
 
-        <h3>Objednávka číslo: <?= $id ?></h3>
+        <h3>Objednávka číslo: <?= $id ?> <span style="color: darkred;"><strong><?= $objednavka[0]['status'] ?></strong></span></h3>
         <table class="ObjDetail">
             <thead>
                 <tr>
@@ -45,7 +45,13 @@ $objednavka = $objednavkaClass->getAllInObjednavka($id);
             <b>Cena celkem:</b> <?= $objednavka[0]['cenacelkem'] ?> Kč
         </p>
 
-
+        <p>
+            <form method="post" class="right">
+                <input type="hidden" name="id" value="<?= $id ?>" />
+                <input type="submit" name="obj-status" value="Vydat" class="mybtn-green" />
+                <input type="submit" name="obj-status" value="Storno" class="btn red" />
+            </form>
+        </p>
 
         <?php
         // var_dump($objednavka);

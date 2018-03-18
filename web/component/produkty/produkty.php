@@ -12,7 +12,6 @@
 
   $foto = $menuItem->getFotkaByJidloId($jidlo['id']);
   //Zjistim pocet v kosiku pro lepsi ovladani
-    $handler->debug($foto['path'].$foto['nazev']);
  ?>
       <div class="product">
           <form method="post">
