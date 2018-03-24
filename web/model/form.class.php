@@ -117,7 +117,8 @@ class form
 
     private function editJidlo() {
         $menuItem = new jidlo();
-        $menu       = (!isset($this->data['menu']))     ? 0 : 1 ;
+        $priloha                = (!isset($this->data['priloha']))     ? 0 : 1 ;
+        $priloha_modulo         = (!isset($this->data['priloha_modulo']))     ? 0 : 1 ;
 
         $where = [
             'id' => $this->data['id']
@@ -129,7 +130,9 @@ class form
             'ingredience' => "{$this->data['ingredience']}",
             'kategorie'   => "{$this->data['kategorie']}",
             'gramaz'      => "{$this->data['gramaz']}",
-            'cena'        => $this->data['cena']
+            'cena'        => $this->data['cena'],
+            'priloha'       => $priloha,
+            'priloha_modulo' => $priloha_modulo
         );
 
         $edit = $menuItem->editJidlo($update, $where);
@@ -265,13 +268,17 @@ class form
     private function pridatJidlo(){
         $menuItem = new jidlo();
 
+        $priloha = (isset($this->data['priloha']))?$this->data['priloha']:'';
+        $priloha_modulo = (isset($this->data['priloha_modulo']))?$this->data['priloha_modulo']:'';
         $insert_jidlo = array(
-            'nazev'       => "{$this->data['nazev']}",
-            'popis'       => "{$this->data['popis']}",
-            'ingredience' => "{$this->data['ingredience']}",
-            'kategorie'   => "{$this->data['kategorie']}",
-            'gramaz'      => "{$this->data['gramaz']}",
-            'cena'        => $this->data['cena']
+            'nazev'             => "{$this->data['nazev']}",
+            'popis'             => "{$this->data['popis']}",
+            'ingredience'       => "{$this->data['ingredience']}",
+            'kategorie'         => "{$this->data['kategorie']}",
+            'gramaz'            => "{$this->data['gramaz']}",
+            'cena'              => $this->data['cena'],
+            'priloha_modulo'    => $priloha_modulo,
+            'priloha'           => $priloha
         );
 
 
