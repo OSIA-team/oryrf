@@ -57,7 +57,8 @@ if($_GET['action'] == "pridat"):
                      <label><input type="checkbox" name="priloha" value="1" class="jNiceCheckbox" style="display: block;">     Příloha</label>
                      <label><input type="checkbox" name="alko" value="1" class="jNiceCheckbox" style="display: block;">        Alkohol</label>
                      <label><input type="checkbox" name="hracka" value="1" class="jNiceCheckbox" style="display: block;">      Hračka</label> -->
-                    <label><input type="checkbox" name="menu" value="1" class="jNiceCheckbox" style="display: block;">Menu</label>
+                    <label><input type="checkbox" name="priloha" value="1" class="jNiceCheckbox" style="display: block;">Je příloha</label>
+                    <label><input type="checkbox" name="priloha_modulo" value="1" class="jNiceCheckbox" style="display: block;">Má přílohu</label>
                 </p>
 
                 <input type="submit" value="Přidat" name="pridat_jidlo" />

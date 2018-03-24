@@ -63,10 +63,12 @@ if ($_GET['action'] == "edit"):
 
                 <p>
                     <?php
-                    $mchecked = (@$jidlo['menu'] == 1)?'checked':'';
+                    $pchecked = (@$jidlo['priloha'] == 1)?'checked':'';
+                    $pmchecked = (@$jidlo['priloha_modulo'] == 1)?'checked':'';
                     ?>
 
-                    <label><input type="checkbox" name="menu" value="1" class="jNiceCheckbox" style="display: block;" <?= $mchecked ?> >Menu</label>
+                    <label><input type="checkbox" name="priloha" value="1" class="jNiceCheckbox" style="display: block;" <?= $pchecked ?> >Je příloha</label>
+                    <label><input type="checkbox" name="priloha_modulo" value="1" class="jNiceCheckbox" style="display: block;" <?= $pmchecked ?> >Má přílohu</label>
                 </p>
 
                 <p>
