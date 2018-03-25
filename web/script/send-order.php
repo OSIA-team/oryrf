@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);
 session_start();
 //pridat_do_kosiku
 foreach (glob("../model/*.php") as $filename)
