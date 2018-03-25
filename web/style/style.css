@@ -9,6 +9,11 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     color: rgb(0, 0, 0);
 }
 
+.kosik_wrap{
+  padding-bottom: 20px;
+  min-height: 60vh;
+}
+
 #picker{
   display: none;
 }
@@ -594,7 +599,7 @@ margin: 0 auto;
   display: flex;
   margin-top: 50px;
   width: 100%;
-  padding: 5px 25px;
+  padding: 5px 25px 60px;
 }
 .navigation-sidebar a{
   color: white;
