@@ -54,7 +54,7 @@
               ?>
             <h4>Vyberte si přílohu k <?= $jidlo['nazev'] ?></h4>
             <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
-
+            <form class="prilohy">
                 <?php
                     $lastKat = "";
                     $prilohy = $menuItem->getAllPriloha();
@@ -73,10 +73,10 @@
               <?php
                 endforeach;
               ?>
-
+            </form>
           </div>
           <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">přidat přílohu</a>
+            <a href="#!" class="modal-action modal-close waves-effect add-priloha waves-green btn-flat">přidat přílohu</a>
           </div>
         </div>
 <?php
@@ -110,6 +110,23 @@ $(function () {
 
         });
 
+
+        $('.add-priloha').on('click', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'script/send-order.php',
+            data: $(this).closest('.prilohy').serialize(),
+            dataType: 'json',
+            async: false,
+            success: function () {
+              console.log('odeslano');
+            }
+          });
+
+        });
       });
 
 
