@@ -92,8 +92,11 @@ $(function () {
             type: 'post',
             url: 'script/send-order.php',
             data: $(this).closest('.produkt-form').serialize(),
-            success: function () {
-             alert('form was submitted');
+            dataType: 'json',
+            async: false,
+            success: function (d) {
+             document.getElementById('pocet-kosik').innerHTML = d.pocet;
+             document.getElementById('cena-kosik').innerHTML = d.cena+" Kč";
             }
           });
 
