@@ -67,8 +67,8 @@
                   <div class="">
                   <input type="hidden" name="jidlo_id[]" value="<?= $priloha['id'] ?>" />
                   <input type="hidden" class="quntity-input" name="quntity-1[]" value="1" />
-                  <input type="checkbox" class="filled-in" id="priloha" />
-                  <label for="omacka1"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
+                  <input type="checkbox" class="filled-in" id="priloha<?= $priloha['id'] ?>" />
+                  <label for="priloha<?= $priloha['id'] ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
                 </div>
               <?php
                 endforeach;
