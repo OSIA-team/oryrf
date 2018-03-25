@@ -17,7 +17,7 @@ $kosikClass = new database\kosik();
         $jidlo_id = $_POST['jidlo_id'];
         $result = $kosikClass->addInKosik($jidlo_id, $pocet);
     }
-    
+
     $newPocet = $kosikClass->getPocet();
     $newCena = $kosikClass->getCena();
 
