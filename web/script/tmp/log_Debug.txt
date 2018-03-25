@@ -1,0 +1,3 @@
+Site: 127.0.0.1 - March 25, 2018, 3:21 pm
+<p>An error has occurred:</p><p>Error at 2018-03-25 15:21:42: Query: <br />get_row You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com AND registered = 1 LIMIT 1' at line 1</p><p>Severity: Fatal</p>
+-------------------------

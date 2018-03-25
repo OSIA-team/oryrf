@@ -16,6 +16,15 @@ if (isset($_POST['register'])) {
     require_once '../model/user.class.php';
     require_once '../model/database.class.php';
     $userClass = new \database\user();
+    // Check if email exists in database and is registered
+    $database = new \database\database();
+    $registed = $database->get_row("SELECT id FROM user WHERE email = \"{$email}\"AND registered = 1 LIMIT 1");
+    if ($registed){
+        echo json_encode(array('User alredy registered'));
+        die();
+    }
+
+
     $password = crypt($password,'$2a$07$thisisspartabel3syoknow$');
 
     $insert = array(

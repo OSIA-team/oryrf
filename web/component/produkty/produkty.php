@@ -31,7 +31,18 @@
             </div>
 
                 <input type="hidden" name="jidlo_id" value="<?= $jidlo['id'] ?>" />
-                <input type="submit" name="pridat_do_kosiku" class="material-icons" value="shopping_basket"/>
+              <?php
+              if ($jidlo['priloha_modulo'] == 1):
+              ?>
+                  <input type="submit" name="pridat_do_kosiku" class="material-icons btn modal-trigger" value="shopping_basket" data-target="priloha" />
+              <?php
+                endif;
+                if($jidlo['priloha_modulo'] == 1):
+              ?>
+                    <input type="submit" name="pridat_do_kosiku" class="material-icons" value="shopping_basket"/>
+              <?php
+                endif;
+              ?>
           </form>
         </div>
 <?php
