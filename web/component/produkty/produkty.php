@@ -14,7 +14,7 @@
   //Zjistim pocet v kosiku pro lepsi ovladani
  ?>
       <div class="product">
-          <form method="post">
+          <form class="produkt-form">
             <div class="obrazek">
                <img src="<?php echo $foto['path'].$foto['nazev']; ?>" alt="">
                <div class="title"><h3><?= $jidlo['nazev'] ?></h3></div>
@@ -34,16 +34,40 @@
               <?php
               if ($jidlo['priloha_modulo'] == 1):
               ?>
-                  <input type="submit" name="pridat_do_kosiku" class="material-icons btn modal-trigger" value="shopping_basket" data-target="priloha" />
+                  <button type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn modal-trigger" value="shopping_basket" data-target="priloha" >Do košíku</button>
               <?php
                 endif;
                 if($jidlo['priloha_modulo'] == 0):
               ?>
-                    <input type="submit" name="pridat_do_kosiku" class="material-icons" value="shopping_basket"/>
+                    <input type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn" value="shopping_basket"/>
               <?php
                 endif;
               ?>
           </form>
+        </div>
+        <div id="priloha" class="modal">
+          <div class="modal-content">
+            <h4>K hranolkům omáčku nebo dip?</h4>
+            <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
+            <div class="">
+              <input type="checkbox" class="filled-in" id="omacka1" />
+              <label for="omacka1">Česneková omáčka <b>35,-Kč</b></label>
+            </div>
+
+            <div class="">
+              <input type="checkbox" class="filled-in" id="omacka2" />
+              <label for="omacka2">Kečupová omáčka <b>35,-Kč</b></label>
+            </div>
+
+            <div class="">
+              <input type="checkbox" class="filled-in" id="omacka3" />
+              <label for="omacka3">Tatarska omáčka <b>35,-Kč</b></label>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">přidat do košíku</a>
+          </div>
         </div>
 <?php
 endforeach;
@@ -51,6 +75,31 @@ endforeach;
 </div>
 
 <script type="text/javascript">
+$(document).ready(function(){
+  $('.modal').modal();
+});
+
+
+$(function () {
+
+        $('.objednat-btn').on('click', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'script/send-order.php',
+            data: $('.produkt-form').serialize(),
+            success: function () {
+             alert('form was submitted');
+            }
+          });
+
+        });
+
+      });
+
+
 $(".ddd").on("click", function () {
 
     var $button = $(this);
