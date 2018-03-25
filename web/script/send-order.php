@@ -10,10 +10,10 @@ $kosikClass = new database\kosik();
 
     if (is_array($_POST['jidlo_id'])){
         foreach ($_POST['jidlo_id'] as $key => $value){
-            $result = $kosikClass->addInKosik($_POST['jidlo_id'][$key], 1);
+            $result = $kosikClass->addInKosik($value, 1);
         }
     } else {
-        $pocet = $_POST['quntity-1'];
+        @$pocet = $_POST['quntity-1'];
         $jidlo_id = $_POST['jidlo_id'];
         $result = $kosikClass->addInKosik($jidlo_id, $pocet);
     }
