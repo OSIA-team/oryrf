@@ -91,7 +91,7 @@ $(function () {
           $.ajax({
             type: 'post',
             url: 'script/send-order.php',
-            data: $('.produkt-form').serialize(),
+            data: $(this).closest('.produkt-form').serialize(),
             success: function () {
              alert('form was submitted');
             }
