@@ -10,6 +10,8 @@ if (isset($_POST['register'])) {
     foreach ($_POST as $key => $value) {
         $$key = $value;
     }
+    require_once '../model/core.class.php';
+    \core\core::$configFile = require_once '../config.php';
 
     require_once '../model/user.class.php';
     require_once '../model/database.class.php';

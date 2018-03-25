@@ -68,12 +68,11 @@ if ($objednavka_result != TRUE){
 $kosikClass ->deleteTempKosik();
 //TODO: IS USER LOGGED IN?
 $update = array(
-    'username' => (string)$user,
     'email' => $email,
     'jmeno' => $jmeno,
     'mobil' => $mobil,
     'adresa' => $adresa,
-    'registered' => 0
+    'registered' => 1
 );
 
 $where = array(

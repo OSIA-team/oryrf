@@ -11,6 +11,7 @@ use database\database;
 use database\jidlo;
 use database\kategorie;
 use database\objednavka;
+use database\user;
 use core\upload;
 use core\core;
 
@@ -23,7 +24,8 @@ class form
         'edit_kategorie' => 'editKategorie',
         'pridat_jidlo' => 'pridatJidlo',
         'upload_img' => 'uploadImgJidlo',
-        'obj-status' => 'objStatus'
+        'obj-status' => 'objStatus',
+     //   'register' => 'register'
     );
 
     public function __construct($data){
@@ -342,6 +344,26 @@ class form
 
     private function finishOrder(){
 
+
+    }
+
+    private function register(){
+      /*  $password = crypt($this->data['password'],'$2a$07$thisisspartabel3syoknow$');
+
+        $insert = array(
+            'password' => (string)$password,
+            'email' => (string)$this->data['email'],
+            'jmeno' => (string)$this->data['jmeno'],
+            'prijmeni' => (string)$this->data['prijmeni'],
+            'mobil' =>  (string)$this->data['telefon'],
+            'adresa' => (string)$this->data['adresa'],
+            'registered' => 1
+        );
+
+        $userClass = new user();
+        $userId = $userClass->addUser($insert);
+        if ($userId) $userClass->createLoginSession($userId);
+        if (!$userId) // */
     }
 
     private function objStatus(){
