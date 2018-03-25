@@ -11,7 +11,7 @@ var_dump($_SESSION);
 echo '</pre>';
 ?>
 
-
+<section class="kosik_wrap">
 <div class="progres">
     <div class="timeline">
         <div class="timeline-step complete"><p>1</p><div class="header">Košík</div></div>
@@ -83,7 +83,7 @@ echo '</pre>';
             <input type="submit" name="finish-order" class="col s12 m6  offset-l10 next-btn" value="Dokončit objednávku">
         </div>
     </form>
-
+</section>
 
 </section>
 </body>
