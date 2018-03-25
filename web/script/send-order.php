@@ -7,7 +7,6 @@ foreach (glob("../model/*.php") as $filename)
 }
 \core\core::$configFile = require_once '../config.php';
 $kosikClass = new database\kosik();
-
     if (is_array($_POST['jidlo_id'])){
         foreach ($_POST['jidlo_id'] as $key => $value){
             if($_POST['count'][$key] != 0)$result = $kosikClass->addInKosik($value, 1);
@@ -17,10 +16,7 @@ $kosikClass = new database\kosik();
         $jidlo_id = $_POST['jidlo_id'];
         $result = $kosikClass->addInKosik($jidlo_id, $pocet);
     }
-
     $newPocet = $kosikClass->getPocet();
     $newCena = $kosikClass->getCena();
-
     echo json_encode(array("cena" => $newCena, 'pocet' => $newPocet));
-
 ?>

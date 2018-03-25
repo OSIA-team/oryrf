@@ -54,7 +54,7 @@
               ?>
             <h4>Vyberte si přílohu k <?= $jidlo['nazev'] ?></h4>
             <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
-
+            <form class="prilohy">
                 <?php
                     $lastKat = "";
                     $prilohy = $menuItem->getAllPriloha();
@@ -66,17 +66,16 @@
                 ?>
                   <div class="">
                   <input type="hidden" name="jidlo_id[]" value="<?= $priloha['id'] ?>" />
-                  <input type="hidden" class="quntity-input" name="quntity-1[]" value="1" />
                   <input type="checkbox" class="filled-in" id="priloha<?= $priloha['id'].$i ?>" />
                   <label for="priloha<?= $priloha['id'].$i ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
                 </div>
               <?php
                 endforeach;
               ?>
-
+            </form>
           </div>
           <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">přidat přílohu</a>
+            <a href="#!" class="modal-action modal-close waves-effect add-priloha waves-green btn-flat">přidat přílohu</a>
           </div>
         </div>
 <?php
@@ -111,6 +110,25 @@ $(function () {
 
         });
 
+
+        $('.add-priloha').on('click', function (e) {
+
+           $(this).closest('div').prev().closest('.modal-content').find('.prilohy').css('background', 'red');
+           console.log($(this).closest('div').prev().closest('.modal-content').find('.prilohy').serialize());
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'script/send-order.php',
+            data: $(this).closest('div').prev().closest('.modal-content').find('.prilohy').serialize(),
+            dataType: 'json',
+            async: false,
+            success: function () {
+              console.log('odeslano');
+            }
+          });
+
+        });
       });
 
 
