@@ -22,6 +22,8 @@ $user_id = (isset($_SESSION['user_id']))?$_SESSION['user_id']:0;
 foreach ($_POST as $key => $value) {
     $$key = $value;
 }
+$database = new \database\database();
+$database->fk(0);
 $casdoruceni = ($cas == "")?"Co nejdříve":$cas;
 
 // if user not logged in -- create user record
