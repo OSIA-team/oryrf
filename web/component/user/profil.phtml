@@ -3,47 +3,16 @@
   <div class="info">
     <h4>Patrik Šafář</h4>
     <h5>safarpatrik@seznam.cz</h5>
-    <a href="#!odhlsair">Odhlásit</a>
+    <p>Boleslavská 4, 130 00 Praha</br> +420 737828024</p>
+    <a href="logout.php">Odhlásit</a>
   </div>
   <div class="navigace">
       <ul>
-        <a href="#"><li class="waves-light btn active">Objednávky</li></a>
-        <a href="#"><li class="waves-light btn">Osobní nastavení</li></a>
+        <a href="#" class="show-order-history"><li class="waves-light objednavky-link btn active">Objednávky</li></a>
+        <a href="#!" class="edit-profile"><li class="waves-light settings-link btn">Změnit osobní údaje</li></a>
       </ul>
   </div>
-  <div class="objednavky">
-      <div class="bunka">
-        <div class="info">
-          <div class="basic">
-            <div class="date">25.3.2018</div>
-            <div class="adresa">Boleslavská 4, 130 00 Praha</div>
-          </div>
-          <div class="price"> 155 Kč</div>
-        </div>
-        <div class="produkt">
-          <ul>
-            <li>2x Karbanétek - 64 Kč</li>
-            <li>1x Karbanétek - 120 Kč</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="bunka">
-        <div class="info">
-          <div class="basic">
-            <div class="date">25.3.2018</div>
-            <div class="adresa">Boleslavská 4, 130 00 Praha</div>
-          </div>
-          <div class="price"> 155 Kč</div>
-        </div>
-        <div class="produkt">
-          <ul>
-            <li>2x Karbanétek - 64 Kč</li>
-            <li>1x Karbanétek - 120 Kč</li>
-          </ul>
-        </div>
-      </div>
-
+  <div id="objednavky-historie" class="objednavky">
       <div class="bunka">
         <div class="info">
           <div class="basic">
@@ -60,4 +29,57 @@
         </div>
       </div>
   </div>
+  <div id="edit-profil" class="">
+      <h4>Změna osobních údajů</h4>
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate" value="safarpatrik@seznam.cz">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="telefon" type="text" class="validate" value="+420736289288">
+          <label for="telefon">Telefon</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="Patrik">
+          <label for="first_name">Jméno</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate" value="Šafář">
+          <label for="last_name">Příjmení</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="address" type="text" class="validate" value="Boleslavská 4, 130 00  Praha">
+          <label for="address">Adresa</label>
+        </div>
+      </div>
+      <button type="submit" name="save" class="btn amber accent-3">Uložit změny</button>
+    </form>
+  </div>
+  </div>
 </section>
+
+<script type="text/javascript">
+  $('.edit-profile').click(function(){
+      $('.objednavky-link ').removeClass('active');
+      $('.settings-link').addClass('active');
+
+      $( '#objednavky-historie').hide();
+      $( '#edit-profil').show();
+
+  })
+
+  $('.show-order-history').click(function(){
+      $( '#objednavky-historie').show();
+      $( '#edit-profil').hide();
+
+      $('.objednavky-link ').addClass('active');
+      $('.settings-link').removeClass('active');
+  })
+</script>
