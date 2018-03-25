@@ -27,7 +27,7 @@
      <h5>Přihlašte se</h5>
 <div class="loginform-in">
 <div class="err" id="add_err"></div>
-<fieldset>
+
  <form action="./" method="post">
  <ul>
  <li> <label for="email">Email</label>
@@ -35,10 +35,10 @@
  <li> <label for="password">Password</label>
  <input type="password" name="password" id="password"  /></li>
  <li> <label></label>
- <input type="submit" id="login-btn" name="login" value="Login" class="loginbutton" ></li>
+ <input type="submit" id="login-btn" name="login" value="Přihlásit" class="waves-effect waves-light btn amber darken-2 " ></li>
  </ul>
-         </form>
-</fieldset>
+</form>
+
 </div>
    </div>
  </div>
