@@ -18,6 +18,7 @@ foreach ($obsahKosiku as $id => $pocet){
 unset($obsahKosiku);
 // var_dump($jidlaVkosiku);
 ?>
+<section class="kosik_wrap">
 <div class="progres">
     <div class="timeline">
         <div class="timeline-step complete"><p>1</p><div class="header">Košík</div></div>
@@ -71,7 +72,7 @@ unset($obsahKosiku);
     </div>
 
 </form>
-
+</section>
 <script type="text/javascript">
 $(".close-btn").on("click", function () {
 
