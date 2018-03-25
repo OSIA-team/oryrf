@@ -34,7 +34,7 @@
               <?php
               if ($jidlo['priloha_modulo'] == 1):
               ?>
-                  <button type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn modal-trigger" value="shopping_basket" data-target="priloha" >Do košíku</button>
+                  <button type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn modal-trigger" data-target="priloha" ><i class="material-icons">shopping_basket</i></button>
               <?php
                 endif;
                 if($jidlo['priloha_modulo'] == 0):
@@ -45,6 +45,8 @@
               ?>
           </form>
         </div>
+
+
         <div id="priloha" class="modal">
           <div class="modal-content">
             <h4>K hranolkům omáčku nebo dip?</h4>

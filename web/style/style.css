@@ -742,7 +742,7 @@ h4.background::before{
 .product .cena .text{
   font-weight: bold;
 }
-.product input[type="submit"]{
+.product input[type="submit"], .product button{
   width: 100%;
   background-color: #ff2633;
   text-align: center;
@@ -758,11 +758,11 @@ h4.background::before{
   font-size: 32px;
 }
 
-.product input[type="submit"]:hover{
+.product input[type="submit"]:hover, .product button:hover {
   background-color: #df0714;
 }
 
-.product input[type="submit"] .material-icons{
+.product input[type="submit"] .material-icons, .product button .material-icons{
   font-size: 33px;
   line-height: 50px;
 }
