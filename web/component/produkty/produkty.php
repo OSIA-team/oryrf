@@ -37,7 +37,7 @@
                   <input type="submit" name="pridat_do_kosiku" class="material-icons btn modal-trigger" value="shopping_basket" data-target="priloha" />
               <?php
                 endif;
-                if($jidlo['priloha_modulo'] == 1):
+                if($jidlo['priloha_modulo'] == 0):
               ?>
                     <input type="submit" name="pridat_do_kosiku" class="material-icons" value="shopping_basket"/>
               <?php
