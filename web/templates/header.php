@@ -6,7 +6,7 @@
 <nav class="user">
     <?php
         if (isset($userClass->id)):
-            echo $userClass->email;
+            echo  "<a href=\"?page=user\" >".$userClass->email."</a>";
     ?>
             &nbsp;
     <a class="waves-effect waves-light modal-trigger" href="logout.php">Odhlásit se</a>
