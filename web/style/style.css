@@ -14,6 +14,10 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   min-height: 60vh;
 }
 
+#edit-profil{
+  display: none;
+}
+
 #picker{
   display: none;
 }
@@ -921,7 +925,7 @@ input[type=text]:focus {
 
 .profil{
   min-height: 80vh;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .profil h4{
@@ -945,10 +949,11 @@ input[type=text]:focus {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 
 .profil .navigace li{
-  margin: 0 16px;
+  margin: 8px 16px;
   border-radius: 5px;
   background-color: #e0e0e0;
   color: #5a5a5a;
@@ -971,10 +976,11 @@ input[type=text]:focus {
 .profil .adresa{
   padding-bottom: 10px;
   color: grey;
+  font-size: 12px;
 }
 
 .profil .objednavky .bunka{
-    margin-bottom: 35px;
+    margin-bottom: 50px;
     border-top: 1px solid whitesmoke;
     padding-top: 8px;
 }
@@ -1000,11 +1006,16 @@ input[type=text]:focus {
     font-size: 24px;
     line-height: 65px;
 }
-.profil .objednavky{
+.profil .objednavky, #edit-profil{
   max-width: 800px;
   margin: 0 auto;
   margin-top: 64px;
   margin-bottom: 70px;
+}
+
+#edit-profil h4{
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .profil .objednavky .date{
