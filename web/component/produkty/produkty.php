@@ -6,7 +6,7 @@
   } else {
       $jidla    = $menuItem->getAllJidloByKategorie($urlKategorie);
   }
-
+  $i = 1;
   // Write out
   foreach($jidla as $jidlo):
 
@@ -67,8 +67,8 @@
                   <div class="">
                   <input type="hidden" name="jidlo_id[]" value="<?= $priloha['id'] ?>" />
                   <input type="hidden" class="quntity-input" name="quntity-1[]" value="1" />
-                  <input type="checkbox" class="filled-in" id="priloha<?= $priloha['id'] ?>" />
-                  <label for="priloha<?= $priloha['id'] ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
+                  <input type="checkbox" class="filled-in" id="priloha<?= $priloha['id'].$i ?>" />
+                  <label for="priloha<?= $priloha['id'].$i ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
                 </div>
               <?php
                 endforeach;
@@ -80,6 +80,7 @@
           </div>
         </div>
 <?php
+  $i++;
 endforeach;
  ?>
 </div>
