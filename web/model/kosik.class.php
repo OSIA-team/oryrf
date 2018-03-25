@@ -71,9 +71,12 @@ class kosik
        // $count = count($_SESSION['kosik']['obsah']);
         if (@!$_SESSION['kosik']['obsah'][$jidlo_id]){
             $_SESSION['kosik']['obsah'][$jidlo_id] = $pocet;
+            return true;
         } else {
             $_SESSION['kosik']['obsah'][$jidlo_id] = $_SESSION['kosik']['obsah'][$jidlo_id] + $pocet;
+            return true;
         }
+        return false;
        // $this->setObsah();
     }
 
