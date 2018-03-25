@@ -919,6 +919,113 @@ input[type=text]:focus {
   box-shadow: none!important;
 }
 
+.profil{
+  min-height: 80vh;
+  padding-top: 20px;
+}
+
+.profil h4{
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+.profil h5{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.profil a{
+  font-weight: bold;
+}
+
+.profil .navigace a{
+  color: red;
+}
+.profil .navigace ul{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.profil .navigace li{
+  margin: 0 16px;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  color: #5a5a5a;
+}
+
+.profil .navigace li.active{
+  background: #ffc400;
+  color: white;
+}
+
+.profil .info{
+  text-align: center;
+}
+
+.profil .objednavky .info{
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+.profil .adresa{
+  padding-bottom: 10px;
+  color: grey;
+}
+
+.profil .objednavky .bunka{
+    margin-bottom: 60px;
+    border-top: 1px solid whitesmoke;
+    padding-top: 8px;
+}
+
+.profil .objednavky .produkt{
+  font-style: italic;
+      margin-left: 17px;
+      background-color: #f7f7f7;
+      padding-left: 25px;
+      border-radius: 5px;
+}
+
+.profil .objednavky .produkt ul{
+  margin: 0;
+  padding: 8px 0px;
+}
+
+.profil .basic, .profil .price{
+  padding: 0 8px;
+}
+.profil .price{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 65px;
+}
+.profil .objednavky{
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 64px;
+}
+
+.profil .objednavky .date{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.profil .info{
+text-align: center;
+}
+
+.profil .photo{
+    background: #F8F8F8;
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+    line-height: 120px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 .sp-quantity {
   width: 100px;
   height: 35px;
