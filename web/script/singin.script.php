@@ -14,10 +14,11 @@ session_start();
         {
             include $filename;
         }
+\core\core::$configFile = require_once '../config.php';
     $userClass = new \database\user();
     $kosikClass = new \database\kosik();
 
-    $kosikClass->deleteTempKosik();
+   // $kosikClass->deleteTempKosik();
 
     $userId = $userClass->checkIfExists($email, $password);
 
