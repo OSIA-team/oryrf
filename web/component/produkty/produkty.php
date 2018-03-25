@@ -66,7 +66,6 @@
                 ?>
                   <div class="">
                   <input type="hidden" name="jidlo_id[]" value="<?= $priloha['id'] ?>" />
-                  <input type="hidden" class="quntity-input" name="quntity-1[]" value="1" />
                   <input type="checkbox" class="filled-in" id="priloha<?= $priloha['id'].$i ?>" />
                   <label for="priloha<?= $priloha['id'].$i ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
                 </div>
@@ -114,12 +113,14 @@ $(function () {
 
         $('.add-priloha').on('click', function (e) {
 
+           $(this).closest('div').prev().closest('.modal-content').find('.prilohy').css('background', 'red');
+           console.log($(this).closest('div').prev().closest('.modal-content').find('.prilohy').serialize());
           e.preventDefault();
 
           $.ajax({
             type: 'post',
             url: 'script/send-order.php',
-            data: $(this).closest('.prilohy').serialize(),
+            data: $(this).closest('div').prev().closest('.modal-content').find('.prilohy').serialize(),
             dataType: 'json',
             async: false,
             success: function () {
