@@ -1004,6 +1004,7 @@ input[type=text]:focus {
   max-width: 800px;
   margin: 0 auto;
   margin-top: 64px;
+  margin-bottom: 70px;
 }
 
 .profil .objednavky .date{
