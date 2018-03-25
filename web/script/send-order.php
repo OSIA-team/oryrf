@@ -11,7 +11,10 @@ $kosikClass = new database\kosik();
     $pocet = $_POST['quntity-1'];
     $jidlo_id = $_POST['jidlo_id'];
     $result = $kosikClass->addInKosik($jidlo_id, $pocet);
-    
-    echo json_encode(array("true"));
+
+    $newPocet = $kosikClass->getPocet();
+    $newCena = $kosikClass->getCena();
+
+    echo json_encode(array("cena" => $newCena, 'pocet' => $newPocet));
 
 ?>
