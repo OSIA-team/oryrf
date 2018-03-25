@@ -6,9 +6,6 @@
  * Time: 23:23
  */
 
-echo "<pre>";
-var_dump($_SESSION);
-echo '</pre>';
 ?>
 
 <section class="kosik_wrap">
@@ -22,8 +19,14 @@ echo '</pre>';
 
 <section class="mid-step">
   <div class="login-vyzva">
+      <?php
+        if (!$userClass->isLogged()):
+      ?>
   <a class="waves-effect waves-light modal-trigger btn amber darken-2" href="#login">Přihlásit se</a> nebo <a class="waves-effect waves-light modal-trigger btn amber darken-2" href="#register">registrovat</a>
   <br><br>Přihlášení vám ušetří čas s vyplňováním objednávky. Ale můžete si objednat i bez přihlášení.
+      <?php
+        endif;
+      ?>
   </div>
     <h4>Způsob doručení a adresa</h4>
     <form class="" method="post" action="?page=kosik&action=finish-order">

@@ -101,6 +101,9 @@ switch ($page){
         break;
     case 'kontakt':
         break;
+    case 'user':
+            require 'component/user/index.php';
+        break;
 }
 
 require 'templates/footer.php';
