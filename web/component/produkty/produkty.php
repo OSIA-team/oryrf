@@ -49,26 +49,34 @@
 
         <div id="priloha" class="modal">
           <div class="modal-content">
-            <h4>K hranolkům omáčku nebo dip?</h4>
+              <?php
+               //TODO: Editave v administraci
+              ?>
+            <h4>Vyberte si přílohu k <?= $jidlo['nazev'] ?></h4>
             <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
-            <div class="">
-              <input type="checkbox" class="filled-in" id="omacka1" />
-              <label for="omacka1">Česneková omáčka <b>35,-Kč</b></label>
-            </div>
 
-            <div class="">
-              <input type="checkbox" class="filled-in" id="omacka2" />
-              <label for="omacka2">Kečupová omáčka <b>35,-Kč</b></label>
-            </div>
-
-            <div class="">
-              <input type="checkbox" class="filled-in" id="omacka3" />
-              <label for="omacka3">Tatarska omáčka <b>35,-Kč</b></label>
-            </div>
+                <?php
+                    $lastKat = "";
+                    $prilohy = $menuItem->getAllPriloha();
+                    foreach ($prilohy as $priloha):
+                        if($lastKat != $priloha['kategorie']){
+                            echo "<h5>".$priloha['kategorie']."</h5>";
+                            $lastKat = $priloha['kategorie'];
+                        }
+                ?>
+                  <div class="">
+                  <input type="hidden" name="jidlo_id[]" value="<?= $priloha['id'] ?>" />
+                  <input type="hidden" class="quntity-input" name="quntity-1[]" value="1" />
+                  <input type="checkbox" class="filled-in" id="priloha" />
+                  <label for="omacka1"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
+                </div>
+              <?php
+                endforeach;
+              ?>
 
           </div>
           <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">přidat do košíku</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">přidat přílohu</a>
           </div>
         </div>
 <?php

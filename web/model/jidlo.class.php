@@ -213,4 +213,10 @@ class jidlo {
             $result = $this->_mysqli->get_results($query);
          return $result;
      }
+
+     public function getAllPriloha(){
+            $query = "SELECT * FROM menuItem WHERE priloha = 1 GROUP BY kategorie";
+            $result = $this->_mysqli->get_results($query);
+        return $result;
+     }
  }
