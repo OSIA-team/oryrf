@@ -368,6 +368,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `Bel3s`;
+SET foreign_key_checks = 0;
 INSERT INTO `Bel3s`.`fotka` (`id`, `nazev`, `path`, `jidlo_id`) VALUES (1, DEFAULT, DEFAULT, 1);
 INSERT INTO `Bel3s`.`fotka` (`id`, `nazev`, `path`, `jidlo_id`) VALUES (2, DEFAULT, DEFAULT, 2);
 INSERT INTO `Bel3s`.`fotka` (`id`, `nazev`, `path`, `jidlo_id`) VALUES (3, DEFAULT, DEFAULT, 3);

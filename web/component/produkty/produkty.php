@@ -46,49 +46,47 @@
           </form>
         </div>
 
-
-        <div id="priloha" class="modal">
-          <div class="modal-content">
-              <?php
-               //TODO: Editave v administraci
-              ?>
-            <h4>Vyberte si přílohu k <?= $jidlo['nazev'] ?></h4>
-            <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
-            <form class="prilohy">
-                <?php
-                    $lastKat = "";
-                    $prilohy = $menuItem->getAllPriloha();
-                    foreach ($prilohy as $priloha):
-                        if($lastKat != $priloha['kategorie']){
-                            echo "<h5>".$priloha['kategorie']."</h5>";
-                            $lastKat = $priloha['kategorie'];
-                        }
-                ?>
-                  <div class="">
-                  <input type="hidden" name="jidlo_id[]" value="<?= $priloha['id'] ?>" />
-                  <input type="checkbox" class="filled-in" id="priloha<?= $priloha['id'].$i ?>" />
-                  <label for="priloha<?= $priloha['id'].$i ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
-                </div>
-              <?php
-                endforeach;
-              ?>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect add-priloha waves-green btn-flat">přidat přílohu</a>
-          </div>
-        </div>
 <?php
   $i++;
 endforeach;
  ?>
+
+ <div id="priloha" class="modal">
+   <div class="modal-content">
+       <?php
+        //TODO: Editave v administraci
+       ?>
+     <h4>Vyberte si přílohu k</h4>
+     <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
+     <form class="prilohy">
+         <?php
+             $lastKat = "";
+             $prilohy = $menuItem->getAllPriloha();
+             foreach ($prilohy as $priloha):
+                 if($lastKat != $priloha['kategorie']){
+                     echo "<h5>".$priloha['kategorie']."</h5>";
+                     $lastKat = $priloha['kategorie'];
+                 }
+         ?>
+           <div class="">
+           <input type="checkbox" class="filled-in" name="jidlo_id[]" id="priloha<?= $priloha['id'] ?>" value="<?= $priloha['id'] ?>"/>
+           <label class="omacka-label" for="priloha<?= $priloha['id'] ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
+         </div>
+       <?php
+         endforeach;
+       ?>
+     </form>
+   </div>
+   <div class="modal-footer">
+     <a href="#!" class="modal-action modal-close waves-effect add-priloha waves-green btn-flat">přidat přílohu</a>
+   </div>
+ </div>
 </div>
 
 <script type="text/javascript">
 $(document).ready(function(){
   $('.modal').modal();
 });
-
 
 $(function () {
 
@@ -113,8 +111,6 @@ $(function () {
 
         $('.add-priloha').on('click', function (e) {
 
-           $(this).closest('div').prev().closest('.modal-content').find('.prilohy').css('background', 'red');
-           console.log($(this).closest('div').prev().closest('.modal-content').find('.prilohy').serialize());
           e.preventDefault();
 
           $.ajax({
@@ -123,8 +119,9 @@ $(function () {
             data: $(this).closest('div').prev().closest('.modal-content').find('.prilohy').serialize(),
             dataType: 'json',
             async: false,
-            success: function () {
-              console.log('odeslano');
+            success: function (d) {
+              document.getElementById('pocet-kosik').innerHTML = d.pocet;
+              document.getElementById('cena-kosik').innerHTML = d.cena+" Kč";
             }
           });
 

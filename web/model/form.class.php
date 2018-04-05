@@ -25,6 +25,7 @@ class form
         'pridat_jidlo' => 'pridatJidlo',
         'upload_img' => 'uploadImgJidlo',
         'obj-status' => 'objStatus',
+        'editUser'  => 'editUser'
      //   'register' => 'register'
     );
 
@@ -386,6 +387,23 @@ class form
                     //error
                     \core\core::debugLog('Bad status to change status value: '.$this->data['obj-status']);
                 break;
+        }
+    }
+
+    private function editUser(){
+        $userClass = new user();
+        $update = array(
+            'email' => (string)$this->data['email'],
+            'jmeno' => (string)$this->data['jmeno'],
+            'prijmeni' => (string)$this->data['prijmeni'],
+            'mobil' => (string)$this->data['mobil'],
+            'adresa'=> (string)$this->data['adresa']
+        );
+        $where = array('id' => $userClass->id);
+
+        $result = $userClass->editUser($update, $where);
+        if (!$result){
+            die('error');
         }
     }
 }

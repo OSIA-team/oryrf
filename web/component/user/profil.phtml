@@ -1,9 +1,11 @@
 <section class="container profil">
-  <div class="photo">PŠ</div>
+  <div class="photo">
+      <?= strtoupper($userClass->jmeno[0].$userClass->prijmeni[0]) ?>
+  </div>
   <div class="info">
-    <h4>Patrik Šafář</h4>
-    <h5>safarpatrik@seznam.cz</h5>
-    <p>Boleslavská 4, 130 00 Praha</br> +420 737828024</p>
+    <h4><?= $userClass->jmeno . ' ' . $userClass->prijmeni ?></h4>
+    <h5><?= $userClass->email ?></h5>
+    <p><?= $userClass->adresa ?></br><?= $userClass->mobil ?></p>
     <a href="logout.php">Odhlásit</a>
   </div>
   <div class="navigace">
@@ -12,54 +14,70 @@
         <a href="#!" class="edit-profile"><li class="waves-light settings-link btn">Změnit osobní údaje</li></a>
       </ul>
   </div>
+    <?php
+        $objednavky = $objednavkaClass->getObjednavkyByUser($userClass->id);
+       // print_r($objednavky);
+    ?>
   <div id="objednavky-historie" class="objednavky">
+      <?php
+        foreach($objednavky as $objednavka):
+        $kosik = $objednavkaClass->getAllInObjednavka($objednavka['id']);
+      ?>
       <div class="bunka">
         <div class="info">
           <div class="basic">
-            <div class="date">25.3.2018</div>
-            <div class="adresa">Boleslavská 4, 130 00 Praha</div>
+            <div class="date"><?= $objednavka['time_created'] ?></div>
+            <div class="adresa"><?= $objednavka['adresadoruceni'] ?></div>
           </div>
-          <div class="price"> 155 Kč</div>
+          <div class="price"> <?= $objednavka['cenacelkem'] ?> Kč</div>
         </div>
         <div class="produkt">
           <ul>
-            <li>2x Karbanétek - 64 Kč</li>
-            <li>1x Karbanétek - 120 Kč</li>
+              <?php
+              foreach($kosik as $item):
+              ?>
+                    <li><?= $item['pocet'] . 'x ' . $item['nazev'] . ' - ' . $item['cenaZaPocet'].' Kč' ?></li>
+              <?php
+              endforeach;
+              ?>
           </ul>
         </div>
       </div>
+      <?php
+      endforeach;
+      ?>
   </div>
   <div id="edit-profil" class="">
       <h4>Změna osobních údajů</h4>
       <div class="row">
-    <form class="col s12">
+    <form class="col s12" method="post">
       <div class="row">
         <div class="input-field col s6">
-          <input id="email" type="email" class="validate" value="safarpatrik@seznam.cz">
+          <input name="email" id="email" type="email" class="validate" value="<?= $userClass->email ?>">
           <label for="email">Email</label>
         </div>
         <div class="input-field col s6">
-          <input id="telefon" type="text" class="validate" value="+420736289288">
+          <input name="mobil" id="telefon" type="text" class="validate" value="<?= $userClass->mobil ?>">
           <label for="telefon">Telefon</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="Patrik">
+          <input name="jmeno" id="first_name" type="text" class="validate" value="<?= $userClass->jmeno ?>">
           <label for="first_name">Jméno</label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" value="Šafář">
+          <input name="prijmeni" id="last_name" type="text" class="validate" value="<?= $userClass->prijmeni ?>">
           <label for="last_name">Příjmení</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="address" type="text" class="validate" value="Boleslavská 4, 130 00  Praha">
+          <input name="adresa" id="address" type="text" class="validate" value="<?= $userClass->adresa ?>">
           <label for="address">Adresa</label>
         </div>
       </div>
-      <button type="submit" name="save" class="btn amber accent-3">Uložit změny</button>
+      <button name="editUser" type="submit" class="btn amber accent-3">Uložit změny</button>
     </form>
   </div>
   </div>
