@@ -7,6 +7,7 @@
 
 namespace database;
 use database\database;
+// use database\user;
 
 class objednavka {
 	private $_mysqli;
@@ -171,6 +172,11 @@ class objednavka {
          }
 
 
+     }
+
+     public function getObjednavkyByUser($user_id){
+        $query = "SELECT * FROM objednavka WHERE user_id = ".$user_id." ORDER BY time_created DESC LIMIT 10";
+        return $this->_mysqli->get_results($query);
      }
 
         public function changeStatus($status, $id){
