@@ -3,6 +3,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script src="script/login.js"></script>
 <!-- Latest compiled and minified CSS -->
+<div id="add-success">
+  <div class="wrap-info">
+    <i class="small material-icons">add_shopping_cart</i> <span>Uspěšně vloženo do košíku</span> <a href="?page=kosik">přejít do košíku</a>
+  </div>
+</div>
+
+<div id="add-error">
+  <div class="wrap-info">
+    <i class="small material-icons">error_outline</i> <span>Při vkládání do košíku nastala chyba</span>
+  </div>
+</div>
+
 <nav class="user">
     <?php
         if (isset($userClass->id)):

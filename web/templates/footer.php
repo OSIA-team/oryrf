@@ -21,7 +21,7 @@
         <div class="footer-copyright">
           <div class="container">
           © 2018 Copyright Bel3s
-          <a class="grey-text text-lighten-4 right" href="#!">Made with love by OSIA</a>
+          <a class="grey-text text-lighten-4 right" href="https://www.osia.cz">Made with ❤️ by OSIA</a>
           </div>
         </div>
       </footer>
