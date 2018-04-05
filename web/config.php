@@ -25,7 +25,7 @@ return [
 
         'test' => [
             'host' => 'innodb.endora.cz',
-            'user' => 'osiacz   ',
+            'user' => 'osiacz',
             'password' => 'kokoti22',
             'database' => 'bel3s'
         ],
