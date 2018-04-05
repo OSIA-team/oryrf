@@ -808,10 +808,10 @@ h4.background::before{
   background-color: #ff2633;
   text-align: center;
   border: none;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -os-border-radius: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -os-border-radius: 5px;
   color: white;
   padding-bottom: 0px;
   height: 50px;

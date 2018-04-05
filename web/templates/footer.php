@@ -4,7 +4,7 @@
           <div class="row">
             <div class="col l6 s12">
               <h5 class="white-text">Kontakt</h5>
-              <p class="grey-text text-lighten-4">Kontakt ? </p>
+              <p class="grey-text text-lighten-4">Tady může být nejaky základní info nebo kontakt<br> však už to znáte ne ? Vlastně tu může být i formuláš pro odesílání a nebo jen info</p>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Důležité odkazy</h5>
