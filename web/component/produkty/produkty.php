@@ -101,6 +101,14 @@ $(function () {
             dataType: 'json',
             async: false,
             success: function (d) {
+              
+             if(d.stav = "true"){
+               $( "#add-success" ).slideDown(500).delay(5000).slideUp( 500 );
+             }
+             else{
+               $( "#add-error" ).slideDown(500).delay(5000).slideUp( 500 );
+             }
+
              document.getElementById('pocet-kosik').innerHTML = d.pocet;
              document.getElementById('cena-kosik').innerHTML = d.cena+" Kč";
             }

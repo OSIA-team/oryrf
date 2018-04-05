@@ -16,6 +16,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 #add-success, #add-error{
   display: none;
+
 }
 #add-success a{
   color: white;
@@ -34,6 +35,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 #add-success .wrap-info, #add-error .wrap-info{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #add-success span, #add-error span{
@@ -1169,6 +1171,7 @@ user-select: none;
 .products .sp-plus, .products .sp-minus{
   padding-bottom: 23px;
 }
+
 
 @media screen and (max-width: 1206px) {
   .nabidka_mainpage .row{
