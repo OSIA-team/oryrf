@@ -43,7 +43,31 @@ if ($user_id == 0){
         die();
     }
 }
+else {
+//TODO: IS USER LOGGED IN?
+    $update = array(
+        'email' => $email,
+        'jmeno' => $jmeno,
+        'mobil' => $mobil,
+        'adresa' => $adresa,
+        'registered' => 1
+    );
 
+    $where = array(
+        'id' => $user_id
+    );
+// TODO: IF FALSE....
+    $user_result = $userClass->editUser($update,$where);
+
+    if (!$user_result){
+        echo '<pre>';
+        echo 'edit user failed';
+        print_r($update);
+        print_r($where);
+        echo '</pre>';
+        die();
+    }
+}
 
 $insert = array(
     'user_id' => $user_id,
@@ -68,29 +92,6 @@ if ($objednavka_result != TRUE){
     die();
 }
 $kosikClass ->deleteTempKosik();
-//TODO: IS USER LOGGED IN?
-$update = array(
-    'email' => $email,
-    'jmeno' => $jmeno,
-    'mobil' => $mobil,
-    'adresa' => $adresa,
-    'registered' => 1
-);
-
-$where = array(
-    'id' => $user_id
-);
-// TODO: IF FALSE....
-$user_result = $userClass->editUser($update,$where);
-
-if (!$user_result){
-    echo '<pre>';
-    echo 'edit user failed';
-    print_r($update);
-    print_r($where);
-    echo '</pre>';
-    die();
-}
 // set kosik to transfered (to objednavka)
 $trasnferResult = $kosikClass->editKosik(array('transfered' => 1), array('id' => $kosik_id));
 

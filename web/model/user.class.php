@@ -12,6 +12,7 @@ class user {
 	private $_mysqli;
 
 	public $id;
+	public $username;
 	public $email;
 	public $jmeno;
 	public $prijmeni;
@@ -68,6 +69,7 @@ class user {
         $rec = $this->_mysqli->get_row($query);
         if ($rec){
             $this->id       = $id;
+            $this->username = $rec['username'];
             $this->email    = $rec['email'];
             $this->jmeno    = $rec['jmeno'];
             $this->prijmeni = $rec['prijmeni'];

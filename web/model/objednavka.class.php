@@ -84,6 +84,7 @@ class objednavka {
        if ($limit != NULL) {
          $query .= " LIMIT ".$limit;
        }
+       $query .= " ORDER BY id DESC";
        $result = $this->_mysqli->get_results($query);
       return $result;
      }
