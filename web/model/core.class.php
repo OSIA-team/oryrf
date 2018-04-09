@@ -39,5 +39,10 @@ class core{
         return self::$configFile['database'][$mode];
     }
 
+    static function errorMsg($msg){
+        echo "<script>
+                alert($msg);
+              </script>";
+    }
 
 }
