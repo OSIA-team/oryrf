@@ -6,6 +6,7 @@
  */
 
 namespace database;
+use core\core;
 use database\database;
 
 class jidlo {
@@ -145,10 +146,15 @@ class jidlo {
      */
     public function editFotka($update, $where)
  {
+     if($this->_mysqli->get_row("SELECT id FROM fotka WHERE jidlo_id =".$where['jidlo_id'])){
      $result 	= $this->_mysqli->update( 'fotka', $update, $where, 1 );
      if ($result) {
          return true;
      } else {
+         return false;
+     }
+     } else {
+         \core\core::errorMsg("Can't update photo: Photo you want to update doesnt exists!");
          return false;
      }
  }
@@ -187,6 +193,7 @@ class jidlo {
 			if ($add_foto){
                 return true;
             } else {
+			    core::errorMsg("Can't proceed insert, please check log_file!");
                 return false;
             }
 
