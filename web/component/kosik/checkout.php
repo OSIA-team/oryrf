@@ -32,15 +32,15 @@
     <form class="" method="post" action="?page=kosik&action=finish-order">
         <div class="row">
             <div class="input-field col s12">
-                <select name="zpusobdoruceni">
-                    <option value="" disabled selected>Zvolte typ doručení</option>
+                <select name="zpusobdoruceni" required>
+                    <option value="">Zvolte typ doručení</option>
                     <option value="1">Osobně</option>
                     <option value="2">Rozvozem do 40minut</option>
                 </select>
             </div>
             <div class="input-field col s12">
-                <select name="zpusobplaceni">
-                    <option value="" disabled selected>Zvolte typ platby</option>
+                <select name="zpusobplaceni" required>
+                    <option value="">Zvolte typ platby</option>
                     <option value="Stravenkami">Stravenkami</option>
                     <option value="Hotově">Hotově</option>
                     <option value="Kartou u kurýra">Kartou u kurýra</option>
@@ -92,6 +92,19 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function() {
+      $('select[required]').css({
+         display: 'inline',
+         position: 'absolute',
+         float: 'left',
+         padding: 0,
+         margin: 0,
+         border: '1px solid rgba(255,255,255,0)',
+         height: 0,
+         width: 0,
+         top: '2em',
+         left: '3em'
+        });
+
         $('select').material_select();
 
         $('.timepicker').pickatime({
