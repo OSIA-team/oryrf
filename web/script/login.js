@@ -9,7 +9,7 @@ $(document).ready(function(){
     data: "email="+email+"&password="+password,
     success: function(html){
        if(html=="true") {
-       $("#add_err").html("Přihlašuji");
+       $("#add_err").html("Přihlašuji...");
        setTimeout(' window.location.reload(); ',2000);
        }
        else    {
@@ -36,7 +36,7 @@ $(document).ready(function(){
     async: false,
     success: function(d){
        if(d.stav == "true") {
-       $("#add_err_reg").html("Registrace proběhla úspěšně, registruji");
+       $("#add_err_reg").html("Registrace proběhla úspěšně, registruji...");
        setTimeout(' window.location.reload(); ',1000);
        }
        else{
