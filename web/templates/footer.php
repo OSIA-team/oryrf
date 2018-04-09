@@ -4,7 +4,11 @@
           <div class="row">
             <div class="col l6 s12">
               <h5 class="white-text">Kontakt</h5>
-              <p class="grey-text text-lighten-4">Tady může být nejaky základní info nebo kontakt<br> však už to znáte ne ? Vlastně tu může být i formuláš pro odesílání a nebo jen info</p>
+              <div class="kontakt-wrap">
+                <p class=""> BEL3S s.r.o. </p>
+                <p class=""> Sněmovní 4, 612 00  Brno</p>
+                <p class=""> tel: +420 737 828 024</p>
+              </div>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Důležité odkazy</h5>
