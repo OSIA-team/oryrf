@@ -44,7 +44,7 @@
  <ul>
  <li> <label for="email">Email</label>
  <input type="text" name="email" id="email"  /></li>
- <li> <label for="password">Password</label>
+ <li> <label for="password">Heslo</label>
  <input type="password" name="password" id="password"  /></li>
  <li> <label></label>
  <input type="submit" id="login-btn" name="login" value="Přihlásit" class="waves-effect waves-light btn amber darken-2 " ></li>
@@ -64,29 +64,35 @@
       <form class="" action="script/register.script.php" method="post">
         <div class='row'>
           <div class='input-field col s12'>
-            <input class='validate' type='email' name='email' id='email-reg' />
+            <input class='validate' type='email' name='email' id='email-reg' required/>
             <label for='email-reg'>Váš email</label>
           </div>
 
           <div class='input-field col s12'>
-            <input class='validate' type='password' name='password' id='password-reg' />
+            <input class='validate' type='password' name='password' id='password-reg' required/>
             <label for='password-reg'>Vaše heslo</label>
           </div>
+
+          <div class='input-field col s12'>
+            <input class='validate' type='password' name='password2' id='password-reg2' required/>
+            <label for='password-reg2'>Heslo znovu</label>
+          </div>
+
           <h6>Kontaktní údaje</h6>
           <div class='input-field col s6'>
-            <input class='validate' type='text' name='jmeno' id='jmeno' />
+            <input class='validate' type='text' name='jmeno' id='jmeno' required/>
             <label for='jmeno'>Jméno</label>
           </div>
           <div class='input-field col s6'>
-            <input class='validate' type='text' name='prijmeni' id='prijmeni' />
+            <input class='validate' type='text' name='prijmeni' id='prijmeni' required/>
             <label for='prijmeni'>Příjmení</label>
           </div>
           <div class='input-field col s12'>
-            <input class='validate' type='text' name='adresa' id='address' />
+            <input class='validate' type='text' name='adresa' id='address' required/>
             <label for='adresa'>Adresa pro doručení</label>
           </div>
           <div class='input-field col s12'>
-            <input class='validate' type='text' name='telefon' id='telefon' value="+420"/>
+            <input class='validate' type='text' name='telefon' id='telefon' value="" required/>
             <label for='telefon'>Telefon</label>
           </div>
         </div>

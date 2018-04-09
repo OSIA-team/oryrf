@@ -102,6 +102,7 @@ $(".close-btn").on("click", function () {
       cenaKosik -= Number(cenaZrusena);
       document.getElementById('cena-kosik').innerHTML = cenaKosik + " Kč";
       kosikPocet.innerHTML = itemsInKosik;
+      checkEmptyOrder();
   });
 
   $(".ddd").on("click", function () {
@@ -126,6 +127,7 @@ $(".close-btn").on("click", function () {
           }
       }
 
+
       $button.closest('.sp-quantity').find("input.quntity-input").val(newVal);
       cenaPolozka.html(newVal*cenaJidla+" Kč");
 
@@ -145,7 +147,21 @@ $(".close-btn").on("click", function () {
       for (var j = 0; j < pocetInput.length; j++) {
         itemsInKosik = Number(itemsInKosik) + Number(pocetInput[j].value);
       }
-
+        checkEmptyOrder();
         document.getElementById('pocet-kosik').innerHTML = itemsInKosik;
   });
+
+
+  function checkEmptyOrder(){     //ukontroluje jestli košík není prázdný
+       if($('#cenacelkemInput').val() == "0"){  //pokud je
+        $('.next-btn').addClass('disabled');    //nastaví tlačítko na disabled
+      }else{
+        $('.next-btn').removeClass('disabled'); //pokud není prázdný odstraní třídu disabled
+      }
+
+  }
+
+
+checkEmptyOrder();
+
 </script>

@@ -19,8 +19,8 @@ $(document).ready(function(){
     },
     beforeSend:function()
  {
-$("#add_err").css('display', 'inline', 'important');
-$("#add_err").html(" Loading...")
+    $("#add_err").css('display', 'inline', 'important');
+    $("#add_err").html(" Načítám...")
  }
    });
  return false;
