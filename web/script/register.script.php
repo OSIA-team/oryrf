@@ -6,7 +6,7 @@
  * Time: 16:45
  */
 session_start();
-if (isset($_POST['register'])) {
+
     foreach ($_POST as $key => $value) {
         $$key = $value;
     }
@@ -45,9 +45,3 @@ if (isset($_POST['register'])) {
     $userClass->createLoginSession($userId);
     echo json_encode(array('stav' => 'true'));
     die();
-
-
-
-} else {
-    die('Un-authorized entrance');
-}
