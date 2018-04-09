@@ -17,6 +17,8 @@ use core\core;
 
 class form
 {
+
+    private $_mysqli;
     private $data = array();
     private $forms = array(
         'addKategorie' => 'addKategorie',
@@ -31,10 +33,10 @@ class form
 
     public function __construct($data){
 
-        $database = new database();
+        $this->_mysqli = new database();
 
         foreach ($data as $key => $value) {
-            $this->data[$key] = $database->filter($value);
+            $this->data[$key] = $this->_mysqli->filter($value);
         }
 
         foreach ($this->forms as $name => $function){
@@ -297,7 +299,7 @@ class form
 
     private function uploadImgJidlo(){
         $jidlo = new jidlo();
-
+        $this->_mysqli->fk(0);
         if (isset($this->data['preskocit'])){
             $upload_img = $jidlo->addImageToJidlo($this->data['jidlo_id']);
             # upload default image
@@ -341,6 +343,7 @@ class form
         }
 
         }
+        $this->_mysqli->fk(1);
     }
 
     private function finishOrder(){

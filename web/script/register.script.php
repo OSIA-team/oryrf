@@ -20,7 +20,7 @@ if (isset($_POST['register'])) {
     $database = new \database\database();
     $registed = $database->get_row("SELECT id FROM user WHERE email = \"{$email}\"AND registered = 1 LIMIT 1");
     if ($registed){
-        echo json_encode(array('User alredy registered'));
+        echo json_encode(array('stav' => 'User alredy registered'));
         die();
     }
 
@@ -39,11 +39,11 @@ if (isset($_POST['register'])) {
 
     $userId = $userClass->addUser($insert);
     if (!$userId){
-        echo json_encode(array('false'));
+        echo json_encode(array('stav' => 'false'));
         die();
     }
     $userClass->createLoginSession($userId);
-    echo json_encode(array('true'));
+    echo json_encode(array('stav' => 'true'));
     die();
 
 

@@ -40,9 +40,7 @@ class core{
     }
 
     static function errorMsg($msg){
-        echo "<script>
-                alert($msg);
-              </script>";
+        echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 
 }

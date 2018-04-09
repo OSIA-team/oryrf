@@ -281,7 +281,7 @@ public function get_row( $query )
 			{
 					$sql .= ' LIMIT '. $limit;
 			}
-
+			// echo "<pre>".print_r($sql,true)."</pre>"; die();
 			$query = mysqli_query( $this->_mysqli, $sql );
 
 			if( mysqli_error( $this->_mysqli ) )
