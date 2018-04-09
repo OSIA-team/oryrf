@@ -20,7 +20,7 @@ session_start();
     $database = new \database\database();
     $registed = $database->get_row("SELECT id FROM user WHERE email = \"{$email}\"AND registered = 1 LIMIT 1");
     if ($registed){
-        echo json_encode(array('stav' => 'User alredy registered'));
+        echo json_encode(array("stav" => "Tento email je již zaregistrován"));
         die();
     }
 

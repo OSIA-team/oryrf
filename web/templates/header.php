@@ -61,6 +61,7 @@
     <div class="modal-content row">
       <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
       <h5>Registrovat se</h5>
+      <div class="err" id="add_err_reg"></div>
       <form id="registerForm" action="./" method="post">
         <div class='row'>
           <div class='input-field col s12'>

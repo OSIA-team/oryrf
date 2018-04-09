@@ -31,23 +31,24 @@ $(document).ready(function(){
    $.ajax({
     type: "POST",
     url: "script/register.script.php",
-    data: $('registerForm').serialize(),
+    data: $('#registerForm').serialize(),
+    dataType: 'json',
+    async: false,
     success: function(d){
        if(d.stav == "true") {
-       //$("#add_err").html("Přihlašuji");
-       //setTimeout(' window.location.reload(); ',2000);
-       alert('ahoj svete');
+       $("#add_err_reg").html("Registrace proběhla úspěšně, registruji");
+       setTimeout(' window.location.reload(); ',1000);
        }
-       else    {
-       //$("#add_err").css('display', 'inline', 'important');
-       //$("#add_err").html("Špatné uživatelské jméno nebo heslo");
-       alert(d.stav);
+       else{
+         $("#add_err_reg").css('display', 'inline', 'important');
+         $("#add_err_reg").html(d.stav);
        }
+
     },
     beforeSend:function()
  {
-    $("#add_err").css('display', 'inline', 'important');
-    $("#add_err").html(" Načítám...")
+    $("#add_err_reg").css('display', 'inline', 'important');
+    $("#add_err_reg").html(" Načítám...")
  }
    });
  return false;
