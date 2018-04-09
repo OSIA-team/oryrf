@@ -101,8 +101,8 @@ $(function () {
             dataType: 'json',
             async: false,
             success: function (d) {
-              
-             if(d.stav = "true"){
+
+             if(d.stav == "true"){
                $( "#add-success" ).slideDown(500).delay(5000).slideUp( 500 );
              }
              else{

@@ -61,7 +61,7 @@
     <div class="modal-content row">
       <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
       <h5>Registrovat se</h5>
-      <form class="" action="script/register.script.php" method="post">
+      <form id="registerForm" action="./" method="post">
         <div class='row'>
           <div class='input-field col s12'>
             <input class='validate' type='email' name='email' id='email-reg' required/>
@@ -96,7 +96,7 @@
             <label for='telefon'>Telefon</label>
           </div>
         </div>
-        <input type="submit" class="btn amber darken-2 center" name="register" value="Registrovat se">
+        <input type="submit" id="register-btn" class="btn amber darken-2 center" name="register" value="Registrovat se">
       </form>
     </div>
   </div>
