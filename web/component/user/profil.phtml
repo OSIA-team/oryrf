@@ -1,11 +1,23 @@
 <section class="container profil">
   <div class="photo">
-      <?= strtoupper($userClass->jmeno[0].$userClass->prijmeni[0]) ?>
+      <?php
+      if(!preg_match("/^[A-Za-z]+/", $userClass->jmeno)){
+          echo mb_strtoupper(substr($userClass->jmeno, 0,2));
+      } else {
+          echo mb_strtoupper(substr($userClass->jmeno, 0,1));
+      }
+      if(!preg_match("/^[A-Za-z]+/", $userClass->prijmeni)){
+          echo mb_strtoupper(substr($userClass->prijmeni, 0,2));
+      } else {
+          echo mb_strtoupper(substr($userClass->prijmeni, 0,1));
+      }
+      ?>
   </div>
   <div class="info">
     <h4><?= $userClass->jmeno . ' ' . $userClass->prijmeni ?></h4>
     <h5><?= $userClass->email ?></h5>
     <p><?= $userClass->adresa ?></br><?= $userClass->mobil ?></p>
+
     <a href="logout.php">Odhlásit</a>
   </div>
   <div class="navigace">
@@ -26,7 +38,7 @@
       <div class="bunka">
         <div class="info">
           <div class="basic">
-            <div class="date"><?= $objednavka['time_created'] ?></div>
+            <div class="date"><?=  date("j.n.Y",strtotime($objednavka['time_created'])) ?></div>
             <div class="adresa"><?= $objednavka['adresadoruceni'] ?></div>
           </div>
           <div class="price"> <?= $objednavka['cenacelkem'] ?> Kč</div>
