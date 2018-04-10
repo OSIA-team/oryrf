@@ -3,6 +3,57 @@ html, body{
   margin: 0px;
   padding: 0px;
 }
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.err-page{
+  background: #232323;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.err-page .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.err-page .error-image{
+  max-width: 500px;
+  margin: 1rem;
+}
+
+.err-page .text{
+  max-width: 500px;
+  margin: 1rem;
+}
+.err-page .error-image img{
+  width: 100%;
+  height: auto;
+}
+
+.err-page h1{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  margin-top: 3px;
+  padding-bottom: -10px;
+  display: inline-block;
+  margin-bottom: 0px;
+  color: white;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color: white;
     background-image: none;
