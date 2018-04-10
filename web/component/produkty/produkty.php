@@ -63,6 +63,7 @@ endforeach;
              $prilohy = $menuItem->getAllPriloha();
              foreach ($prilohy as $priloha):
                  if($lastKat != $priloha['kategorie']){
+                    echo "<div class='lol'>";
                      echo "<h5>".$priloha['kategorie']."</h5>";
                      $lastKat = $priloha['kategorie'];
                  }
@@ -72,6 +73,12 @@ endforeach;
            <label class="omacka-label" for="priloha<?= $priloha['id'] ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
          </div>
        <?php
+
+                 $next = next($prilohy);
+                    if ( $next['kategorie'] != $priloha['kategorie'] ){
+                        echo "</div>";
+                    } // */
+
          endforeach;
        ?>
      </form>
