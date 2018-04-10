@@ -56,8 +56,7 @@ endforeach;
        <?php
         //TODO: Editave v administraci
        ?>
-     <h4>Vyberte si přílohu k</h4>
-     <p> Vyzkoušejte naše domácí omáčky a dipy! </p>
+     <h4>Vyberte si přílohu<span class="badge">nepovinné</span></h4>
      <form class="prilohy">
          <?php
              $lastKat = "";

@@ -566,6 +566,20 @@ margin: 0 auto;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: bold;
   margin: 0px;
+  display: inline-block;
+}
+
+#priloha span.badge{
+      background: #f32e2e;
+      color: white;
+       font-family: 'Roboto', sans-serif; 
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 16px;
+      display: inline-block;
+      padding: 3px 6px;
+      height: auto;
+      border-radius: 3px;
 }
 
 .promo-product-wrapper h1{
