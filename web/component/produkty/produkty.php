@@ -63,7 +63,7 @@ endforeach;
              $prilohy = $menuItem->getAllPriloha();
              foreach ($prilohy as $priloha):
                  if($lastKat != $priloha['kategorie']){
-                    echo "<div class='lol'>";
+                    echo "<div class='priloha-kategorie'>";
                      echo "<h5>".$priloha['kategorie']."</h5>";
                      $lastKat = $priloha['kategorie'];
                  }
@@ -84,7 +84,7 @@ endforeach;
      </form>
    </div>
    <div class="modal-footer">
-     <a href="#!" class="modal-action modal-close waves-effect add-priloha waves-green btn-flat">přidat přílohu</a>
+     <a href="#!" class="modal-action modal-close waves-effect add-priloha waves-red btn">přidat přílohu</a>
    </div>
  </div>
 </div>

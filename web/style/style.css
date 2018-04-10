@@ -566,13 +566,21 @@ margin: 0 auto;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: bold;
   margin: 0px;
-  display: inline-block;
+
 }
 
+#priloha h4{
+  display: inline-block;
+}
+#priloha .btn{
+  background: #d00505;
+  color: white;
+  border-radius: 5px;
+}
 #priloha span.badge{
       background: #f32e2e;
       color: white;
-       font-family: 'Roboto', sans-serif; 
+       font-family: 'Roboto', sans-serif;
       font-size: 12px;
       font-weight: normal;
       line-height: 16px;
@@ -580,6 +588,27 @@ margin: 0 auto;
       padding: 3px 6px;
       height: auto;
       border-radius: 3px;
+}
+
+#priloha .prilohy {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 23px;
+}
+
+.priloha-kategorie{
+  margin-right: 4%;
+}
+
+.priloha-kategorie h5{
+    font-size: 19px;
+    color: #2b2b2b;
+    font-weight: bold;
+}
+
+.priloha-kategorie label{
+  color: #464646;
 }
 
 .promo-product-wrapper h1{
