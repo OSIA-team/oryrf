@@ -99,9 +99,12 @@ switch ($page){
     case 'user':
             require 'component/user/index.php';
         break;
+
+    case 'err-404':
+            require 'templates/error_page.php';
+        break;
 }
 
 require 'templates/footer.php';
 //print_r($_SESSION);
 //}
-
