@@ -100,7 +100,7 @@ switch ($page){
             require 'component/user/index.php';
         break;
 
-    case 'err-404':
+    default:
             require 'templates/error_page.php';
         break;
 }
