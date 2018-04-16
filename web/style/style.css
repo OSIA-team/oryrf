@@ -423,6 +423,7 @@ nav .brand-logo{
   z-index: 7;
   margin: 0px;
   padding: 0px;
+  left: 0px;
 }
 .vlajecka-logo{
   width: 142px;
@@ -1316,6 +1317,12 @@ user-select: none;
   .jidelnicek{
     display: none;
   }
+
+  nav .brand-logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 }
 
 @media screen and (max-width: 792px) {
