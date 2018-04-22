@@ -14,6 +14,7 @@ use database\objednavka;
 use database\user;
 use core\upload;
 use core\core;
+use database\stranka;
 
 class form
 {
@@ -27,7 +28,8 @@ class form
         'pridat_jidlo' => 'pridatJidlo',
         'upload_img' => 'uploadImgJidlo',
         'obj-status' => 'objStatus',
-        'editUser'  => 'editUser'
+        'editUser'  => 'editUser',
+        'editStranka' => 'editStranka'
      //   'register' => 'register'
     );
 
@@ -405,6 +407,48 @@ class form
         $where = array('id' => $userClass->id);
 
         $result = $userClass->editUser($update, $where);
+        if (!$result){
+            die('error');
+        }
+    }
+
+    private function editStranka(){
+        //var_dump($_FILES); die();
+        $strankaClass = new stranka();
+        $strankaClass->setUpStranka($this->data['id']);
+
+        if (isset($_FILES['image']['name'])  AND $_FILES['image']['name'] != ""){
+            $upload = new upload($_FILES['image'], "cs_CS");
+            // Overeni zda je obrazek uspesne nahran do tmp slozky
+            if ($upload->uploaded) {
+                // Manipulace s obrazkem
+                $upload->image_resize = true;
+                //  $upload->image_ratio = true;
+                $upload->image_x = 3000;
+                $upload->image_y = 1500;
+                //  $upload->image_ratio_crop = true;
+                // Presuneme fotku ze slozky temp
+                $upload->Process("../img/");
+                // Jestli se zadarilo
+                if ($upload->processed) {
+                    $image  = $_FILES['image']['name'];
+                } else {
+                    die($upload->error);
+                }
+            }
+        } else {
+            $image = $strankaClass->image;
+        }
+
+        $update = array(
+            'content'   => (string)$this->data['content'],
+            'image'     => (string)$image
+        );
+        $where = array(
+            'id' => (int)$this->data['id']
+        );
+
+        $result = $strankaClass->editStranka($update,$where);
         if (!$result){
             die('error');
         }

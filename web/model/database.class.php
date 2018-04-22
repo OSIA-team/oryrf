@@ -95,7 +95,7 @@ class database {
 	/**
 	 * @access public
 	 * @param string
-	 * @return string
+	 * @return array
 	 */
 public function query($query)
 {
@@ -291,7 +291,7 @@ public function get_row( $query )
 			}
 			else
 			{
-					// die($sql);
+					//die($sql);
 					return true;
 			}
 	}
