@@ -196,6 +196,7 @@ class form
     }
 
     private function editKategorie(){
+        var_dump($this->data); die();
         $kategorieClass= new kategorie();
         $kategorieClass->setUpKategorie($this->data['id']);
 

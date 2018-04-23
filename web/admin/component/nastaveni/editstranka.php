@@ -17,42 +17,19 @@ if (!$stranka){
 <div id="main">
     <h3>Upravit stránku <?= $stranka['nazev'] ?></h3>
     <div class="container">
+        <script type="text/javascript" src="style/js/nicEdit.js"></script>
+        <script type="text/javascript">
+            bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+        </script>
 
-        <!-- Include stylesheet -->
-        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-        <!-- Create the editor container -->
-        <form method="post" onsubmit="javascript: return process();" enctype="multipart/form-data" >
-            <img src="../img/<?= $stranka['image'] ?>" height="150px" /> <br>
-            <input type="file" accept="image/*" name="image" value="Vybrat novou fotku" />
-            <div id="editor">
-
-            </div>
+        <h4>First Textarea</h4>
+        <textarea name="area1" cols="40"></textarea>
+        <br />
             <input type="hidden" name="content" id="hiddenContent" value="<?= $stranka['content'] ?>">
             <input type="hidden" name="id" value="<?= $id ?>">
             <input type="submit" name="editStranka" value="Uložit změny" />
         </form>
 
-        <!-- Include the Quill library -->
-        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-        <!-- Initialize Quill editor -->
-        <script>
-            var quill = new Quill('#editor', {
-                theme: 'snow'
-            });
-            quill.setText("<?= $stranka['content'] ?>");
-
-
-            function process() {
-                var html = quill.root.innerHTML;
-                //var delta = quill.getContents();
-                document.getElementById("hiddenContent").value = html;
-
-                return true;
-            }
-
-        </script>
     </div>
 </div>
 
