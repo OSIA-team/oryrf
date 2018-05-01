@@ -43,4 +43,17 @@ class core{
         echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 
+    static function getProjectInfo($implementation_name, $return = 0){
+        $mysqli = new database();
+        $query = "SELECT value FROM project_info WHERE implementation_name='{$implementation_name}'";
+        $result = $mysqli->get_row($query);
+        $return = ($result)?$result['value']:$return;
+        return $return;
+    }
+
+    static function editProjectInfo($implementation_name, $value = 0){
+        $mysqli = new database();
+        $query = "UPDATE project_info SET value='{$value}' WHERE implementation_name='{$implementation_name}'";
+        return $mysqli->query($query);
+    }
 }
