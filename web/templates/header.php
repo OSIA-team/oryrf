@@ -15,6 +15,12 @@
   </div>
 </div>
 
+<div id="error-alert">
+  <div class="wrap-info">
+    <i class="small material-icons">info</i> <span>Neumožňujeme právě žádné objendávky</span>
+  </div>
+</div>
+
 <nav class="user">
     <?php
         if (isset($userClass->id)):
