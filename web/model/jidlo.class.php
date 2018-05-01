@@ -9,6 +9,7 @@ namespace database;
 use core\core;
 use database\database;
 
+// TODO: SETUP JIDLO ()
 class jidlo {
 	private $_mysqli;
 

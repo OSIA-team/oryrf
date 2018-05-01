@@ -38,6 +38,8 @@ $menuItem = new \database\jidlo();
 
 $objednavkaClass = new \database\objednavka();
 
+$strankClass = new \database\stranka();
+
 // determinate scripts
  if (isset($_POST['to-checkout'])){
      require_once 'script/review.script.php';
@@ -101,7 +103,12 @@ switch ($page){
         break;
 
     default:
-            require 'templates/error_page.php';
+        $stranka = $strankClass->strankaExists((string)$page);
+            if($stranka){
+                require_once 'component/custom/index.php';
+            } else {
+                require_once 'templates/error_page.php';
+            }
         break;
 }
 

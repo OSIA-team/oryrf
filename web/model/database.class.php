@@ -55,6 +55,7 @@ class database {
         if( mysqli_connect_errno() )
         {
             $this->log_db_errors( "Connect failed: %s\n", mysqli_connect_error(), 'Fatal' );
+            die('wt');
             exit();
         }
 		$this->_mysqli->set_charset("utf8");

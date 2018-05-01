@@ -20,8 +20,12 @@ class stranka {
         $this->_mysqli = new database();
     }
 
-    public function getAllStranka(){
-        $query = "SELECT * FROM stranka";
+    /**
+     * @param string $role (page, alert)
+     * @return array
+     */
+    public function getAll($role = 'page'){
+        $query = "SELECT * FROM stranka WHERE role = '{$role}'";
         $result = $this->_mysqli->get_results($query);
         return $result;
     }
@@ -42,8 +46,6 @@ class stranka {
     public function editStranka($update,$where){
         $result = $this->_mysqli->update('stranka', $update, $where, 1);
 
-        //var_dump($result); die();
-
         if ($result) {
             return true;
         } else {
@@ -55,6 +57,20 @@ class stranka {
     public function setUpStranka($id){
         $data = $this->getFullStrankaById($id);
         $this->background = $data['image'];
+    }
+
+    /**
+     * @param $url string
+     * @return array|bool
+     */
+    public function strankaExists($url){
+        $query = 'SELECT * FROM stranka WHERE url = "' . $url . '"';
+        $result = $this->_mysqli->get_row($query);
+        if ($result){
+            return $result;
+        } else {
+            return FALSE;
+        }
     }
 
 

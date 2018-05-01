@@ -7,7 +7,7 @@
  */
 
 $strankaClass = new \database\stranka();
-$stranky = $strankaClass->getAllStranka();
+$stranky = $strankaClass->getAll('page');
 ?>
 <div id="main">
 
@@ -28,5 +28,6 @@ $stranky = $strankaClass->getAllStranka();
         <?php
         endforeach;
         ?>
+        <a href="?page=nastaveni&action=addStranka" class="button-submit fadeInDow">Přidat</a>
     </div>
 </div>

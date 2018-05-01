@@ -29,7 +29,8 @@ class form
         'upload_img' => 'uploadImgJidlo',
         'obj-status' => 'objStatus',
         'editUser'  => 'editUser',
-        'editStranka' => 'editStranka'
+        'editStranka' => 'editStranka',
+        'edit_alert'  => 'editAlert'
      //   'register' => 'register'
     );
 
@@ -414,7 +415,7 @@ class form
     }
 
     private function editStranka(){
-        //var_dump($_FILES); die();
+      //  var_dump($_POST); die();
         $strankaClass = new stranka();
         $strankaClass->setUpStranka($this->data['id']);
 
@@ -443,7 +444,8 @@ class form
 
         $update = array(
             'content'   => (string)$this->data['content'],
-            'image'     => (string)$image
+            'image'     => (string)$image,
+            'active'    => $this->data['active']
         );
         $where = array(
             'id' => (int)$this->data['id']
@@ -452,6 +454,33 @@ class form
         $result = $strankaClass->editStranka($update,$where);
         if (!$result){
             die('error');
+        }
+    }
+
+    private function editAlert(){
+        // var_dump($this->data);die();
+        $this->disableOrders();
+
+        $active = $this->data['active'];
+        $content = $this->data['content'];
+        $id = $this->data['id'];
+        $strankaClass = new stranka();
+        $update = array(
+            'content' => $content,
+            'active'  => $active
+        );
+        $where = array(
+            'id' => $id
+        );
+        $result = $strankaClass->editStranka($update,$where);
+        if (!$result) die("Error");
+    }
+
+    private function disableOrders(){
+        if(isset($this->data['disable_orders']) AND $this->data['disable_orders'] == 1){
+            core::editProjectInfo('disable_orders', 1);
+        } else {
+            core::editProjectInfo('disable_orders', 0);
         }
     }
 }
