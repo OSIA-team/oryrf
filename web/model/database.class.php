@@ -55,6 +55,7 @@ class database {
         if( mysqli_connect_errno() )
         {
             $this->log_db_errors( "Connect failed: %s\n", mysqli_connect_error(), 'Fatal' );
+            die('wt');
             exit();
         }
 		$this->_mysqli->set_charset("utf8");
@@ -95,7 +96,7 @@ class database {
 	/**
 	 * @access public
 	 * @param string
-	 * @return string
+	 * @return array
 	 */
 public function query($query)
 {
@@ -291,7 +292,7 @@ public function get_row( $query )
 			}
 			else
 			{
-					// die($sql);
+					//die($sql);
 					return true;
 			}
 	}

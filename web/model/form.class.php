@@ -14,6 +14,7 @@ use database\objednavka;
 use database\user;
 use core\upload;
 use core\core;
+use database\stranka;
 
 class form
 {
@@ -27,7 +28,9 @@ class form
         'pridat_jidlo' => 'pridatJidlo',
         'upload_img' => 'uploadImgJidlo',
         'obj-status' => 'objStatus',
-        'editUser'  => 'editUser'
+        'editUser'  => 'editUser',
+        'editStranka' => 'editStranka',
+        'edit_alert'  => 'editAlert'
      //   'register' => 'register'
     );
 
@@ -194,6 +197,7 @@ class form
     }
 
     private function editKategorie(){
+        var_dump($this->data); die();
         $kategorieClass= new kategorie();
         $kategorieClass->setUpKategorie($this->data['id']);
 
@@ -407,6 +411,76 @@ class form
         $result = $userClass->editUser($update, $where);
         if (!$result){
             die('error');
+        }
+    }
+
+    private function editStranka(){
+      //  var_dump($_POST); die();
+        $strankaClass = new stranka();
+        $strankaClass->setUpStranka($this->data['id']);
+
+        if (isset($_FILES['image']['name'])  AND $_FILES['image']['name'] != ""){
+            $upload = new upload($_FILES['image'], "cs_CS");
+            // Overeni zda je obrazek uspesne nahran do tmp slozky
+            if ($upload->uploaded) {
+                // Manipulace s obrazkem
+                $upload->image_resize = true;
+                //  $upload->image_ratio = true;
+                $upload->image_x = 3000;
+                $upload->image_y = 1500;
+                //  $upload->image_ratio_crop = true;
+                // Presuneme fotku ze slozky temp
+                $upload->Process("../img/");
+                // Jestli se zadarilo
+                if ($upload->processed) {
+                    $image  = $_FILES['image']['name'];
+                } else {
+                    die($upload->error);
+                }
+            }
+        } else {
+            $image = $strankaClass->image;
+        }
+
+        $update = array(
+            'content'   => (string)$this->data['content'],
+            'image'     => (string)$image,
+            'active'    => $this->data['active']
+        );
+        $where = array(
+            'id' => (int)$this->data['id']
+        );
+
+        $result = $strankaClass->editStranka($update,$where);
+        if (!$result){
+            die('error');
+        }
+    }
+
+    private function editAlert(){
+        // var_dump($this->data);die();
+        $this->disableOrders();
+
+        $active = $this->data['active'];
+        $content = $this->data['content'];
+        $id = $this->data['id'];
+        $strankaClass = new stranka();
+        $update = array(
+            'content' => $content,
+            'active'  => $active
+        );
+        $where = array(
+            'id' => $id
+        );
+        $result = $strankaClass->editStranka($update,$where);
+        if (!$result) die("Error");
+    }
+
+    private function disableOrders(){
+        if(isset($this->data['disable_orders']) AND $this->data['disable_orders'] == 1){
+            core::editProjectInfo('disable_orders', 1);
+        } else {
+            core::editProjectInfo('disable_orders', 0);
         }
     }
 }
