@@ -17,8 +17,7 @@
 
 <div id="error-alert">
   <div class="wrap-info">
-    <i class="small material-icons">info</i> <span>Neumožňujeme právě žádné objendávky</span>
-  </div>
+    <i class="small material-icons" style="position: relative;top: 10px;">info</i> Nejká informae </div>
 </div>
 
 <nav class="user">
