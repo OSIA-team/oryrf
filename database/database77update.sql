@@ -1,6 +1,6 @@
 CREATE TABLE project_info
 (
-  id                  INT          NOT NULL
+  id                  INT AUTO_INCREMENT
     PRIMARY KEY,
   name                VARCHAR(255) NULL,
   implementation_name VARCHAR(255) NULL,
@@ -22,7 +22,7 @@ CREATE TABLE stranka
   active       TINYINT(3) DEFAULT '0' NOT NULL,
   nazev        VARCHAR(32)            NULL,
   parrent_menu VARCHAR(32)            NULL,
-  image        VARCHAR(255)           NOT NULL,
+  image        VARCHAR(255)           NULL,
   url          VARCHAR(32)            NULL
 )
   ENGINE = InnoDB;
