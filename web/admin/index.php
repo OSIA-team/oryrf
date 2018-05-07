@@ -62,6 +62,7 @@ if (isset($_POST)){
         	<li><a href="?page=jidlo" 					<?php echo ($page=="jidlo")						?"class=\"active\"":""; ?>>Jídlo				</a></li> <!-- Use the "active" class for the active menu item  -->
         	<li><a href="?page=objednavky" 		        <?php echo ($page=="objednavky")			    ?"class=\"active\"":""; ?>>Objednavky			</a></li>
             <li><a href="?page=uzivatele" 			    <?php echo ($page=="uzivatele")				    ?"class=\"active\"":""; ?>>Uživatelé			</a></li>
+            <li><a href="?page=priloha" 			    <?php echo ($page=="priloha")				    ?"class=\"active\"":""; ?>>Příloha			    </a></li>
             <li><a href="?page=nastaveni" 			    <?php echo ($page=="nastaveni")				    ?"class=\"active\"":""; ?>>Nastavení			</a></li>
         	<li class="logout"><a href="logout.php">Odhlásit se</a></li>
         </ul>

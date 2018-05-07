@@ -60,7 +60,7 @@ endforeach;
      <form class="prilohy">
          <?php
              $lastKat = "";
-             $prilohy = $menuItem->getAllPriloha();
+             $prilohy = $menuItem->getAllPriloha($urlKategorie);
              foreach ($prilohy as $priloha):
                  if($lastKat != $priloha['kategorie']){
                     echo "<div class='priloha-kategorie'>";

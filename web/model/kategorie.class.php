@@ -60,6 +60,11 @@ class kategorie {
        return $result;
    }
 
+    public function getKategorieUrlById($id){
+      $query = "SELECT url FROM kategorie WHERE id = $id";
+      $result = $this->_mysqli->get_row($query);
+      return $result;
+   }
     /**
      * @param $id integer
      * @return bool

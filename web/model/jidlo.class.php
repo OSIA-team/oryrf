@@ -219,14 +219,18 @@ class jidlo {
      * @param null $limit
      * @return array or false
      */
-    public function getRandomJidlo($limit = NULL){
-            $query = "SELECT * FROM menuItem ORDER BY RAND() LIMIT 3";
+    public function getRandomJidlo($limit = 3){
+            $query = "SELECT * FROM menuItem ORDER BY RAND() LIMIT $limit";
             $result = $this->_mysqli->get_results($query);
          return $result;
      }
 
-     public function getAllPriloha(){
-            $query = "SELECT * FROM menuItem WHERE priloha = 1 ORDER BY kategorie";
+     public function getAllPriloha($url){
+            $query = "SELECT menuitem.id, menuitem.nazev, cena, kategorie FROM menuitem  
+                      JOIN priloha p ON menuitem.id = p.menuItem_id
+                      JOIN kategorie k ON menuitem.kategorie = k.url
+                      WHERE priloha = 1 AND p.active = 1 AND k.url = '$url'
+                      ORDER BY kategorie";
             $result = $this->_mysqli->get_results($query);
         return $result;
      }
