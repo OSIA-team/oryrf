@@ -30,7 +30,8 @@ class form
         'obj-status' => 'objStatus',
         'editUser'  => 'editUser',
         'editStranka' => 'editStranka',
-        'edit_alert'  => 'editAlert'
+        'edit_alert'  => 'editAlert',
+        'prilohy'     => 'prilohy'
      //   'register' => 'register'
     );
 
@@ -482,5 +483,16 @@ class form
         } else {
             core::editProjectInfo('disable_orders', 0);
         }
+    }
+
+    private function prilohy(){
+        unset($this->data['prilohy']);
+        $kategorie_id = $this->data['kategorie_id'];
+        unset($this->data['kategorie_id']);
+        foreach ($this->data as $id => $active){
+            
+        }
+
+
     }
 }

@@ -7,7 +7,7 @@
  */
 
 // stripslashes?
-$action = (isset($_GET['action']))?$_GET['action']:'vsichni';
+$action = (isset($_GET['action']))?$_GET['action']:'default';
 
 ?>
     <div id="sidebar">

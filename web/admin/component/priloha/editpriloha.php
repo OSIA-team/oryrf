@@ -30,11 +30,10 @@ echo "<pre>".print_r($active, true)."</pre>";
                 foreach ($prilohy as $priloha):
             ?>
                     <label><input type="checkbox" name="<?= $priloha['id'] ?>" value="1" class="jNiceCheckbox" style="display: block;"><?= $priloha['nazev'] ?></label>
-                    <input type="hidden" name="active<?= $priloha['id'] ?>" value="1"/>
-
             <?php
                 endforeach;
             ?>
+            <input type="hidden" name="kategorie_id" value="<?= $kategorieClass->id ?>" />
             <input type="submit" name="prilohy" value="Uložit" />
         </form>
     </fieldset>
