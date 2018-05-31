@@ -15,12 +15,17 @@
   </div>
 </div>
 
-
-<div id="error-alert">
-    <div class="wrap-info">
-        <i class="small material-icons" style="position: relative;top: 10px;">info</i> Nejká informae </div>
-</div>
-
+<?php
+$alert = $strankaClass->strankaExists("alert");
+if ($alert['active'] == 1):
+?>
+    <div id="error-alert">
+        <div class="wrap-info">
+            <i class="small material-icons" style="position: relative;top: 10px;">info</i> <?= $alert['content'] ?> </div>
+    </div>
+<?php
+endif;
+?>
 <nav class="user">
     <?php
         if (isset($userClass->id)):

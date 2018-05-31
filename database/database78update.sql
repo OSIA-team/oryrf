@@ -13,3 +13,7 @@ ALTER TABLE priloha COMMENT = 'propojeni priloh s jidlem a kategoriemi';
 
 
 ALTER TABLE priloha ADD active TINYINT DEFAULT 1 NOT NULL;
+
+ALTER TABLE kategorie ADD visible INT DEFAULT 1 NOT NULL;
+
+INSERT INTO kategorie (nazev, topmenu, url, visible) VALUES ("Neviditelné", 0, "invisible", 0);

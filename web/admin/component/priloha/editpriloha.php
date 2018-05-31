@@ -29,7 +29,14 @@ echo "<pre>".print_r($active, true)."</pre>";
             <?php
                 foreach ($prilohy as $priloha):
             ?>
-                    <label><input type="checkbox" name="<?= $priloha['id'] ?>" value="1" class="jNiceCheckbox" style="display: block;"><?= $priloha['nazev'] ?></label>
+                    <label>
+                        <input      type="checkbox"
+                                    name="<?= $priloha['id'] ?>"
+                                    value="1" class="jNiceCheckbox"
+                            <?php   echo ($prilohaClass->isActive($priloha['id'],$kategorieClass->id)["active"] == 1)?"checked":""; ?>
+                                    style="display: block;">
+                        <?= $priloha['nazev'] ?>
+                    </label>
             <?php
                 endforeach;
             ?>

@@ -68,7 +68,14 @@ unset($obsahKosiku);
         <div class="col s6 l2 offset-s0 offset-l8">Celkem</div>
         <div class="col s6  l2" id="cenacelkem"><?= $kosikClass->getCena() ?> Kč</div>
         <input type="hidden" id="cenacelkemInput" name="cenaCelkem" value="<?= $kosikClass->getCena() ?>" />
-        <input type="submit" name="to-checkout" class="col l2 m12  offset-l10 next-btn" value="Pokračovat">
+        <input type="submit"
+               name="to-checkout"
+               class="col l2 m12  offset-l10 next-btn"
+               value="Pokračovat"
+            <?php
+                echo (\core\core::getProjectInfo('disable_orders') == 1)?"disabled":"";
+            ?>
+        >
     </div>
 
 </form>

@@ -15,6 +15,7 @@ use database\user;
 use core\upload;
 use core\core;
 use database\stranka;
+use database\priloha;
 
 class form
 {
@@ -198,7 +199,7 @@ class form
     }
 
     private function editKategorie(){
-        var_dump($this->data); die();
+        // var_dump($this->data); die();
         $kategorieClass= new kategorie();
         $kategorieClass->setUpKategorie($this->data['id']);
 
@@ -486,13 +487,15 @@ class form
     }
 
     private function prilohy(){
+        // echo "ok"; die();
         unset($this->data['prilohy']);
         $kategorie_id = $this->data['kategorie_id'];
         unset($this->data['kategorie_id']);
+        $prilohaClass = new priloha();
+        $result = $prilohaClass->deleteFromKat($kategorie_id);
+
         foreach ($this->data as $id => $active){
-            
+            $prilohaClass->insertPriloha($id, $kategorie_id);
         }
-
-
     }
 }

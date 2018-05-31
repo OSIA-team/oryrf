@@ -23,7 +23,15 @@ class priloha
      * @return array
      * NEPOUZIVA SE
      */
-    public function getPrilohaByKategorie($kategorie){
+    public function getPrilohaByKategorieId($kategorie_id){
+        $query = "SELECT menuitem.id, menuitem.nazev, cena, kategorie.nazev AS kategorie FROM priloha
+                LEFT JOIN menuitem ON menuitem.id = priloha.jidlo_id
+                LEFT JOIN kategorie ON menuitem.kategorie = kategorie.url
+                WHERE kategorie_id =  $kategorie_id";
+
+        return $this->_mysqli->get_results($query);
+
+        /*
         if (is_string($kategorie)) $url = $kategorie;
         if (is_int($kategorie)) $id = $kategorie;
 
@@ -36,6 +44,7 @@ class priloha
         $result = $this->_mysqli->get_results($query);
 
         return $result;
+        // */
     }
 
     public function getAllPriloha(){
@@ -44,6 +53,14 @@ class priloha
         return $result;
     }
 
+    /**
+     * @param $kategorieId
+     * @param $menuItemId
+     * @param $id
+     * @param int $active
+     * @return bool
+     * nepouziva se
+     */
     public function addPriloha($kategorieId, $menuItemId, $id, $active = 1){
         $query = "SELECT id FROM priloha WHERE menuItem_id = $menuItemId AND kategorie_id = $kategorieId";
         $exists = $this->_mysqli->num_rows($query);
@@ -70,5 +87,20 @@ class priloha
         return $result;
     }
 
+    /**
+     * @param $kategorieId
+     * @return bool
+     */
+    public function deleteFromKat($kategorieId){
+       return  $this->_mysqli->delete("priloha", ["kategorie_id" => $kategorieId]);
+    }
+
+    public function insertPriloha($jidlo_id, $kategorie_id){
+        return $this->_mysqli->insert("priloha", ["jidlo_id" => $jidlo_id, "kategorie_id" => $kategorie_id, "active" => 1]);
+    }
+
+    public function isActive($id, $kategori_id){
+        return $this->_mysqli->get_row("SELECT active FROM priloha WHERE jidlo_id = $id AND kategorie_id = $kategori_id");
+    }
 
 }

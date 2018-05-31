@@ -38,7 +38,7 @@ $menuItem = new \database\jidlo();
 
 $objednavkaClass = new \database\objednavka();
 
-$strankClass = new \database\stranka();
+$strankaClass = new \database\stranka();
 
 // determinate scripts
  if (isset($_POST['to-checkout'])){
@@ -103,7 +103,7 @@ switch ($page){
         break;
 
     default:
-        $stranka = $strankClass->strankaExists((string)$page);
+        $stranka = $strankaClass->strankaExists((string)$page);
             if($stranka){
                 require_once 'component/custom/index.php';
             } else {

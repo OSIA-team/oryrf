@@ -16,6 +16,7 @@ class kategorie {
 	public $background;
 	public $topmenu;
 	public $icon;
+	public $visible;
 	//public $position;
 
 
@@ -49,6 +50,7 @@ class kategorie {
         $this->background = $kategorie['background'];
         $this->icon = $kategorie['icon'];
         $this->topmenu = $kategorie['topmenu'];
+        $this->visible = $kategorie['visible'];
 
         unset($kategorie);
    }

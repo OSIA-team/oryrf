@@ -24,8 +24,9 @@ class stranka {
      * @param string $role (page, alert)
      * @return array
      */
-    public function getAll($role = 'page'){
+    public function getAll($role = 'page', $where = NULL){
         $query = "SELECT * FROM stranka WHERE role = '{$role}'";
+        if($where != NULL) $query .= " AND ".$where;
         $result = $this->_mysqli->get_results($query);
         return $result;
     }

@@ -220,7 +220,7 @@ class jidlo {
      * @return array or false
      */
     public function getRandomJidlo($limit = 3){
-            $query = "SELECT * FROM menuItem ORDER BY RAND() LIMIT $limit";
+            $query = "SELECT * FROM menuItem WHERE priloha != 1 ORDER BY RAND() LIMIT $limit";
             $result = $this->_mysqli->get_results($query);
          return $result;
      }

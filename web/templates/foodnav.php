@@ -21,7 +21,7 @@ $kategories = $kategorieClass->getAllKategorie('topmenu = 1');
       <h1><?= ucfirst($kategorie) ?></h1>
     </div>
 <?php
-$kategories = $kategorieClass->getAllKategorie();
+$kategories = $kategorieClass->getAllKategorie("visible = 1 ");
 ?>
 <section class="container product-list">
   <div class="navigation-sidebar">

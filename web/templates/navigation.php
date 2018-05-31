@@ -8,6 +8,17 @@
   <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
   <div class="center menu hide-on-med-and-down">
     <a href="?page=menu">MENU</a></li>
+      <?php
+        $stranky = $strankaClass->getAll('page', 'active = 1');
+        foreach ($stranky as $stranka):
+      ?>
+            <a href="?page=<?= $stranka['url'] ?>"><?= $stranka['nazev'] ?></a>
+      <?php
+        endforeach;
+      ?>
+
+
+
     <a href="?page=kontakt">KDE NÁS NAJDETE</a>
     <a href="?page=onas">O NÁS</a>
   </div>
