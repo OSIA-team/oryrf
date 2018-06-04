@@ -25,7 +25,7 @@ class priloha
      */
     public function getPrilohaByKategorieId($kategorie_id){
         $query = "SELECT menuitem.id, menuitem.nazev, cena, kategorie.nazev AS kategorie FROM priloha
-                LEFT JOIN menuitem ON menuitem.id = priloha.jidlo_id
+                LEFT JOIN menuitem ON menuitem.id = priloha.menuItem_id
                 LEFT JOIN kategorie ON menuitem.kategorie = kategorie.url
                 WHERE kategorie_id =  $kategorie_id";
 

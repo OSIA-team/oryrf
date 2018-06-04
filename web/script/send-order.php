@@ -12,7 +12,12 @@ try{
             foreach ($_POST['jidlo_id'] as $key => $value){
                 $kosikClass->addInKosik($value, 1);
             }
-        } elseif(@isset($_POST['jidlo_id'])) {
+        }   elseif(isset($_POST['change'])) {
+            @$pocet = $_POST['quntity-1'];
+            $jidlo_id = $_POST['jidlo_id'];
+            $result = $kosikClass->updateInKosik($jidlo_id, $pocet);
+        }
+            elseif(@isset($_POST['jidlo_id'])) {
             @$pocet = $_POST['quntity-1'];
             $jidlo_id = $_POST['jidlo_id'];
             $result = $kosikClass->addInKosik($jidlo_id, $pocet);
