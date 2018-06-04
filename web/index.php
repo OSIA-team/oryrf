@@ -67,7 +67,7 @@ if (isset($_POST['pridat_do_kosiku'])){
 
 //define page selected
 $id         = (isset($_GET['id']))?htmlspecialchars($_GET['id']):"";
-$page       = (isset($_GET['page']))?$_GET['page']:'home';
+$page       = (isset($_GET['page']))?$_GET['page']:'menu';
 
 require 'templates/head.php';
 require 'templates/header.php';
