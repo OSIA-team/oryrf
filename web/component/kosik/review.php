@@ -51,6 +51,7 @@ unset($obsahKosiku);
                     <div class="col s6 l2">
                         <div class="sp-quantity">
                             <input type="hidden" name="id[]" value="<?= $jidlo['id']  ?>" />
+                            <input type="hidden" name="jidlo_id" value="<?= $jidlo['id']  ?>" />
                             <div class="sp-input"><input type="text" class="quntity-input" name="pocet[]" value="<?= $jidlo['pocet'] ?>" /></div>
                             <div class="sp-plus fff ddd">+</div>
                             <div class="sp-minus fff ddd">-</div>
