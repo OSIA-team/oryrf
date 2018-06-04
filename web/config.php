@@ -11,8 +11,11 @@ return [
         if ($_SERVER['SERVER_NAME'] == 'local.osia' OR $_SERVER['SERVER_NAME'] == 'localhost'){
             return 'dev';
         }
-        if ($_SERVER['SERVER_NAME'] == 'bel3s.osia.cz'){
+        elseif ($_SERVER['SERVER_NAME'] == 'test.bel3s.cz'){
             return 'test';
+        }
+        else {
+            return 'production';
         }
     },
     'database' => [
@@ -24,17 +27,17 @@ return [
         ],
 
         'test' => [
-            'host' => 'innodb.endora.cz',
-            'user' => 'osiacz',
-            'password' => 'kokoti22',
-            'database' => 'bel3s'
+            'host' => 'c093um.forpsi.com',
+            'user' => 'f104889',
+            'password' => '3Tp2Enu',
+            'database' => 'f104889'
         ],
 
         'production' => [
-            'host' => 'localhost',
-            'user' => 'root',
-            'password' => '',
-            'database' => 'Bel3s'
+            'host' => 'c093um.forpsi.com',
+            'user' => 'f104889',
+            'password' => '3Tp2Enu',
+            'database' => 'f104889'
         ]
     ]
 ];
