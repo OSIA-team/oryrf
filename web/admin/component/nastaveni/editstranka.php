@@ -18,15 +18,11 @@ if (!$stranka){
 <div id="main">
     <h3>Upravit stránku <?= $stranka['nazev'] ?></h3>
     <div class="container">
-        <form method="post" style="margin-top: 20px;">
-        <script type="text/javascript" src="style/js/nicEdit.js"></script>
-        <script type="text/javascript">
-            bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-        </script>
+        <form method="post">
+          <textarea id="summernote" name="content">
+          <?= $stranka['content'] ?>
+          </textarea>
 
-        <textarea name="content" cols="100" rows="20">
-            <?= $stranka['content'] ?>
-        </textarea>
         <br />
             <label>
                 <input type="checkbox" name="active" value="1" class="jNiceCheckbox" style="display: block;" <?= $active ?> >Aktivní
@@ -38,4 +34,8 @@ if (!$stranka){
 
     </div>
 </div>
-
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#summernote').summernote();
+});
+</script>

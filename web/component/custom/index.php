@@ -14,5 +14,8 @@ if ($stranka['active'] == 0) die("Stránka není k dispozici");
         </div>
     </div>
 
+<div class="container">
 <?php
 echo html_entity_decode($stranka['content']);
+?>
+</div>
