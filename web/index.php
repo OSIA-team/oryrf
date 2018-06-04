@@ -97,6 +97,7 @@ switch ($page){
     case 'onas':
         break;
     case 'kontakt':
+          require 'pages/kontakt.html';
         break;
     case 'user':
             require 'component/user/index.php';

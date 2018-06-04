@@ -81,6 +81,8 @@ unset($obsahKosiku);
 </form>
 </section>
 <script type="text/javascript">
+
+
 $(".close-btn").on("click", function () {
 
     var $button = $(this);
