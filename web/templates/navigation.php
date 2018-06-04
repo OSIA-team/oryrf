@@ -1,6 +1,6 @@
 <nav class="grey darken-4">
 <div class="nav-wrapper">
-  <a href="?page=home" class="brand-logo">
+  <a href="" class="brand-logo">
     <div class="vlajecka-logo">
         <img src="pict/logo_bezpozadi.png" alt="logo" width="98" height="53">
     </div>
