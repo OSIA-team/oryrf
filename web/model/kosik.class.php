@@ -67,7 +67,7 @@ class kosik
      * @param $pocet
      * in menu
      */
-    public function addInKosik($jidlo_id, $pocet){
+    public function     addInKosik($jidlo_id, $pocet){
        // $count = count($_SESSION['kosik']['obsah']);
         if (@!$_SESSION['kosik']['obsah'][$jidlo_id]){
             $_SESSION['kosik']['obsah'][$jidlo_id] = $pocet;
