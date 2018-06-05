@@ -34,12 +34,20 @@
               <?php
               if ($jidlo['priloha_modulo'] == 1):
               ?>
-                  <button type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn modal-trigger" data-target="priloha" ><i class="material-icons">shopping_basket</i></button>
+                  <button
+                      <?php
+                      echo (\core\core::getProjectInfo('disable_orders') == 1)?"disabled":"";
+                      ?>
+                          type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn modal-trigger" data-target="priloha" ><i class="material-icons">shopping_basket</i></button>
               <?php
                 endif;
                 if($jidlo['priloha_modulo'] == 0):
               ?>
-                    <input type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn" value="shopping_basket"/>
+                    <input
+                        <?php
+                        echo (\core\core::getProjectInfo('disable_orders') == 1)?"disabled":"";
+                        ?>
+                            type="submit" name="pridat_do_kosiku" class="material-icons objednat-btn" value="shopping_basket"/>
               <?php
                 endif;
               ?>
