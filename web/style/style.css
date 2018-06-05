@@ -30,6 +30,15 @@ table{
   line-height: 46px;
 }
 
+.brand{
+  background-image: url(../pict/beles-logo.svg);
+  background-size: cover;
+  width: 106px;
+  height: 66px;
+  margin: auto;
+  top: 8px;
+  position: relative;
+}
 .err-page{
   background: #232323;
   color: white;
@@ -1463,9 +1472,13 @@ user-select: none;
     background: none;
   }
 
-  .vlajecka-logo img {
-    width: 80px;
-    height: auto;
-    margin: 0 auto;
+  .vlajecka-logo .brand {
+    background-image: url(../pict/beles-logo.svg);
+        background-size: cover;
+        width: 71px;
+        height: 46px;
+        margin: auto;
+        top: 0px;
+        position: relative;
 }
 }
