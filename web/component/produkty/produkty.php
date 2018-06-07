@@ -1,6 +1,5 @@
 <div class="products">
 <?php
-
   if (!$kategorie){
       $jidla = $menuItem->getRandomJidlo();
   } else {
@@ -9,7 +8,6 @@
   $i = 1;
   // Write out
   foreach($jidla as $jidlo):
-
   $foto = $menuItem->getFotkaByJidloId($jidlo['id']);
   //Zjistim pocet v kosiku pro lepsi ovladani
  ?>
@@ -82,12 +80,10 @@ endforeach;
            <label class="omacka-label" for="priloha<?= $priloha['id'] ?>"><?= $priloha['nazev'] ?> <b><?= $priloha['cena'] ?> Kč</b></label>
          </div>
        <?php
-
                  $next = next($prilohy);
                     if ( $next['kategorie'] != $priloha['kategorie'] ){
                         echo "</div>";
                     } // */
-
          endforeach;
        ?>
      </form>
@@ -102,13 +98,9 @@ endforeach;
 $(document).ready(function(){
   $('.modal').modal();
 });
-
 $(function () {
-
         $('.objednat-btn').on('click', function (e) {
-
           e.preventDefault();
-
           $.ajax({
             type: 'post',
             url: 'script/send-order.php',
@@ -116,26 +108,19 @@ $(function () {
             dataType: 'json',
             async: false,
             success: function (d) {
-
              if(d.stav == "true"){
                $( "#add-success" ).slideDown(500).delay(5000).slideUp( 500 );
              }
              else{
                $( "#add-error" ).slideDown(500).delay(5000).slideUp( 500 );
              }
-
              document.getElementById('pocet-kosik').innerHTML = d.pocet;
              document.getElementById('cena-kosik').innerHTML = d.cena+" Kč";
             }
           });
-
         });
-
-
         $('.add-priloha').on('click', function (e) {
-
           e.preventDefault();
-
           $.ajax({
             type: 'post',
             url: 'script/send-order.php',
@@ -147,16 +132,11 @@ $(function () {
               document.getElementById('cena-kosik').innerHTML = d.cena+" Kč";
             }
           });
-
         });
       });
-
-
 $(".ddd").on("click", function () {
-
     var $button = $(this);
     var oldValue = $button.closest('.sp-quantity').find("input.quntity-input").val();
-
     if ($button.text() == "+") {
         var newVal = parseFloat(oldValue) + 1;
     } else {
@@ -167,8 +147,6 @@ $(".ddd").on("click", function () {
             newVal = 0;
         }
     }
-
     $button.closest('.sp-quantity').find("input.quntity-input").val(newVal);
-
 });
 </script>

@@ -2,7 +2,7 @@
 <div class="nav-wrapper">
   <a href="" class="brand-logo">
     <div class="vlajecka-logo">
-        <img src="pict/logo_bezpozadi.png" alt="logo" width="98" height="53">
+        <div class="brand"></div>
     </div>
   </a>
   <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>

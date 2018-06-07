@@ -27,7 +27,7 @@ unset($obsahKosiku);
     </div>
 </div>
 
-<form class="" method="post" action="?page=kosik&action=to-checkout">
+<form class="produkt-form" method="post" action="?page=kosik&action=to-checkout">
     <section class="kosik">
         <?php
         foreach ($jidlaVkosiku as $jidla):
@@ -101,9 +101,12 @@ $(".close-btn").on("click", function () {
 
 
     $button.closest('.polozka').find('input.quntity-input').val(0);
+    //console.log($button.closest('.polozka').find("input[name='jidlo_id']").val());
     $('#cenacelkem').text((Number(oldSuma)-Number(cenaZrusena))+" Kč");
     $('#cenacelkemInput').val((Number(oldSuma)-Number(cenaZrusena)));
     $button.closest('.polozka').css("display", "none");
+
+    //$('form.produkt-form').hide();
 
     for (var j = 0; j < pocetInput.length; j++) {
       itemsInKosik = Number(itemsInKosik) + Number(pocetInput[j].value);
@@ -113,7 +116,32 @@ $(".close-btn").on("click", function () {
       document.getElementById('cena-kosik').innerHTML = cenaKosik + " Kč";
       kosikPocet.innerHTML = itemsInKosik;
       checkEmptyOrder();
-  });
+
+      var formValue = $('form.produkt-form').serialize();
+          formValue = formValue+"&change=true";
+
+      $.ajax({
+        type: 'post',
+        url: 'script/send-order.php',
+        data: formValue,
+        dataType: 'json',
+        async: false,
+        success: function (d) {
+
+         if(d.stav == "true"){
+           //$( "#add-success" ).slideDown(500).delay(5000).slideUp( 500 );
+           //console.log('ok')
+         }
+         else{
+           //$( "#add-error" ).slideDown(500).delay(5000).slideUp( 500 );
+           //console.log('false')
+         }
+
+        }
+      });
+
+      console.log(formValue);
+      });
 
   $(".ddd").on("click", function () {
 
@@ -159,6 +187,30 @@ $(".close-btn").on("click", function () {
       }
         checkEmptyOrder();
         document.getElementById('pocet-kosik').innerHTML = itemsInKosik;
+
+
+        var data = $(this).closest('.produkt-form').serialize();
+        data = data +"&change=true";
+
+        $.ajax({
+          type: 'post',
+          url: 'script/send-order.php',
+          data: data,
+          dataType: 'json',
+          async: false,
+          success: function (d) {
+
+           if(d.stav == "true"){
+             //$( "#add-success" ).slideDown(500).delay(5000).slideUp( 500 );
+             //console.log('ok')
+           }
+           else{
+             //$( "#add-error" ).slideDown(500).delay(5000).slideUp( 500 );
+             //console.log('false')
+           }
+
+          }
+        });
   });
 
 
