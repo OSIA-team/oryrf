@@ -1,4 +1,5 @@
 <?php
+//var_dump($_POST);
 session_start();
 //pridat_do_kosiku
 foreach (glob("../model/*.php") as $filename)
@@ -13,7 +14,7 @@ try{
                 $kosikClass->addInKosik($value, 1);
             }
         }   elseif(isset($_POST['change'])) {
-            @$pocet = $_POST['quntity-1'];
+            @$pocet = $_POST['pocet'][0];
             $jidlo_id = $_POST['jidlo_id'];
             $result = $kosikClass->updateInKosik($jidlo_id, $pocet);
         }
@@ -26,6 +27,6 @@ try{
         $newCena = $kosikClass->getCena();
         echo json_encode(array("stav" => "true", "cena" => $newCena, 'pocet' => $newPocet));
 }  catch (Exception $e) {
-    echo json_encode(array("stav" => "false", "chyba" => $e->getMessage()));
+        echo json_encode(array("stav" => "false", "chyba" => $e->getMessage()));
 }
 ?>
