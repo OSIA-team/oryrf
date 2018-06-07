@@ -21,8 +21,8 @@
     <meta charset="utf-8">
 
 
-     <meta property="og:title" content="Bel3s bistro s belgickým jídlem">
-     <meta property="og:description" content="Bel3s bistro s belgickým jídlem">
+     <meta property="og:title" content="Bel3s - fast food bistro s belgickým jídlem">
+     <meta property="og:description" content="Bel3s - fast food bistro s belgickým jídlem">
      <meta property="og:site_name" content="Bel3s - Bel3s.cz">
      <meta property="og:url" content="https://www.bel3s.cz">
      <meta property="og:image" content="/pict/logo_bezpozadi.png">
