@@ -98,8 +98,8 @@ class jidlo {
      */
     public function getAllJidloByKategorieId($kategorie, $limit = NULL)
 {
-    $query = "SELECT menuitem.nazev, popis, cena, gramaz, prilohy FROM menuitem
-            JOIN menuitem_has_kategorie ON menuitem.id = menuitem_has_kategorie.menuitem_id
+    $query = "SELECT menuItem.nazev, popis, cena, gramaz, prilohy FROM menuItem
+            JOIN menuItem_has_kategorie ON menuItem.id = menuItem_has_kategorie.menuItem_id
             WHERE kategorie_id = 5";
 
 
@@ -226,9 +226,9 @@ class jidlo {
      }
 
      public function getAllPriloha($url){
-            $query = "SELECT menuitem.id, menuitem.nazev, cena, kategorie FROM menuitem  
-                      JOIN priloha p ON menuitem.id = p.menuItem_id
-                      JOIN kategorie k ON menuitem.kategorie = k.url
+            $query = "SELECT menuItem.id, menuItem.nazev, cena, kategorie FROM menuItem  
+                      JOIN priloha p ON menuItem.id = p.menuItem_id
+                      JOIN kategorie k ON menuItem.kategorie = k.url
                       WHERE priloha = 1 AND p.active = 1 AND k.url = '$url'
                       ORDER BY kategorie";
             $result = $this->_mysqli->get_results($query);

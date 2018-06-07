@@ -24,9 +24,9 @@ class priloha
      * NEPOUZIVA SE
      */
     public function getPrilohaByKategorieId($kategorie_id){
-        $query = "SELECT menuitem.id, menuitem.nazev, cena, kategorie.nazev AS kategorie FROM priloha
-                LEFT JOIN menuitem ON menuitem.id = priloha.menuItem_id
-                LEFT JOIN kategorie ON menuitem.kategorie = kategorie.url
+        $query = "SELECT menuItem.id, menuItem.nazev, cena, kategorie.nazev AS kategorie FROM priloha
+                LEFT JOIN menuItem ON menuItem.id = priloha.menuItem_id
+                LEFT JOIN kategorie ON menuItem.kategorie = kategorie.url
                 WHERE kategorie_id =  $kategorie_id";
 
         return $this->_mysqli->get_results($query);
@@ -48,7 +48,7 @@ class priloha
     }
 
     public function getAllPriloha(){
-        $query = "SELECT * FROM menuitem WHERE priloha = 1";
+        $query = "SELECT * FROM menuItem WHERE priloha = 1";
         $result = $this->_mysqli->get_results($query);
         return $result;
     }
