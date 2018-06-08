@@ -2,7 +2,6 @@
 //var_dump($_POST);
 session_start();
 //pridat_do_kosiku
-var_dump($_POST);
 foreach (glob("../model/*.php") as $filename)
 {
     include $filename;
