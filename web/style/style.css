@@ -604,10 +604,10 @@ margin: 0 auto;
   height: auto;
   padding-left: 2rem;
   padding-right: 2rem;
-  background-image: url('../pict/bg1.png');
+  background-image: url('../pict/bg12.png');
   background-size: cover;
   width: 100%;
-  background-position: center;
+  background-position: center 110px;
   color: #2D2B2D;
   background-attachment: fixed;
 }
