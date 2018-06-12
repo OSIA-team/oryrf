@@ -80,7 +80,7 @@ class database {
 	{
 			if( !is_array( $data ) )
 			{
-				$data = trim( htmlentities( $data ) );
+				// $data = trim( htmlentities( $data ) );
 				$data = mysqli_real_escape_string( $this->_mysqli, $data );
 			}
 			else

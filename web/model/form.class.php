@@ -251,8 +251,7 @@ class form
         }
 
         $topmenu    = (isset($this->data['topmenu']))?1:0;
-        $url        = strtolower($kategorieClass->remove_accents($this->data['nazev']));
-
+        $url        = strtolower($kategorieClass->remove_accents_wp($this->data['nazev']));
         $update = array(
             'nazev' => "{$this->data['nazev']}",
             'topmenu' => $topmenu,
