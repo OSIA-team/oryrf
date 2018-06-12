@@ -91,7 +91,7 @@ $kategories = $kategorieClass->getAllKategorie();
 
                         <div class="action-kategorie">
                           <a href="?page=nastaveni&action=editkategorie&id=<?= $kategorie['id'] ?>" class="edit"><div class="action">Editovat</div></a>
-                          <a href="?page=nastaveni&action=deletekategorie&id=<?= $kategorie['id'] ?>" class="delete-icon" onclick="confirm('Opravdu chcete tuto kategorii vymazat?')"><i class="material-icons dp48">delete</i></a>
+                          <a href="?page=nastaveni&action=deletekategorie&id=<?= $kategorie['id'] ?>" class="delete-icon" onclick="return confirm('Opravdu chcete tuto kategorii vymazat?')"><i class="material-icons dp48">delete</i></a>
                         </div>
                     </div>
             </div>
