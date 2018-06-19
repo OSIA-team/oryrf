@@ -209,10 +209,8 @@ class form
             // Overeni zda je obrazek uspesne nahran do tmp slozky
             if ($upload->uploaded) {
                 // Manipulace s obrazkem
-                $upload->image_resize = true;
+                // $upload->image_resize = true;
                 //  $upload->image_ratio = true;
-                $upload->image_x = 226;
-                $upload->image_y = 226;
                 // $upload->image_ratio_crop = true;
                 // Presuneme fotku ze slozky temp
                 $upload->Process("../img/");
@@ -232,10 +230,10 @@ class form
             // Overeni zda je obrazek uspesne nahran do tmp slozky
             if ($upload->uploaded) {
                 // Manipulace s obrazkem
-                $upload->image_resize = true;
+               // $upload->image_resize = false;
                 //  $upload->image_ratio = true;
-                $upload->image_x = 3000;
-                $upload->image_y = 1500;
+               // $upload->image_x = 3000;
+               // $upload->image_y = 1500;
                 //  $upload->image_ratio_crop = true;
                 // Presuneme fotku ze slozky temp
                 $upload->Process("../img/");
@@ -251,8 +249,7 @@ class form
         }
 
         $topmenu    = (isset($this->data['topmenu']))?1:0;
-        $url        = strtolower($kategorieClass->remove_accents($this->data['nazev']));
-
+        $url        = str_replace(" ", "_", strtolower($kategorieClass->remove_accents_wp($this->data['nazev'])));
         $update = array(
             'nazev' => "{$this->data['nazev']}",
             'topmenu' => $topmenu,
