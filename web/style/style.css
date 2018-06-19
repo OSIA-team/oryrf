@@ -339,7 +339,7 @@ display: inline-block;
 }
 
 .nabidka_mainpage .item1{
-  background-image: url('../pict/hranolky.jpg');
+  background-image: url('../pict/koule.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -705,8 +705,11 @@ margin: 0 auto;
   color: white;
   font-weight: bold;
   font-size: 100px;
-  margin-top: 100px
+  margin-top: 100px;
+  margin-top: 0px;
+  padding-top: 115px;
 }
+
 .navigation-sidebar{
   width: 350px;
   margin-right: 50px;
