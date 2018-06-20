@@ -3582,7 +3582,6 @@ class upload {
                         $this->log .= '- resizing...<br />';
                         $this->image_dst_x = $this->image_x;
                         $this->image_dst_y = $this->image_y;
-
                         // backward compatibility for soon to be deprecated settings
                         if ($this->image_ratio_no_zoom_in) {
                             $this->image_ratio = true;
