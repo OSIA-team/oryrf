@@ -283,6 +283,20 @@ z-index: 10;
   justify-content: space-between;
 }
 
+.opening-hours{
+  color: white;
+  font-size: 24px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 100px;
+}
+
+.opening-hours .day{
+  padding-right: 44px;
+}
+
 .carousel-item{
   background-repeat: no-repeat;
   background-size: cover;
