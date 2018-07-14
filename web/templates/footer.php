@@ -5,9 +5,9 @@
             <div class="col l6 s12">
               <h5 class="white-text">Kontakt</h5>
               <div class="kontakt-wrap">
-                <p class=""> BEL3S s.r.o. </p>
+                <p class=""> PSV Cargo s.r.o</p>
                 <p class=""> Kaštanová 639/143,<br>617 00  Brno</p>
-                <p class=""> tel: +420 775 596 695</p>
+                <p class=""> tel: +420 739 083 083</p>
               </div>
             </div>
             <div class="col l4 offset-l2 s12">
