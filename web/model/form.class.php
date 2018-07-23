@@ -162,9 +162,10 @@ class form
                 $upload->image_x = 226;
                 $upload->image_y = 226;
                 // $upload->image_precrop              = '5%';
-                $upload->image_ratio_crop           = true;
+                $upload->image_ratio_crop           = false;
                 // Presuneme fotku ze slozky temp
-                $upload->Process("../img/");
+                //die("ok");
+                $upload->process("../img/");
                 // Jestli se zadarilo
                 if ($upload->processed) {
                     // Vlozeni fotky/obrazku do databaze
@@ -180,8 +181,6 @@ class form
                     );
 
                     $upload_foto = $menuItem->editFotka($update, $where);
-                    /*var_dump($update); var_dump($where);
-                    var_dump($upload_foto); die();*/
                 }
             }
         } else {

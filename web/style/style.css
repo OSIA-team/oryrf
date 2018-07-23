@@ -200,7 +200,6 @@ input[type="submit"].disabled{
 }
 #login .brand, #register .brand{
   margin: 0 auto;
-width: 94px;
 display: block;
 }
 

@@ -3,6 +3,14 @@
  * @file index.php
  */
 // require_once 'model/public/PHPMailer/PHPMailerAutoload.php';
+// redirect to https
+if($_SERVER['SERVER_NAME'] == 'bel3s.cz'){
+    if (!$_SERVER['HTTPS']){
+        $redirect = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header('Location: '.$redirect);
+        exit();
+    }
+}
 
 foreach (glob("model/*.php") as $filename)
 {
@@ -67,7 +75,7 @@ if (isset($_POST['pridat_do_kosiku'])){
 
 //define page selected
 $id         = (isset($_GET['id']))?htmlspecialchars($_GET['id']):"";
-$page       = (isset($_GET['page']))?$_GET['page']:'menu';
+$page       = (isset($_GET['page']))?$_GET['page']:'home';
 
 require 'templates/head.php';
 require 'templates/header.php';

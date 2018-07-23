@@ -148,7 +148,6 @@ class jidlo {
     public function editFotka($update, $where){
 
      if($this->_mysqli->get_row("SELECT id FROM fotka WHERE jidlo_id =".$where['jidlo_id'])){
-
      $result 	= $this->_mysqli->update( 'fotka', $update, $where, 1 );
      if ($result) {
          return true;

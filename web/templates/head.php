@@ -39,5 +39,8 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="style/style.css">
-    <title>Bel3s - belgické kuchyně, fast food</title>
+      <title>Bel3s - Nově otevřená belgická kuchyně a fastfood.</title>
+      <meta name="description" content="Jedíná pravá Belgická restaurace a fastfood v Brně, nově otevřená. Belgické wafle, domací limonády.">
+      <meta name="keywords" content="belgické, wafle, hranolky, belgické hranolky, stripsy, belgické stripsy, fastfood, fast food, restaurace, nova">
+      <meta name="author" content="Osia Team" >
   </head>
