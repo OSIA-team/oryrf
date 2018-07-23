@@ -15,9 +15,9 @@
               <ul>
                 <li><a class="grey-text text-lighten-3" href="?page=menu">Menu</a></li>
                 <li><a class="grey-text text-lighten-3" href="?page=kontakt">Kde nás najdete</a></li>
-                <li><a class="grey-text text-lighten-3" href="?page=onas">O nás</a></li>
                 <li><a class="grey-text text-lighten-3 modal-trigger" href="#login">Přihlášení</a></li>
                 <li><a class="grey-text text-lighten-3 modal-trigger" href="#register">Registrace</a></li>
+                <li><a class="grey-text text-lighten-3" href="?page=seznam-alergenu">Seznam alergenů</a></li>
               </ul>
             </div>
           </div>
