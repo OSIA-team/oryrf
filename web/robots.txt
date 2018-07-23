@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /bel3s.cz/admin/login.php
+
+Sitemap: https://bel3s.cz/sitemap.xml

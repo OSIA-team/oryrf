@@ -46,7 +46,8 @@ endif;
 <!-- Modal Structure -->
   <div id="login" class="modal grey lighten-4">
    <div class="modal-content row">
-     <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
+    <!-- <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand"> -->
+       <div class="brand"></div>
      <h5>Přihlašte se</h5>
 <div class="loginform-in">
 <div class="err" id="add_err"></div>
@@ -70,7 +71,8 @@ endif;
  <!-- Modal Structure -->
    <div id="register" class="modal grey lighten-4">
     <div class="modal-content row">
-      <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand">
+     <!--  <img src="pict/logo_bezpozadi.png" alt="branding logo" class="brand"> -->
+        <div class="brand"></div>
       <h5>Registrovat se</h5>
       <div class="err" id="add_err_reg"></div>
       <form id="registerForm" action="./" method="post">

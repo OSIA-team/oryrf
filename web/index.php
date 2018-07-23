@@ -3,6 +3,14 @@
  * @file index.php
  */
 // require_once 'model/public/PHPMailer/PHPMailerAutoload.php';
+// redirect to https
+if($_SERVER['SERVER_NAME'] == 'bel3s.cz'){
+    if (!$_SERVER['HTTPS']){
+        $redirect = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header('Location: '.$redirect);
+        exit();
+    }
+}
 
 foreach (glob("model/*.php") as $filename)
 {
