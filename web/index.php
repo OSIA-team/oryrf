@@ -110,6 +110,19 @@ switch ($page){
   case 'seznam-alergenu':
         require 'pages/alergeny.html';
       break;
+
+  case 'obchodni-podminky':
+        require 'pages/podminky.html';
+      break;
+
+case 'ochrana-osobnich-udaju':
+      require 'pages/ochrana-udaju.html';
+    break;
+
+    case 'souhlas-se-zpracovanim-osobnich-udaju':
+          require 'pages/souhlas-se-zpracovanim-udaju.html';
+        break;
+
     case 'user':
             require 'component/user/index.php';
         break;

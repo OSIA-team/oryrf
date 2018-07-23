@@ -30,6 +30,13 @@ table{
   line-height: 46px;
 }
 
+.alergeny{
+  text-align: right;
+  color: #bfbfbf;
+  padding: 0px 13px 6px;
+  font-size: 13px;
+}
+
 .brand{
   background-image: url(../pict/beles-logo.svg);
   background-size: cover;
@@ -959,7 +966,7 @@ h4.background::before{
       font-size: 14px;
       line-height: 18px;
       font-family: 'Open Sans', sans-serif;
-      padding: 16px 8px;
+      padding: 16px 8px 4px;
       margin: 0px;
       font-style: italic;
       text-align: left;

@@ -83,6 +83,9 @@
                     <input id="timepicker_ampm_dark" class="timepicker" type="time" name="cas">
                 </div>
             </div>
+            <div class="">
+                Potvrzením objednávky souhlasíte s <a href="?page=obchodni-podminky">obchodními podmínkami</a>, jejich součástí je i úprava <a href="?page=ochrana-osobnich-udaju">Ochrany osobních údajů</a>.
+            </div>
             <input type="submit" name="finish-order" class="col s12 m6  offset-l10 next-btn" value="Dokončit objednávku"
                 <?php
                 echo (\core\core::getProjectInfo('disable_orders') == 1)?"disabled":"";

@@ -18,6 +18,8 @@
                 <li><a class="grey-text text-lighten-3 modal-trigger" href="#login">Přihlášení</a></li>
                 <li><a class="grey-text text-lighten-3 modal-trigger" href="#register">Registrace</a></li>
                 <li><a class="grey-text text-lighten-3" href="?page=seznam-alergenu">Seznam alergenů</a></li>
+                <li><a class="grey-text text-lighten-3" href="?page=obchodni-podminky">Obchodní podmínky</a></li>
+                <li><a class="grey-text text-lighten-3" href="?page=ochrana-osobnich-udaju">Ochrana osobních údajů</a></li>
               </ul>
             </div>
           </div>
