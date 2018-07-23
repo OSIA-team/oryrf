@@ -99,6 +99,9 @@ switch ($page){
     case 'kontakt':
           require 'pages/kontakt.html';
         break;
+  case 'seznam-alergenu':
+        require 'pages/alergeny.html';
+      break;
     case 'user':
             require 'component/user/index.php';
         break;
