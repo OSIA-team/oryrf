@@ -30,6 +30,35 @@ table{
   line-height: 46px;
 }
 
+.social{
+  margin-top: 30px;
+}
+
+.social svg{
+  height: 40px;
+  max-width: 40px;
+  fill: #999999;
+  /* margin-left: 10px; */
+  margin-right: 15px;
+}
+
+
+.nabidka_mainpage .social{
+    margin-bottom: 85px;
+    /* border-bottom: 1px solid grey; */
+    padding: 0 0 50px;
+}
+
+
+.nabidka_mainpage svg{
+  height: 60px;
+  max-width: 60px;
+}
+
+.social a:hover svg{
+    fill: #e51c24;
+}
+
 .alergeny{
   text-align: right;
   color: #bfbfbf;
