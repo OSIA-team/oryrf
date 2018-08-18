@@ -7,7 +7,10 @@
               <div class="kontakt-wrap">
                 <p class=""> PSV Cargo s.r.o</p>
                 <p class=""> Kaštanová 639/143,<br>617 00  Brno</p>
-                <p class=""> tel: +420 739 083 083</p>
+                <p class=""> tel: +420 739 083 083
+                <br>
+                    &emsp; &nbsp; +420 775 596 695
+                </p>
               </div>
 
               <div class="social">

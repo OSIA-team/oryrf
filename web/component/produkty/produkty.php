@@ -18,7 +18,7 @@
                <div class="title"><h3><?= $jidlo['nazev'] ?></h3></div>
             </div>
             <p><?= $jidlo['popis'] ?></p>
-            <div class="alergeny" title="obsahuje alergeny">1, 3, 7, 13</div>
+            <div class="alergeny" title="obsahuje alergeny"><?= $jidlo['ingredience'] ?></div>
             <h4 class="background"><span>cena</span></h4>
             <div class="cena">
                 <div class="text"><?= $jidlo['cena'] ?> Kč, <?= $jidlo['gramaz'] ?></div>
