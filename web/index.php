@@ -119,6 +119,10 @@ case 'ochrana-osobnich-udaju':
       require 'pages/ochrana-udaju.html';
     break;
 
+    case 'rozvoz':
+        require 'pages/rozvoz.php';
+      break;
+
     case 'souhlas-se-zpracovanim-osobnich-udaju':
           require 'pages/souhlas-se-zpracovanim-udaju.html';
         break;

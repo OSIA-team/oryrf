@@ -9,6 +9,7 @@
   <div class="center menu hide-on-med-and-down">
     <a href="?page=menu">MENU</a></li>
     <a href="?page=kontakt">KDE NÁS NAJDETE</a>
+    <a href="?page=rozvoz">ROZVOZ</a>
       <?php
         $stranky = $strankaClass->getAll('page', 'active = 1');
         foreach ($stranky as $stranka):

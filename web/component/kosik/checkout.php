@@ -46,6 +46,15 @@
                     <option value="Kartou u kurýra">Kartou u kurýra</option>
                 </select>
             </div>
+            <div class="input-field col s12">
+                <select name="zpusobdoruceni" required>
+                    <option value="">Zvolte rozvozovou zónu</option>
+                    <option value="žluta">Žlutá zóna (Tuřany, Chrlice..)</option>
+                    <option value="modrá">Modrá zóna (Sokolnice, Kobylnice, Ponětovice, Telnice)</option>
+                    <option value="červená">Červená zóna (Žatčany, Újezd u Brna...)</option>
+                </select>
+                <p><a style="color: red" href="/?page=rozvoz">Rozvozové zony</a></p>
+            </div>
             <div class="input-field col s6">
                 <input id="first_name" type="text" class="validate" name="jmeno" <?php if($userClass->isLogged()) echo "Value=\"".$userClass->jmeno."\"" ?>     required>
                 <label for="first_name">Jméno</label>
